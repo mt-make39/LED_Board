@@ -1,0 +1,4451 @@
+
+LuminousStage.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000003a  00800100  00001df6  00001e8a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00001df6  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000005d  0080013a  0080013a  00001ec4  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00001ec4  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00001ef4  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000108  00000000  00000000  00001f34  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001214  00000000  00000000  0000203c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000b0f  00000000  00000000  00003250  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00001067  00000000  00000000  00003d5f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000320  00000000  00000000  00004dc8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000578  00000000  00000000  000050e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000a3d  00000000  00000000  00005660  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000f0  00000000  00000000  0000609d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 70 00 	jmp	0xe0	; 0xe0 <__ctors_end>
+       4:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+       8:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+       c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      10:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      14:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      18:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      1c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      20:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      24:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      28:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      2c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      30:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      34:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      38:	0c 94 29 01 	jmp	0x252	; 0x252 <__vector_14>
+      3c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      40:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      44:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      48:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      4c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      50:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      54:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      58:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      5c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      60:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      64:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+      68:	4c 03       	fmul	r20, r20
+      6a:	4f 03       	fmul	r20, r23
+      6c:	52 03       	mulsu	r21, r18
+      6e:	55 03       	mulsu	r21, r21
+      70:	58 03       	fmul	r21, r16
+      72:	5d 03       	fmul	r21, r21
+      74:	62 03       	mulsu	r22, r18
+      76:	67 03       	mulsu	r22, r23
+      78:	6c 03       	fmul	r22, r20
+      7a:	71 03       	mulsu	r23, r17
+      7c:	66 06       	cpc	r6, r22
+      7e:	c1 06       	cpc	r12, r17
+      80:	28 07       	cpc	r18, r24
+      82:	77 07       	cpc	r23, r23
+      84:	de 07       	cpc	r29, r30
+      86:	77 07       	cpc	r23, r23
+      88:	28 07       	cpc	r18, r24
+      8a:	c1 06       	cpc	r12, r17
+      8c:	66 06       	cpc	r6, r22
+      8e:	17 06       	cpc	r1, r23
+      90:	ca 05       	cpc	r28, r10
+      92:	17 06       	cpc	r1, r23
+      94:	66 06       	cpc	r6, r22
+      96:	c1 06       	cpc	r12, r17
+      98:	28 07       	cpc	r18, r24
+      9a:	c1 06       	cpc	r12, r17
+      9c:	66 06       	cpc	r6, r22
+      9e:	17 06       	cpc	r1, r23
+      a0:	ca 05       	cpc	r28, r10
+      a2:	7b 05       	cpc	r23, r11
+      a4:	15 08       	sbc	r1, r5
+      a6:	7b 05       	cpc	r23, r11
+      a8:	ca 05       	cpc	r28, r10
+      aa:	17 06       	cpc	r1, r23
+      ac:	66 06       	cpc	r6, r22
+      ae:	49 0a       	sbc	r4, r25
+      b0:	98 0a       	sbc	r9, r24
+      b2:	e7 0a       	sbc	r14, r23
+      b4:	36 0b       	sbc	r19, r22
+      b6:	8b 0b       	sbc	r24, r27
+      b8:	36 0b       	sbc	r19, r22
+      ba:	e7 0a       	sbc	r14, r23
+      bc:	98 0a       	sbc	r9, r24
+      be:	49 0a       	sbc	r4, r25
+      c0:	fa 09       	sbc	r31, r10
+      c2:	ab 09       	sbc	r26, r11
+      c4:	fa 09       	sbc	r31, r10
+      c6:	49 0a       	sbc	r4, r25
+      c8:	98 0a       	sbc	r9, r24
+      ca:	e7 0a       	sbc	r14, r23
+      cc:	98 0a       	sbc	r9, r24
+      ce:	49 0a       	sbc	r4, r25
+      d0:	fa 09       	sbc	r31, r10
+      d2:	ab 09       	sbc	r26, r11
+      d4:	5c 09       	sbc	r21, r12
+      d6:	1a 09       	sbc	r17, r10
+      d8:	5c 09       	sbc	r21, r12
+      da:	ab 09       	sbc	r26, r11
+      dc:	fa 09       	sbc	r31, r10
+      de:	49 0a       	sbc	r4, r25
+
+000000e0 <__ctors_end>:
+      e0:	11 24       	eor	r1, r1
+      e2:	1f be       	out	0x3f, r1	; 63
+      e4:	cf ef       	ldi	r28, 0xFF	; 255
+      e6:	d8 e0       	ldi	r29, 0x08	; 8
+      e8:	de bf       	out	0x3e, r29	; 62
+      ea:	cd bf       	out	0x3d, r28	; 61
+
+000000ec <__do_copy_data>:
+      ec:	11 e0       	ldi	r17, 0x01	; 1
+      ee:	a0 e0       	ldi	r26, 0x00	; 0
+      f0:	b1 e0       	ldi	r27, 0x01	; 1
+      f2:	e6 ef       	ldi	r30, 0xF6	; 246
+      f4:	fd e1       	ldi	r31, 0x1D	; 29
+      f6:	02 c0       	rjmp	.+4      	; 0xfc <__do_copy_data+0x10>
+      f8:	05 90       	lpm	r0, Z+
+      fa:	0d 92       	st	X+, r0
+      fc:	aa 33       	cpi	r26, 0x3A	; 58
+      fe:	b1 07       	cpc	r27, r17
+     100:	d9 f7       	brne	.-10     	; 0xf8 <__do_copy_data+0xc>
+
+00000102 <__do_clear_bss>:
+     102:	21 e0       	ldi	r18, 0x01	; 1
+     104:	aa e3       	ldi	r26, 0x3A	; 58
+     106:	b1 e0       	ldi	r27, 0x01	; 1
+     108:	01 c0       	rjmp	.+2      	; 0x10c <.do_clear_bss_start>
+
+0000010a <.do_clear_bss_loop>:
+     10a:	1d 92       	st	X+, r1
+
+0000010c <.do_clear_bss_start>:
+     10c:	a7 39       	cpi	r26, 0x97	; 151
+     10e:	b2 07       	cpc	r27, r18
+     110:	e1 f7       	brne	.-8      	; 0x10a <.do_clear_bss_loop>
+     112:	0e 94 f4 01 	call	0x3e8	; 0x3e8 <main>
+     116:	0c 94 f9 0e 	jmp	0x1df2	; 0x1df2 <_exit>
+
+0000011a <__bad_interrupt>:
+     11a:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000011e <adcInit>:
+#include "common.h"
+
+void adcInit(void)
+{
+	//外部基準電圧,左揃え,ADC0(PC0)
+	ADMUX = 0x20;
+     11e:	80 e2       	ldi	r24, 0x20	; 32
+     120:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7e007c>
+	//A/D許可,割り込み禁止,CLK/8
+	ADCSRA = 0x83;
+     124:	83 e8       	ldi	r24, 0x83	; 131
+     126:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7e007a>
+     12a:	08 95       	ret
+
+0000012c <adcStart>:
+}
+
+uint8_t adcStart(void)
+{
+	ADCSRA |= _BV(ADSC);
+     12c:	ea e7       	ldi	r30, 0x7A	; 122
+     12e:	f0 e0       	ldi	r31, 0x00	; 0
+     130:	80 81       	ld	r24, Z
+     132:	80 64       	ori	r24, 0x40	; 64
+     134:	80 83       	st	Z, r24
+	while(ADSC & _BV(ADSC));
+
+	return ADCH;
+     136:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7e0079>
+}
+     13a:	08 95       	ret
+
+0000013c <adcAverage>:
+
+uint16_t adcAverage(uint8_t cnt)
+{
+     13c:	6f 92       	push	r6
+     13e:	7f 92       	push	r7
+     140:	8f 92       	push	r8
+     142:	9f 92       	push	r9
+     144:	af 92       	push	r10
+     146:	bf 92       	push	r11
+     148:	cf 92       	push	r12
+     14a:	df 92       	push	r13
+     14c:	ef 92       	push	r14
+     14e:	ff 92       	push	r15
+     150:	0f 93       	push	r16
+     152:	1f 93       	push	r17
+     154:	cf 93       	push	r28
+     156:	df 93       	push	r29
+	if(cnt < 3) cnt = 3;
+     158:	83 30       	cpi	r24, 0x03	; 3
+     15a:	30 f0       	brcs	.+12     	; 0x168 <adcAverage+0x2c>
+	uint16_t max = 0x0000;
+	uint16_t min = 0xFFFF;
+	uint16_t tmp = 0;
+	uint32_t sum = 0;
+
+	for(int i=0; i<cnt; i++){
+     15c:	08 2f       	mov	r16, r24
+     15e:	10 e0       	ldi	r17, 0x00	; 0
+     160:	10 16       	cp	r1, r16
+     162:	11 06       	cpc	r1, r17
+     164:	1c f0       	brlt	.+6      	; 0x16c <adcAverage+0x30>
+     166:	2d c0       	rjmp	.+90     	; 0x1c2 <adcAverage+0x86>
+     168:	03 e0       	ldi	r16, 0x03	; 3
+     16a:	10 e0       	ldi	r17, 0x00	; 0
+     16c:	c0 e0       	ldi	r28, 0x00	; 0
+     16e:	d0 e0       	ldi	r29, 0x00	; 0
+     170:	81 2c       	mov	r8, r1
+     172:	91 2c       	mov	r9, r1
+     174:	54 01       	movw	r10, r8
+     176:	ee 24       	eor	r14, r14
+     178:	ea 94       	dec	r14
+     17a:	fe 2c       	mov	r15, r14
+     17c:	c1 2c       	mov	r12, r1
+     17e:	d1 2c       	mov	r13, r1
+		tmp = adcStart() << 2;
+		if(tmp > AUDIO_LEVEL_MAX) tmp = AUDIO_LEVEL_MAX;
+		if(tmp > AUDIO_LEVEL_OFFSET) tmp -= AUDIO_LEVEL_OFFSET;
+		else tmp = 0;
+     180:	61 2c       	mov	r6, r1
+     182:	71 2c       	mov	r7, r1
+	uint16_t min = 0xFFFF;
+	uint16_t tmp = 0;
+	uint32_t sum = 0;
+
+	for(int i=0; i<cnt; i++){
+		tmp = adcStart() << 2;
+     184:	0e 94 96 00 	call	0x12c	; 0x12c <adcStart>
+     188:	24 e0       	ldi	r18, 0x04	; 4
+     18a:	82 9f       	mul	r24, r18
+     18c:	c0 01       	movw	r24, r0
+     18e:	11 24       	eor	r1, r1
+		if(tmp > AUDIO_LEVEL_MAX) tmp = AUDIO_LEVEL_MAX;
+		if(tmp > AUDIO_LEVEL_OFFSET) tmp -= AUDIO_LEVEL_OFFSET;
+     190:	8d 3d       	cpi	r24, 0xDD	; 221
+     192:	91 05       	cpc	r25, r1
+     194:	18 f0       	brcs	.+6      	; 0x19c <adcAverage+0x60>
+     196:	8c 5d       	subi	r24, 0xDC	; 220
+     198:	91 09       	sbc	r25, r1
+     19a:	02 c0       	rjmp	.+4      	; 0x1a0 <adcAverage+0x64>
+		else tmp = 0;
+     19c:	86 2d       	mov	r24, r6
+     19e:	97 2d       	mov	r25, r7
+     1a0:	c8 16       	cp	r12, r24
+     1a2:	d9 06       	cpc	r13, r25
+     1a4:	08 f4       	brcc	.+2      	; 0x1a8 <adcAverage+0x6c>
+     1a6:	6c 01       	movw	r12, r24
+     1a8:	8e 15       	cp	r24, r14
+     1aa:	9f 05       	cpc	r25, r15
+     1ac:	08 f4       	brcc	.+2      	; 0x1b0 <adcAverage+0x74>
+     1ae:	7c 01       	movw	r14, r24
+		if(tmp > max) max = tmp;
+		if(tmp < min) min = tmp;
+		sum += tmp;
+     1b0:	88 0e       	add	r8, r24
+     1b2:	99 1e       	adc	r9, r25
+     1b4:	a1 1c       	adc	r10, r1
+     1b6:	b1 1c       	adc	r11, r1
+	uint16_t max = 0x0000;
+	uint16_t min = 0xFFFF;
+	uint16_t tmp = 0;
+	uint32_t sum = 0;
+
+	for(int i=0; i<cnt; i++){
+     1b8:	21 96       	adiw	r28, 0x01	; 1
+     1ba:	c0 17       	cp	r28, r16
+     1bc:	d1 07       	cpc	r29, r17
+     1be:	14 f3       	brlt	.-60     	; 0x184 <adcAverage+0x48>
+     1c0:	08 c0       	rjmp	.+16     	; 0x1d2 <adcAverage+0x96>
+{
+	if(cnt < 3) cnt = 3;
+	uint16_t max = 0x0000;
+	uint16_t min = 0xFFFF;
+	uint16_t tmp = 0;
+	uint32_t sum = 0;
+     1c2:	81 2c       	mov	r8, r1
+     1c4:	91 2c       	mov	r9, r1
+     1c6:	54 01       	movw	r10, r8
+
+uint16_t adcAverage(uint8_t cnt)
+{
+	if(cnt < 3) cnt = 3;
+	uint16_t max = 0x0000;
+	uint16_t min = 0xFFFF;
+     1c8:	ee 24       	eor	r14, r14
+     1ca:	ea 94       	dec	r14
+     1cc:	fe 2c       	mov	r15, r14
+}
+
+uint16_t adcAverage(uint8_t cnt)
+{
+	if(cnt < 3) cnt = 3;
+	uint16_t max = 0x0000;
+     1ce:	c1 2c       	mov	r12, r1
+     1d0:	d1 2c       	mov	r13, r1
+		if(tmp > max) max = tmp;
+		if(tmp < min) min = tmp;
+		sum += tmp;
+	}
+	//トリム平均
+	sum -= max;
+     1d2:	d5 01       	movw	r26, r10
+     1d4:	c4 01       	movw	r24, r8
+     1d6:	8c 19       	sub	r24, r12
+     1d8:	9d 09       	sbc	r25, r13
+     1da:	a1 09       	sbc	r26, r1
+     1dc:	b1 09       	sbc	r27, r1
+	sum -= min;
+	sum =  (float)sum / (cnt - 2) + 0.5;
+     1de:	bc 01       	movw	r22, r24
+     1e0:	cd 01       	movw	r24, r26
+     1e2:	6e 19       	sub	r22, r14
+     1e4:	7f 09       	sbc	r23, r15
+     1e6:	81 09       	sbc	r24, r1
+     1e8:	91 09       	sbc	r25, r1
+     1ea:	0e 94 c0 0d 	call	0x1b80	; 0x1b80 <__floatunsisf>
+     1ee:	6b 01       	movw	r12, r22
+     1f0:	7c 01       	movw	r14, r24
+     1f2:	b8 01       	movw	r22, r16
+     1f4:	62 50       	subi	r22, 0x02	; 2
+     1f6:	71 09       	sbc	r23, r1
+     1f8:	07 2e       	mov	r0, r23
+     1fa:	00 0c       	add	r0, r0
+     1fc:	88 0b       	sbc	r24, r24
+     1fe:	99 0b       	sbc	r25, r25
+     200:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+     204:	9b 01       	movw	r18, r22
+     206:	ac 01       	movw	r20, r24
+     208:	c7 01       	movw	r24, r14
+     20a:	b6 01       	movw	r22, r12
+     20c:	0e 94 1f 0d 	call	0x1a3e	; 0x1a3e <__divsf3>
+     210:	20 e0       	ldi	r18, 0x00	; 0
+     212:	30 e0       	ldi	r19, 0x00	; 0
+     214:	40 e0       	ldi	r20, 0x00	; 0
+     216:	5f e3       	ldi	r21, 0x3F	; 63
+     218:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+	return (uint16_t)sum;
+     21c:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+     220:	cb 01       	movw	r24, r22
+     222:	df 91       	pop	r29
+     224:	cf 91       	pop	r28
+     226:	1f 91       	pop	r17
+     228:	0f 91       	pop	r16
+     22a:	ff 90       	pop	r15
+     22c:	ef 90       	pop	r14
+     22e:	df 90       	pop	r13
+     230:	cf 90       	pop	r12
+     232:	bf 90       	pop	r11
+     234:	af 90       	pop	r10
+     236:	9f 90       	pop	r9
+     238:	8f 90       	pop	r8
+     23a:	7f 90       	pop	r7
+     23c:	6f 90       	pop	r6
+     23e:	08 95       	ret
+
+00000240 <tmr0Init>:
+	タイマー初期設定
+************************************************************/
+void tmr0Init(void)
+{
+	//CTCモード,clk/64
+	TCCR0A = 0x02;
+     240:	82 e0       	ldi	r24, 0x02	; 2
+     242:	84 bd       	out	0x24, r24	; 36
+	TCCR0B = 0x03;
+     244:	93 e0       	ldi	r25, 0x03	; 3
+     246:	95 bd       	out	0x25, r25	; 37
+	//比較A割り込み許可
+	TIMSK0 =0x02;
+     248:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <__TEXT_REGION_LENGTH__+0x7e006e>
+	//1/16MHz*64*250=1ms
+	OCR0A = 0xFA;
+     24c:	8a ef       	ldi	r24, 0xFA	; 250
+     24e:	87 bd       	out	0x27, r24	; 39
+     250:	08 95       	ret
+
+00000252 <__vector_14>:
+
+/************************************************************
+	比較A一致割り込み
+************************************************************/
+ISR(TIMER0_COMPA_vect)
+{
+     252:	1f 92       	push	r1
+     254:	0f 92       	push	r0
+     256:	0f b6       	in	r0, 0x3f	; 63
+     258:	0f 92       	push	r0
+     25a:	11 24       	eor	r1, r1
+     25c:	2f 93       	push	r18
+     25e:	3f 93       	push	r19
+     260:	4f 93       	push	r20
+     262:	5f 93       	push	r21
+     264:	6f 93       	push	r22
+     266:	7f 93       	push	r23
+     268:	8f 93       	push	r24
+     26a:	9f 93       	push	r25
+     26c:	af 93       	push	r26
+     26e:	bf 93       	push	r27
+	//タイマ割り込み1ms周期
+	static uint16_t intCnt=0;
+	static uint16_t pwrSwCheckCnt=0, ptnSwCheckCnt=0;
+
+	intCnt++;
+     270:	40 91 3e 01 	lds	r20, 0x013E	; 0x80013e <intCnt.1667>
+     274:	50 91 3f 01 	lds	r21, 0x013F	; 0x80013f <intCnt.1667+0x1>
+     278:	4f 5f       	subi	r20, 0xFF	; 255
+     27a:	5f 4f       	sbci	r21, 0xFF	; 255
+     27c:	50 93 3f 01 	sts	0x013F, r21	; 0x80013f <intCnt.1667+0x1>
+     280:	40 93 3e 01 	sts	0x013E, r20	; 0x80013e <intCnt.1667>
+	if(intCnt  > 1000) intCnt=0;
+     284:	49 3e       	cpi	r20, 0xE9	; 233
+     286:	83 e0       	ldi	r24, 0x03	; 3
+     288:	58 07       	cpc	r21, r24
+     28a:	28 f0       	brcs	.+10     	; 0x296 <__vector_14+0x44>
+     28c:	10 92 3f 01 	sts	0x013F, r1	; 0x80013f <intCnt.1667+0x1>
+     290:	10 92 3e 01 	sts	0x013E, r1	; 0x80013e <intCnt.1667>
+     294:	1a c0       	rjmp	.+52     	; 0x2ca <__vector_14+0x78>
+
+	//10ms毎の処理
+	if(!(intCnt % 10)){
+     296:	9a 01       	movw	r18, r20
+     298:	ad ec       	ldi	r26, 0xCD	; 205
+     29a:	bc ec       	ldi	r27, 0xCC	; 204
+     29c:	0e 94 ea 0e 	call	0x1dd4	; 0x1dd4 <__umulhisi3>
+     2a0:	96 95       	lsr	r25
+     2a2:	87 95       	ror	r24
+     2a4:	96 95       	lsr	r25
+     2a6:	87 95       	ror	r24
+     2a8:	96 95       	lsr	r25
+     2aa:	87 95       	ror	r24
+     2ac:	9c 01       	movw	r18, r24
+     2ae:	22 0f       	add	r18, r18
+     2b0:	33 1f       	adc	r19, r19
+     2b2:	88 0f       	add	r24, r24
+     2b4:	99 1f       	adc	r25, r25
+     2b6:	88 0f       	add	r24, r24
+     2b8:	99 1f       	adc	r25, r25
+     2ba:	88 0f       	add	r24, r24
+     2bc:	99 1f       	adc	r25, r25
+     2be:	82 0f       	add	r24, r18
+     2c0:	93 1f       	adc	r25, r19
+     2c2:	48 17       	cp	r20, r24
+     2c4:	59 07       	cpc	r21, r25
+     2c6:	09 f0       	breq	.+2      	; 0x2ca <__vector_14+0x78>
+     2c8:	53 c0       	rjmp	.+166    	; 0x370 <__vector_14+0x11e>
+		//PWR_SWの監視
+		if(PWR_SW == ON){
+     2ca:	4a 99       	sbic	0x09, 2	; 9
+     2cc:	13 c0       	rjmp	.+38     	; 0x2f4 <__vector_14+0xa2>
+			//長押しでPWR_HOLD
+			if(pwrSwCheckCnt < LONG_PRESS){
+     2ce:	80 91 3c 01 	lds	r24, 0x013C	; 0x80013c <pwrSwCheckCnt.1668>
+     2d2:	90 91 3d 01 	lds	r25, 0x013D	; 0x80013d <pwrSwCheckCnt.1668+0x1>
+     2d6:	84 36       	cpi	r24, 0x64	; 100
+     2d8:	91 05       	cpc	r25, r1
+     2da:	30 f4       	brcc	.+12     	; 0x2e8 <__vector_14+0x96>
+				pwrSwCheckCnt++;
+     2dc:	01 96       	adiw	r24, 0x01	; 1
+     2de:	90 93 3d 01 	sts	0x013D, r25	; 0x80013d <pwrSwCheckCnt.1668+0x1>
+     2e2:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <pwrSwCheckCnt.1668>
+     2e6:	1a c0       	rjmp	.+52     	; 0x31c <__vector_14+0xca>
+			}else{
+				if(!pwrFlg) PWR_HOLD();
+     2e8:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <pwrFlg>
+     2ec:	81 11       	cpse	r24, r1
+     2ee:	16 c0       	rjmp	.+44     	; 0x31c <__vector_14+0xca>
+     2f0:	5f 9a       	sbi	0x0b, 7	; 11
+     2f2:	14 c0       	rjmp	.+40     	; 0x31c <__vector_14+0xca>
+			}
+		}else{
+			if(pwrSwCheckCnt == LONG_PRESS) pwrSwState = ON_LONG;
+     2f4:	80 91 3c 01 	lds	r24, 0x013C	; 0x80013c <pwrSwCheckCnt.1668>
+     2f8:	90 91 3d 01 	lds	r25, 0x013D	; 0x80013d <pwrSwCheckCnt.1668+0x1>
+     2fc:	84 36       	cpi	r24, 0x64	; 100
+     2fe:	91 05       	cpc	r25, r1
+     300:	21 f4       	brne	.+8      	; 0x30a <__vector_14+0xb8>
+     302:	82 e0       	ldi	r24, 0x02	; 2
+     304:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <pwrSwState>
+     308:	05 c0       	rjmp	.+10     	; 0x314 <__vector_14+0xc2>
+			else if(pwrSwCheckCnt > SHORT_PRESS) pwrSwState = ON_SHORT;
+     30a:	04 97       	sbiw	r24, 0x04	; 4
+     30c:	18 f0       	brcs	.+6      	; 0x314 <__vector_14+0xc2>
+     30e:	83 e0       	ldi	r24, 0x03	; 3
+     310:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <pwrSwState>
+			pwrSwCheckCnt = 0;												//ON時間監視リセット
+     314:	10 92 3d 01 	sts	0x013D, r1	; 0x80013d <pwrSwCheckCnt.1668+0x1>
+     318:	10 92 3c 01 	sts	0x013C, r1	; 0x80013c <pwrSwCheckCnt.1668>
+		}
+
+		//PATTERN_SWの監視
+		if(PTN_SW == ON){
+     31c:	4b 99       	sbic	0x09, 3	; 9
+     31e:	0d c0       	rjmp	.+26     	; 0x33a <__vector_14+0xe8>
+			if(ptnSwCheckCnt < LONG_PRESS) ptnSwCheckCnt++;					//ON時間監視
+     320:	80 91 3a 01 	lds	r24, 0x013A	; 0x80013a <__data_end>
+     324:	90 91 3b 01 	lds	r25, 0x013B	; 0x80013b <__data_end+0x1>
+     328:	84 36       	cpi	r24, 0x64	; 100
+     32a:	91 05       	cpc	r25, r1
+     32c:	d0 f4       	brcc	.+52     	; 0x362 <__vector_14+0x110>
+     32e:	01 96       	adiw	r24, 0x01	; 1
+     330:	90 93 3b 01 	sts	0x013B, r25	; 0x80013b <__data_end+0x1>
+     334:	80 93 3a 01 	sts	0x013A, r24	; 0x80013a <__data_end>
+     338:	14 c0       	rjmp	.+40     	; 0x362 <__vector_14+0x110>
+		}else{
+			if(ptnSwCheckCnt == LONG_PRESS){
+     33a:	80 91 3a 01 	lds	r24, 0x013A	; 0x80013a <__data_end>
+     33e:	90 91 3b 01 	lds	r25, 0x013B	; 0x80013b <__data_end+0x1>
+     342:	84 36       	cpi	r24, 0x64	; 100
+     344:	91 05       	cpc	r25, r1
+     346:	21 f4       	brne	.+8      	; 0x350 <__vector_14+0xfe>
+				ptnSwState = ON_LONG;
+     348:	82 e0       	ldi	r24, 0x02	; 2
+     34a:	80 93 38 01 	sts	0x0138, r24	; 0x800138 <ptnSwState>
+     34e:	05 c0       	rjmp	.+10     	; 0x35a <__vector_14+0x108>
+			}else if(ptnSwCheckCnt > SHORT_PRESS){
+     350:	04 97       	sbiw	r24, 0x04	; 4
+     352:	18 f0       	brcs	.+6      	; 0x35a <__vector_14+0x108>
+				ptnSwState = ON_SHORT;
+     354:	83 e0       	ldi	r24, 0x03	; 3
+     356:	80 93 38 01 	sts	0x0138, r24	; 0x800138 <ptnSwState>
+			}
+			ptnSwCheckCnt = 0;												//ON時間監視リセット
+     35a:	10 92 3b 01 	sts	0x013B, r1	; 0x80013b <__data_end+0x1>
+     35e:	10 92 3a 01 	sts	0x013A, r1	; 0x80013a <__data_end>
+		}
+		//ADC更新
+		if(!adcEnFlg) adcEnFlg = 1;
+     362:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <adcEnFlg>
+     366:	81 11       	cpse	r24, r1
+     368:	03 c0       	rjmp	.+6      	; 0x370 <__vector_14+0x11e>
+     36a:	81 e0       	ldi	r24, 0x01	; 1
+     36c:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <adcEnFlg>
+	}
+
+	//30ms毎の処理
+	if(!(intCnt % 30)){
+     370:	40 91 3e 01 	lds	r20, 0x013E	; 0x80013e <intCnt.1667>
+     374:	50 91 3f 01 	lds	r21, 0x013F	; 0x80013f <intCnt.1667+0x1>
+     378:	9a 01       	movw	r18, r20
+     37a:	a9 e8       	ldi	r26, 0x89	; 137
+     37c:	b8 e8       	ldi	r27, 0x88	; 136
+     37e:	0e 94 ea 0e 	call	0x1dd4	; 0x1dd4 <__umulhisi3>
+     382:	92 95       	swap	r25
+     384:	82 95       	swap	r24
+     386:	8f 70       	andi	r24, 0x0F	; 15
+     388:	89 27       	eor	r24, r25
+     38a:	9f 70       	andi	r25, 0x0F	; 15
+     38c:	89 27       	eor	r24, r25
+     38e:	6e e1       	ldi	r22, 0x1E	; 30
+     390:	68 9f       	mul	r22, r24
+     392:	90 01       	movw	r18, r0
+     394:	69 9f       	mul	r22, r25
+     396:	30 0d       	add	r19, r0
+     398:	11 24       	eor	r1, r1
+     39a:	42 17       	cp	r20, r18
+     39c:	53 07       	cpc	r21, r19
+     39e:	79 f4       	brne	.+30     	; 0x3be <__vector_14+0x16c>
+		//rainbow更新
+		if((firstColor == RAINBOW) || (secondColor == RAINBOW))
+     3a0:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     3a4:	8a 30       	cpi	r24, 0x0A	; 10
+     3a6:	21 f0       	breq	.+8      	; 0x3b0 <__vector_14+0x15e>
+     3a8:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     3ac:	8a 30       	cpi	r24, 0x0A	; 10
+     3ae:	39 f4       	brne	.+14     	; 0x3be <__vector_14+0x16c>
+			if(!rainbowUpdateFlg) rainbowUpdateFlg = 1;
+     3b0:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <rainbowUpdateFlg>
+     3b4:	81 11       	cpse	r24, r1
+     3b6:	03 c0       	rjmp	.+6      	; 0x3be <__vector_14+0x16c>
+     3b8:	81 e0       	ldi	r24, 0x01	; 1
+     3ba:	80 93 4b 01 	sts	0x014B, r24	; 0x80014b <rainbowUpdateFlg>
+	}
+     3be:	bf 91       	pop	r27
+     3c0:	af 91       	pop	r26
+     3c2:	9f 91       	pop	r25
+     3c4:	8f 91       	pop	r24
+     3c6:	7f 91       	pop	r23
+     3c8:	6f 91       	pop	r22
+     3ca:	5f 91       	pop	r21
+     3cc:	4f 91       	pop	r20
+     3ce:	3f 91       	pop	r19
+     3d0:	2f 91       	pop	r18
+     3d2:	0f 90       	pop	r0
+     3d4:	0f be       	out	0x3f, r0	; 63
+     3d6:	0f 90       	pop	r0
+     3d8:	1f 90       	pop	r1
+     3da:	18 95       	reti
+
+000003dc <avrInit>:
+/************************************************************
+	各種ポートの入出力設定
+************************************************************/
+void avrInit(void)
+{
+	DDRB = _BV(PB3) | _BV(PB5);
+     3dc:	88 e2       	ldi	r24, 0x28	; 40
+     3de:	84 b9       	out	0x04, r24	; 4
+	DDRC = 0x00;
+     3e0:	17 b8       	out	0x07, r1	; 7
+	DDRD = _BV(PD1) | _BV(LED_PIN) | _BV(PWR_HOLD_PIN) | _BV(PD5); //PD5 is Debug Pin
+     3e2:	82 eb       	ldi	r24, 0xB2	; 178
+     3e4:	8a b9       	out	0x0a, r24	; 10
+     3e6:	08 95       	ret
+
+000003e8 <main>:
+/************************************************************
+	メイン関数
+************************************************************/
+int main(void)
+{
+	avrInit();		//AVR初期化
+     3e8:	0e 94 ee 01 	call	0x3dc	; 0x3dc <avrInit>
+	tmr0Init();		//TMR0割り込み初期化
+     3ec:	0e 94 20 01 	call	0x240	; 0x240 <tmr0Init>
+	adcInit();		//ADC初期化
+     3f0:	0e 94 8f 00 	call	0x11e	; 0x11e <adcInit>
+	uartInit();		//UART初期化
+     3f4:	0e 94 78 03 	call	0x6f0	; 0x6f0 <uartInit>
+	sei();			//全体割り込み許可
+     3f8:	78 94       	sei
+				}else{
+					//PWR_HOLD完了
+					pwrFlg = 1;
+					updateLedFlg = 1;
+				}
+				pwrSwState = OFF;
+     3fa:	c1 e0       	ldi	r28, 0x01	; 1
+				if((firstColor == secondColor) && (ptnMode != SINGLE)) firstColor++;
+				updateLedFlg = 1;
+				if(firstColor == RAINBOW){								//Rainbow用の変数を初期化
+					if(ptnMode == GRADATION) firstColor = 0;
+					else{
+						rRed = 0xFF;
+     3fc:	1f ef       	ldi	r17, 0xFF	; 255
+				}else if(secondColor > RAINBOW) secondColor = 0;
+				break;
+			//短押し時 カラー変更
+			case ON_SHORT:
+				if(ptnMode == SINGLE){										//単色モード:前の色に戻す
+					if(firstColor == 0) firstColor = RAINBOW;
+     3fe:	da e0       	ldi	r29, 0x0A	; 10
+					break;
+				case 1:
+					//Green減少,Blue増加
+					rGreen--;
+					rBlue++;
+					if(rBlue == 0xFF) rainbowStep = 2;
+     400:	02 e0       	ldi	r16, 0x02	; 2
+
+	while (1){
+		/******************************
+		  PWR_SW押下処理
+		******************************/
+		switch(pwrSwState){
+     402:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <pwrSwState>
+     406:	82 30       	cpi	r24, 0x02	; 2
+     408:	19 f0       	breq	.+6      	; 0x410 <__LOCK_REGION_LENGTH__+0x10>
+     40a:	83 30       	cpi	r24, 0x03	; 3
+     40c:	d1 f0       	breq	.+52     	; 0x442 <__LOCK_REGION_LENGTH__+0x42>
+     40e:	4b c0       	rjmp	.+150    	; 0x4a6 <__LOCK_REGION_LENGTH__+0xa6>
+			//OFF時
+			case OFF:
+				break;
+			//長押し時 電源ON/OFF処理
+			case ON_LONG:
+				if(pwrFlg){
+     410:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <pwrFlg>
+     414:	88 23       	and	r24, r24
+     416:	71 f0       	breq	.+28     	; 0x434 <__LOCK_REGION_LENGTH__+0x34>
+     418:	80 e0       	ldi	r24, 0x00	; 0
+     41a:	90 e0       	ldi	r25, 0x00	; 0
+					//輝度を最小にしてから電源OFF
+					for(int i=0; i<LEDNUM; i++) brightness[i] = BRIGHTNESS_MIN;
+     41c:	fc 01       	movw	r30, r24
+     41e:	ef 5f       	subi	r30, 0xFF	; 255
+     420:	fe 4f       	sbci	r31, 0xFE	; 254
+     422:	c0 83       	st	Z, r28
+     424:	01 96       	adiw	r24, 0x01	; 1
+     426:	89 31       	cpi	r24, 0x19	; 25
+     428:	91 05       	cpc	r25, r1
+     42a:	c1 f7       	brne	.-16     	; 0x41c <__LOCK_REGION_LENGTH__+0x1c>
+					updateLed();
+     42c:	0e 94 62 0c 	call	0x18c4	; 0x18c4 <updateLed>
+					PWR_OFF();
+     430:	5f 98       	cbi	0x0b, 7	; 11
+     432:	04 c0       	rjmp	.+8      	; 0x43c <__LOCK_REGION_LENGTH__+0x3c>
+				}else{
+					//PWR_HOLD完了
+					pwrFlg = 1;
+     434:	c0 93 4a 01 	sts	0x014A, r28	; 0x80014a <pwrFlg>
+					updateLedFlg = 1;
+     438:	c0 93 49 01 	sts	0x0149, r28	; 0x800149 <updateLedFlg>
+				}
+				pwrSwState = OFF;
+     43c:	c0 93 39 01 	sts	0x0139, r28	; 0x800139 <pwrSwState>
+				break;
+     440:	32 c0       	rjmp	.+100    	; 0x4a6 <__LOCK_REGION_LENGTH__+0xa6>
+			case ON_SHORT:
+				//短押しでfirstColor変更
+				firstColor++;
+     442:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     446:	8f 5f       	subi	r24, 0xFF	; 255
+     448:	80 93 48 01 	sts	0x0148, r24	; 0x800148 <firstColor>
+				if((firstColor == secondColor) && (ptnMode != SINGLE)) firstColor++;
+     44c:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <firstColor>
+     450:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     454:	98 13       	cpse	r25, r24
+     456:	09 c0       	rjmp	.+18     	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+     458:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     45c:	88 23       	and	r24, r24
+     45e:	29 f0       	breq	.+10     	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+     460:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     464:	8f 5f       	subi	r24, 0xFF	; 255
+     466:	80 93 48 01 	sts	0x0148, r24	; 0x800148 <firstColor>
+				updateLedFlg = 1;
+     46a:	c0 93 49 01 	sts	0x0149, r28	; 0x800149 <updateLedFlg>
+				if(firstColor == RAINBOW){								//Rainbow用の変数を初期化
+     46e:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     472:	8a 30       	cpi	r24, 0x0A	; 10
+     474:	81 f4       	brne	.+32     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+					if(ptnMode == GRADATION) firstColor = 0;
+     476:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     47a:	83 30       	cpi	r24, 0x03	; 3
+     47c:	19 f4       	brne	.+6      	; 0x484 <__LOCK_REGION_LENGTH__+0x84>
+     47e:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <firstColor>
+     482:	0f c0       	rjmp	.+30     	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+					else{
+						rRed = 0xFF;
+     484:	10 93 45 01 	sts	0x0145, r17	; 0x800145 <rRed>
+						rGreen = 0x00;
+     488:	10 92 44 01 	sts	0x0144, r1	; 0x800144 <rGreen>
+						rBlue = 0x00;
+     48c:	10 92 43 01 	sts	0x0143, r1	; 0x800143 <rBlue>
+						rainbowStep = 0;
+     490:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <rainbowStep>
+     494:	06 c0       	rjmp	.+12     	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+					}
+				}else if(firstColor > RAINBOW) firstColor = 0;
+     496:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     49a:	8b 30       	cpi	r24, 0x0B	; 11
+     49c:	10 f0       	brcs	.+4      	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+     49e:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <firstColor>
+				pwrSwState = OFF;
+     4a2:	c0 93 39 01 	sts	0x0139, r28	; 0x800139 <pwrSwState>
+				break;
+		}
+		/******************************
+		  PTN_SW押下処理
+		******************************/
+		switch(ptnSwState){
+     4a6:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <ptnSwState>
+     4aa:	82 30       	cpi	r24, 0x02	; 2
+     4ac:	19 f0       	breq	.+6      	; 0x4b4 <__LOCK_REGION_LENGTH__+0xb4>
+     4ae:	83 30       	cpi	r24, 0x03	; 3
+     4b0:	81 f1       	breq	.+96     	; 0x512 <__LOCK_REGION_LENGTH__+0x112>
+     4b2:	89 c0       	rjmp	.+274    	; 0x5c6 <__LOCK_REGION_LENGTH__+0x1c6>
+			//OFF時
+			case OFF:
+				break;
+			//長押し時 点灯パターン切替
+			case ON_LONG:
+				ptnMode++;
+     4b4:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     4b8:	8f 5f       	subi	r24, 0xFF	; 255
+     4ba:	80 93 47 01 	sts	0x0147, r24	; 0x800147 <ptnMode>
+				if(ptnMode >= PTATTEN_TYPE) ptnMode = 0;
+     4be:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     4c2:	8a 30       	cpi	r24, 0x0A	; 10
+     4c4:	10 f0       	brcs	.+4      	; 0x4ca <__LOCK_REGION_LENGTH__+0xca>
+     4c6:	10 92 47 01 	sts	0x0147, r1	; 0x800147 <ptnMode>
+				ptnSwState = OFF;
+     4ca:	c0 93 38 01 	sts	0x0138, r28	; 0x800138 <ptnSwState>
+				if(firstColor == secondColor) secondColor++;			//2色が同じ色にならないように処理
+     4ce:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <firstColor>
+     4d2:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     4d6:	98 13       	cpse	r25, r24
+     4d8:	05 c0       	rjmp	.+10     	; 0x4e4 <__LOCK_REGION_LENGTH__+0xe4>
+     4da:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     4de:	8f 5f       	subi	r24, 0xFF	; 255
+     4e0:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+				updateLedFlg = 1;
+     4e4:	c0 93 49 01 	sts	0x0149, r28	; 0x800149 <updateLedFlg>
+				if(secondColor ==RAINBOW){								//Rainbow用の変数を初期化
+     4e8:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     4ec:	8a 30       	cpi	r24, 0x0A	; 10
+     4ee:	49 f4       	brne	.+18     	; 0x502 <__LOCK_REGION_LENGTH__+0x102>
+					rRed = 0xFF;
+     4f0:	10 93 45 01 	sts	0x0145, r17	; 0x800145 <rRed>
+					rGreen = 0x00;
+     4f4:	10 92 44 01 	sts	0x0144, r1	; 0x800144 <rGreen>
+					rBlue = 0x00;
+     4f8:	10 92 43 01 	sts	0x0143, r1	; 0x800143 <rBlue>
+					rainbowStep = 0; //rRedのみ増加
+     4fc:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <rainbowStep>
+     500:	62 c0       	rjmp	.+196    	; 0x5c6 <__LOCK_REGION_LENGTH__+0x1c6>
+				}else if(secondColor > RAINBOW) secondColor = 0;
+     502:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     506:	8b 30       	cpi	r24, 0x0B	; 11
+     508:	08 f4       	brcc	.+2      	; 0x50c <__LOCK_REGION_LENGTH__+0x10c>
+     50a:	5d c0       	rjmp	.+186    	; 0x5c6 <__LOCK_REGION_LENGTH__+0x1c6>
+     50c:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_start>
+     510:	5a c0       	rjmp	.+180    	; 0x5c6 <__LOCK_REGION_LENGTH__+0x1c6>
+				break;
+			//短押し時 カラー変更
+			case ON_SHORT:
+				if(ptnMode == SINGLE){										//単色モード:前の色に戻す
+     512:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     516:	81 11       	cpse	r24, r1
+     518:	1c c0       	rjmp	.+56     	; 0x552 <__LOCK_REGION_LENGTH__+0x152>
+					if(firstColor == 0) firstColor = RAINBOW;
+     51a:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     51e:	81 11       	cpse	r24, r1
+     520:	03 c0       	rjmp	.+6      	; 0x528 <__LOCK_REGION_LENGTH__+0x128>
+     522:	d0 93 48 01 	sts	0x0148, r29	; 0x800148 <firstColor>
+     526:	05 c0       	rjmp	.+10     	; 0x532 <__LOCK_REGION_LENGTH__+0x132>
+					else firstColor--;
+     528:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     52c:	81 50       	subi	r24, 0x01	; 1
+     52e:	80 93 48 01 	sts	0x0148, r24	; 0x800148 <firstColor>
+					updateLedFlg = 1;
+     532:	c0 93 49 01 	sts	0x0149, r28	; 0x800149 <updateLedFlg>
+					if(firstColor ==RAINBOW){								//Rainbow用の変数を初期化
+     536:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     53a:	8a 30       	cpi	r24, 0x0A	; 10
+     53c:	09 f0       	breq	.+2      	; 0x540 <__LOCK_REGION_LENGTH__+0x140>
+     53e:	41 c0       	rjmp	.+130    	; 0x5c2 <__LOCK_REGION_LENGTH__+0x1c2>
+						rRed = 0xFF;
+     540:	10 93 45 01 	sts	0x0145, r17	; 0x800145 <rRed>
+						rGreen = 0x00;
+     544:	10 92 44 01 	sts	0x0144, r1	; 0x800144 <rGreen>
+						rBlue = 0x00;
+     548:	10 92 43 01 	sts	0x0143, r1	; 0x800143 <rBlue>
+						rainbowStep = 0; //rRedのみ増加
+     54c:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <rainbowStep>
+     550:	38 c0       	rjmp	.+112    	; 0x5c2 <__LOCK_REGION_LENGTH__+0x1c2>
+					}
+				}else if((ptnMode == DOUBLE_A) || (ptnMode == DOUBLE_B) || (ptnMode ==GRADATION)){	//2色モード:secondColorの変更
+     552:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     556:	81 30       	cpi	r24, 0x01	; 1
+     558:	41 f0       	breq	.+16     	; 0x56a <__LOCK_REGION_LENGTH__+0x16a>
+     55a:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     55e:	82 30       	cpi	r24, 0x02	; 2
+     560:	21 f0       	breq	.+8      	; 0x56a <__LOCK_REGION_LENGTH__+0x16a>
+     562:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     566:	83 30       	cpi	r24, 0x03	; 3
+     568:	61 f5       	brne	.+88     	; 0x5c2 <__LOCK_REGION_LENGTH__+0x1c2>
+					secondColor++;
+     56a:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     56e:	8f 5f       	subi	r24, 0xFF	; 255
+     570:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+					if(firstColor == secondColor) secondColor++;
+     574:	90 91 48 01 	lds	r25, 0x0148	; 0x800148 <firstColor>
+     578:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     57c:	98 13       	cpse	r25, r24
+     57e:	05 c0       	rjmp	.+10     	; 0x58a <__LOCK_REGION_LENGTH__+0x18a>
+     580:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     584:	8f 5f       	subi	r24, 0xFF	; 255
+     586:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+					updateLedFlg = 1;
+     58a:	c0 93 49 01 	sts	0x0149, r28	; 0x800149 <updateLedFlg>
+					if(secondColor ==RAINBOW){								//Rainbow用の変数を初期化
+     58e:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     592:	8a 30       	cpi	r24, 0x0A	; 10
+     594:	81 f4       	brne	.+32     	; 0x5b6 <__LOCK_REGION_LENGTH__+0x1b6>
+						if(ptnMode == GRADATION) secondColor = 0;
+     596:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <ptnMode>
+     59a:	83 30       	cpi	r24, 0x03	; 3
+     59c:	19 f4       	brne	.+6      	; 0x5a4 <__LOCK_REGION_LENGTH__+0x1a4>
+     59e:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_start>
+     5a2:	0f c0       	rjmp	.+30     	; 0x5c2 <__LOCK_REGION_LENGTH__+0x1c2>
+						else{
+							rRed = 0xFF;
+     5a4:	10 93 45 01 	sts	0x0145, r17	; 0x800145 <rRed>
+							rGreen = 0x00;
+     5a8:	10 92 44 01 	sts	0x0144, r1	; 0x800144 <rGreen>
+							rBlue = 0x00;
+     5ac:	10 92 43 01 	sts	0x0143, r1	; 0x800143 <rBlue>
+							rainbowStep = 0; //rRedのみ増加
+     5b0:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <rainbowStep>
+     5b4:	06 c0       	rjmp	.+12     	; 0x5c2 <__LOCK_REGION_LENGTH__+0x1c2>
+						}
+					}else if(secondColor > RAINBOW) secondColor = 0;
+     5b6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     5ba:	8b 30       	cpi	r24, 0x0B	; 11
+     5bc:	10 f0       	brcs	.+4      	; 0x5c2 <__LOCK_REGION_LENGTH__+0x1c2>
+     5be:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_start>
+				}
+				ptnSwState = OFF;
+     5c2:	c0 93 38 01 	sts	0x0138, r28	; 0x800138 <ptnSwState>
+				break;
+		}
+		/******************************
+		  Rainbow計算処理
+		******************************/
+		if(rainbowUpdateFlg){
+     5c6:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <rainbowUpdateFlg>
+     5ca:	88 23       	and	r24, r24
+     5cc:	f1 f1       	breq	.+124    	; 0x64a <__LOCK_REGION_LENGTH__+0x24a>
+			rainbowUpdateFlg = 0;
+     5ce:	10 92 4b 01 	sts	0x014B, r1	; 0x80014b <rainbowUpdateFlg>
+			switch(rainbowStep){
+     5d2:	80 91 46 01 	lds	r24, 0x0146	; 0x800146 <rainbowStep>
+     5d6:	81 30       	cpi	r24, 0x01	; 1
+     5d8:	a9 f0       	breq	.+42     	; 0x604 <__LOCK_REGION_LENGTH__+0x204>
+     5da:	18 f0       	brcs	.+6      	; 0x5e2 <__LOCK_REGION_LENGTH__+0x1e2>
+     5dc:	82 30       	cpi	r24, 0x02	; 2
+     5de:	19 f1       	breq	.+70     	; 0x626 <__LOCK_REGION_LENGTH__+0x226>
+     5e0:	32 c0       	rjmp	.+100    	; 0x646 <__LOCK_REGION_LENGTH__+0x246>
+				case 0:
+					//Red減少,Green増加
+					rRed--;
+     5e2:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <rRed>
+     5e6:	81 50       	subi	r24, 0x01	; 1
+     5e8:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <rRed>
+					rGreen++;
+     5ec:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <rGreen>
+     5f0:	8f 5f       	subi	r24, 0xFF	; 255
+     5f2:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <rGreen>
+					if(rGreen == 0xFF) rainbowStep = 1;
+     5f6:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <rGreen>
+     5fa:	8f 3f       	cpi	r24, 0xFF	; 255
+     5fc:	21 f5       	brne	.+72     	; 0x646 <__LOCK_REGION_LENGTH__+0x246>
+     5fe:	c0 93 46 01 	sts	0x0146, r28	; 0x800146 <rainbowStep>
+     602:	21 c0       	rjmp	.+66     	; 0x646 <__LOCK_REGION_LENGTH__+0x246>
+					break;
+				case 1:
+					//Green減少,Blue増加
+					rGreen--;
+     604:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <rGreen>
+     608:	81 50       	subi	r24, 0x01	; 1
+     60a:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <rGreen>
+					rBlue++;
+     60e:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <rBlue>
+     612:	8f 5f       	subi	r24, 0xFF	; 255
+     614:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <rBlue>
+					if(rBlue == 0xFF) rainbowStep = 2;
+     618:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <rBlue>
+     61c:	8f 3f       	cpi	r24, 0xFF	; 255
+     61e:	99 f4       	brne	.+38     	; 0x646 <__LOCK_REGION_LENGTH__+0x246>
+     620:	00 93 46 01 	sts	0x0146, r16	; 0x800146 <rainbowStep>
+     624:	10 c0       	rjmp	.+32     	; 0x646 <__LOCK_REGION_LENGTH__+0x246>
+					break;
+				case 2:
+					//Blue減少,Red増加
+					rBlue--;
+     626:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <rBlue>
+     62a:	81 50       	subi	r24, 0x01	; 1
+     62c:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <rBlue>
+					rRed++;
+     630:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <rRed>
+     634:	8f 5f       	subi	r24, 0xFF	; 255
+     636:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <rRed>
+					if(rRed == 0xFF) rainbowStep =0;
+     63a:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <rRed>
+     63e:	8f 3f       	cpi	r24, 0xFF	; 255
+     640:	11 f4       	brne	.+4      	; 0x646 <__LOCK_REGION_LENGTH__+0x246>
+     642:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <rainbowStep>
+					break;
+			}
+			updateLedFlg = 1;
+     646:	c0 93 49 01 	sts	0x0149, r28	; 0x800149 <updateLedFlg>
+		}
+
+		/******************************
+		  オーディオレベル更新処理
+		******************************/
+		if(adcEnFlg){
+     64a:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <adcEnFlg>
+     64e:	88 23       	and	r24, r24
+     650:	59 f0       	breq	.+22     	; 0x668 <__LOCK_REGION_LENGTH__+0x268>
+			adcEnFlg = 0;
+     652:	10 92 42 01 	sts	0x0142, r1	; 0x800142 <adcEnFlg>
+			audioLevel = adcAverage(10);
+     656:	8d 2f       	mov	r24, r29
+     658:	0e 94 9e 00 	call	0x13c	; 0x13c <adcAverage>
+     65c:	90 93 41 01 	sts	0x0141, r25	; 0x800141 <audioLevel+0x1>
+     660:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <audioLevel>
+			//if(UCSR0A & _BV(UDRE0)) send1byte((uint8_t)(audioLevel>>8));
+			//if(UCSR0A & _BV(UDRE0)) send1byte((uint8_t)audioLevel);
+			updateLedFlg = 1;
+     664:	c0 93 49 01 	sts	0x0149, r28	; 0x800149 <updateLedFlg>
+		}
+
+		/******************************
+		  LED更新処理
+		******************************/
+		if(updateLedFlg && pwrFlg){
+     668:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <updateLedFlg>
+     66c:	88 23       	and	r24, r24
+     66e:	09 f4       	brne	.+2      	; 0x672 <__LOCK_REGION_LENGTH__+0x272>
+     670:	c8 ce       	rjmp	.-624    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+     672:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <pwrFlg>
+     676:	88 23       	and	r24, r24
+     678:	09 f4       	brne	.+2      	; 0x67c <__LOCK_REGION_LENGTH__+0x27c>
+     67a:	c3 ce       	rjmp	.-634    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+			updateLedFlg = 0;
+     67c:	10 92 49 01 	sts	0x0149, r1	; 0x800149 <updateLedFlg>
+			switch(ptnMode){
+     680:	e0 91 47 01 	lds	r30, 0x0147	; 0x800147 <ptnMode>
+     684:	8e 2f       	mov	r24, r30
+     686:	90 e0       	ldi	r25, 0x00	; 0
+     688:	8a 30       	cpi	r24, 0x0A	; 10
+     68a:	91 05       	cpc	r25, r1
+     68c:	70 f5       	brcc	.+92     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+     68e:	fc 01       	movw	r30, r24
+     690:	ec 5c       	subi	r30, 0xCC	; 204
+     692:	ff 4f       	sbci	r31, 0xFF	; 255
+     694:	0c 94 e4 0e 	jmp	0x1dc8	; 0x1dc8 <__tablejump2__>
+				case SINGLE:
+					singleColor();
+     698:	0e 94 a7 03 	call	0x74e	; 0x74e <singleColor>
+					break;
+     69c:	26 c0       	rjmp	.+76     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case DOUBLE_A:
+					doubleColor_A();
+     69e:	0e 94 ce 03 	call	0x79c	; 0x79c <doubleColor_A>
+					break;
+     6a2:	23 c0       	rjmp	.+70     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case DOUBLE_B:
+					doubleColor_B();
+     6a4:	0e 94 10 04 	call	0x820	; 0x820 <doubleColor_B>
+					break;
+     6a8:	20 c0       	rjmp	.+64     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case GRADATION:
+					gradation_LB_RT();
+     6aa:	0e 94 61 04 	call	0x8c2	; 0x8c2 <gradation_LB_RT>
+					break;
+     6ae:	1d c0       	rjmp	.+58     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case SINGLE_All:
+					singleColor();
+     6b0:	0e 94 a7 03 	call	0x74e	; 0x74e <singleColor>
+					brightnessAudioAll();
+     6b4:	0e 94 33 08 	call	0x1066	; 0x1066 <brightnessAudioAll>
+					break;
+     6b8:	18 c0       	rjmp	.+48     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case DOUBLE_A_All:
+					doubleColor_A();
+     6ba:	0e 94 ce 03 	call	0x79c	; 0x79c <doubleColor_A>
+					brightnessAudioAll();
+     6be:	0e 94 33 08 	call	0x1066	; 0x1066 <brightnessAudioAll>
+					break;
+     6c2:	13 c0       	rjmp	.+38     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case DOUBLE_B_All:
+					doubleColor_B();
+     6c4:	0e 94 10 04 	call	0x820	; 0x820 <doubleColor_B>
+					brightnessAudioAll();
+     6c8:	0e 94 33 08 	call	0x1066	; 0x1066 <brightnessAudioAll>
+					break;
+     6cc:	0e c0       	rjmp	.+28     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case GRADATION_All:
+					gradation_LB_RT();
+     6ce:	0e 94 61 04 	call	0x8c2	; 0x8c2 <gradation_LB_RT>
+					brightnessAudioAll();
+     6d2:	0e 94 33 08 	call	0x1066	; 0x1066 <brightnessAudioAll>
+					break;
+     6d6:	09 c0       	rjmp	.+18     	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case SINGLE_Meter:
+					singleColor();
+     6d8:	0e 94 a7 03 	call	0x74e	; 0x74e <singleColor>
+					brightnessAudioMeter();
+     6dc:	0e 94 9c 08 	call	0x1138	; 0x1138 <brightnessAudioMeter>
+					break;
+     6e0:	04 c0       	rjmp	.+8      	; 0x6ea <__LOCK_REGION_LENGTH__+0x2ea>
+				case GRADATION_Meter:
+					gradation_LB_RT();
+     6e2:	0e 94 61 04 	call	0x8c2	; 0x8c2 <gradation_LB_RT>
+					brightnessAudioMeter();
+     6e6:	0e 94 9c 08 	call	0x1138	; 0x1138 <brightnessAudioMeter>
+					break;
+			}
+			//LED更新
+			updateLed();
+     6ea:	0e 94 62 0c 	call	0x18c4	; 0x18c4 <updateLed>
+     6ee:	89 ce       	rjmp	.-750    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+
+000006f0 <uartInit>:
+	UART初期化
+************************************************************/
+void uartInit(void)
+{
+	//CPU16MHz 9600bps
+	UBRR0 = 103;
+     6f0:	87 e6       	ldi	r24, 0x67	; 103
+     6f2:	90 e0       	ldi	r25, 0x00	; 0
+     6f4:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7e00c5>
+     6f8:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7e00c4>
+	//CPU16MHz 19200bps
+	//UBRR0 = 51;
+
+	//受信許可,送信許可
+	UCSR0B = _BV(RXEN0) | _BV(TXEN0);
+     6fc:	88 e1       	ldi	r24, 0x18	; 24
+     6fe:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7e00c1>
+
+	//データ8bit,パリティ無し,ストップビット1bit
+	UCSR0C = (0 << USBS0) | (3 << UCSZ00);
+     702:	86 e0       	ldi	r24, 0x06	; 6
+     704:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7e00c2>
+     708:	08 95       	ret
+
+0000070a <setColor>:
+		adr:LED番号 0からLEDNUM-1まで
+		presetNum:プリセットナンバー 0からPRESET_MAX-1まで
+************************************************************/
+void setColor(uint8_t  adr, uint8_t  presetNum)
+{
+	if(adr >= LEDNUM) adr = 0;
+     70a:	89 31       	cpi	r24, 0x19	; 25
+     70c:	08 f0       	brcs	.+2      	; 0x710 <setColor+0x6>
+     70e:	80 e0       	ldi	r24, 0x00	; 0
+	if(presetNum >= PRESET_MAX) presetNum = 0;
+     710:	6a 30       	cpi	r22, 0x0A	; 10
+     712:	08 f0       	brcs	.+2      	; 0x716 <setColor+0xc>
+     714:	60 e0       	ldi	r22, 0x00	; 0
+
+	led[adr].green = presetColor[presetNum].green;
+     716:	90 e0       	ldi	r25, 0x00	; 0
+     718:	70 e0       	ldi	r23, 0x00	; 0
+     71a:	fb 01       	movw	r30, r22
+     71c:	ee 0f       	add	r30, r30
+     71e:	ff 1f       	adc	r31, r31
+     720:	6e 0f       	add	r22, r30
+     722:	7f 1f       	adc	r23, r31
+     724:	fb 01       	movw	r30, r22
+     726:	e6 5e       	subi	r30, 0xE6	; 230
+     728:	fe 4f       	sbci	r31, 0xFE	; 254
+     72a:	20 81       	ld	r18, Z
+     72c:	dc 01       	movw	r26, r24
+     72e:	aa 0f       	add	r26, r26
+     730:	bb 1f       	adc	r27, r27
+     732:	8a 0f       	add	r24, r26
+     734:	9b 1f       	adc	r25, r27
+     736:	dc 01       	movw	r26, r24
+     738:	a4 5b       	subi	r26, 0xB4	; 180
+     73a:	be 4f       	sbci	r27, 0xFE	; 254
+     73c:	2c 93       	st	X, r18
+	led[adr].red = presetColor[presetNum].red;
+     73e:	81 81       	ldd	r24, Z+1	; 0x01
+     740:	11 96       	adiw	r26, 0x01	; 1
+     742:	8c 93       	st	X, r24
+     744:	11 97       	sbiw	r26, 0x01	; 1
+	led[adr].blue = presetColor[presetNum].blue;
+     746:	82 81       	ldd	r24, Z+2	; 0x02
+     748:	12 96       	adiw	r26, 0x02	; 2
+     74a:	8c 93       	st	X, r24
+     74c:	08 95       	ret
+
+0000074e <singleColor>:
+
+/************************************************************
+	単色モードの点灯色制御
+************************************************************/
+void singleColor(void)
+{
+     74e:	cf 93       	push	r28
+	if(firstColor == RAINBOW){
+     750:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     754:	8a 30       	cpi	r24, 0x0A	; 10
+     756:	b9 f4       	brne	.+46     	; 0x786 <singleColor+0x38>
+     758:	80 e0       	ldi	r24, 0x00	; 0
+     75a:	90 e0       	ldi	r25, 0x00	; 0
+		for(int i=0; i<LEDNUM; i++){
+			led[i].red = rRed;
+     75c:	20 91 45 01 	lds	r18, 0x0145	; 0x800145 <rRed>
+     760:	fc 01       	movw	r30, r24
+     762:	ee 0f       	add	r30, r30
+     764:	ff 1f       	adc	r31, r31
+     766:	e8 0f       	add	r30, r24
+     768:	f9 1f       	adc	r31, r25
+     76a:	e4 5b       	subi	r30, 0xB4	; 180
+     76c:	fe 4f       	sbci	r31, 0xFE	; 254
+     76e:	21 83       	std	Z+1, r18	; 0x01
+			led[i].green = rGreen;
+     770:	20 91 44 01 	lds	r18, 0x0144	; 0x800144 <rGreen>
+     774:	20 83       	st	Z, r18
+			led[i].blue = rBlue;
+     776:	20 91 43 01 	lds	r18, 0x0143	; 0x800143 <rBlue>
+     77a:	22 83       	std	Z+2, r18	; 0x02
+	単色モードの点灯色制御
+************************************************************/
+void singleColor(void)
+{
+	if(firstColor == RAINBOW){
+		for(int i=0; i<LEDNUM; i++){
+     77c:	01 96       	adiw	r24, 0x01	; 1
+     77e:	89 31       	cpi	r24, 0x19	; 25
+     780:	91 05       	cpc	r25, r1
+     782:	61 f7       	brne	.-40     	; 0x75c <singleColor+0xe>
+     784:	09 c0       	rjmp	.+18     	; 0x798 <singleColor+0x4a>
+     786:	c0 e0       	ldi	r28, 0x00	; 0
+			led[i].red = rRed;
+			led[i].green = rGreen;
+			led[i].blue = rBlue;
+		}
+	}else{
+		for(int i=0; i<LEDNUM; i++) setColor(i,firstColor);
+     788:	60 91 48 01 	lds	r22, 0x0148	; 0x800148 <firstColor>
+     78c:	8c 2f       	mov	r24, r28
+     78e:	0e 94 85 03 	call	0x70a	; 0x70a <setColor>
+     792:	cf 5f       	subi	r28, 0xFF	; 255
+     794:	c9 31       	cpi	r28, 0x19	; 25
+     796:	c1 f7       	brne	.-16     	; 0x788 <singleColor+0x3a>
+	}
+}
+     798:	cf 91       	pop	r28
+     79a:	08 95       	ret
+
+0000079c <doubleColor_A>:
+
+/************************************************************
+	2色モードの点灯色制御 市松模様
+************************************************************/
+void doubleColor_A(void)
+{
+     79c:	cf 93       	push	r28
+     79e:	df 93       	push	r29
+	for(int i=0; i<LEDNUM; i++){
+     7a0:	c0 e0       	ldi	r28, 0x00	; 0
+     7a2:	d0 e0       	ldi	r29, 0x00	; 0
+		if(i % 2){							//偶数番firstColor
+     7a4:	c0 ff       	sbrs	r28, 0
+     7a6:	1b c0       	rjmp	.+54     	; 0x7de <doubleColor_A+0x42>
+			if(firstColor == RAINBOW){
+     7a8:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     7ac:	8a 30       	cpi	r24, 0x0A	; 10
+     7ae:	89 f4       	brne	.+34     	; 0x7d2 <doubleColor_A+0x36>
+				led[i].red = rRed;
+     7b0:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <rRed>
+     7b4:	fe 01       	movw	r30, r28
+     7b6:	ee 0f       	add	r30, r30
+     7b8:	ff 1f       	adc	r31, r31
+     7ba:	ec 0f       	add	r30, r28
+     7bc:	fd 1f       	adc	r31, r29
+     7be:	e4 5b       	subi	r30, 0xB4	; 180
+     7c0:	fe 4f       	sbci	r31, 0xFE	; 254
+     7c2:	81 83       	std	Z+1, r24	; 0x01
+				led[i].green = rGreen;
+     7c4:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <rGreen>
+     7c8:	80 83       	st	Z, r24
+				led[i].blue = rBlue;
+     7ca:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <rBlue>
+     7ce:	82 83       	std	Z+2, r24	; 0x02
+     7d0:	20 c0       	rjmp	.+64     	; 0x812 <doubleColor_A+0x76>
+			}else{
+				setColor(i,firstColor);
+     7d2:	60 91 48 01 	lds	r22, 0x0148	; 0x800148 <firstColor>
+     7d6:	8c 2f       	mov	r24, r28
+     7d8:	0e 94 85 03 	call	0x70a	; 0x70a <setColor>
+     7dc:	1a c0       	rjmp	.+52     	; 0x812 <doubleColor_A+0x76>
+			}
+		}else{								//奇数番secondColor
+			if(secondColor == RAINBOW){
+     7de:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     7e2:	8a 30       	cpi	r24, 0x0A	; 10
+     7e4:	89 f4       	brne	.+34     	; 0x808 <doubleColor_A+0x6c>
+				led[i].red = rRed;
+     7e6:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <rRed>
+     7ea:	fe 01       	movw	r30, r28
+     7ec:	ee 0f       	add	r30, r30
+     7ee:	ff 1f       	adc	r31, r31
+     7f0:	ec 0f       	add	r30, r28
+     7f2:	fd 1f       	adc	r31, r29
+     7f4:	e4 5b       	subi	r30, 0xB4	; 180
+     7f6:	fe 4f       	sbci	r31, 0xFE	; 254
+     7f8:	81 83       	std	Z+1, r24	; 0x01
+				led[i].green = rGreen;
+     7fa:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <rGreen>
+     7fe:	80 83       	st	Z, r24
+				led[i].blue = rBlue;
+     800:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <rBlue>
+     804:	82 83       	std	Z+2, r24	; 0x02
+     806:	05 c0       	rjmp	.+10     	; 0x812 <doubleColor_A+0x76>
+			}else{
+				setColor(i,secondColor);
+     808:	60 91 00 01 	lds	r22, 0x0100	; 0x800100 <__data_start>
+     80c:	8c 2f       	mov	r24, r28
+     80e:	0e 94 85 03 	call	0x70a	; 0x70a <setColor>
+/************************************************************
+	2色モードの点灯色制御 市松模様
+************************************************************/
+void doubleColor_A(void)
+{
+	for(int i=0; i<LEDNUM; i++){
+     812:	21 96       	adiw	r28, 0x01	; 1
+     814:	c9 31       	cpi	r28, 0x19	; 25
+     816:	d1 05       	cpc	r29, r1
+     818:	29 f6       	brne	.-118    	; 0x7a4 <doubleColor_A+0x8>
+			}else{
+				setColor(i,secondColor);
+			}
+		}
+	}
+}
+     81a:	df 91       	pop	r29
+     81c:	cf 91       	pop	r28
+     81e:	08 95       	ret
+
+00000820 <doubleColor_B>:
+
+/************************************************************
+	2色モードの点灯色制御 回の字
+************************************************************/
+void doubleColor_B(void)
+{
+     820:	cf 93       	push	r28
+     822:	df 93       	push	r29
+	for(int i=0; i<LEDNUM; i++){
+     824:	c0 e0       	ldi	r28, 0x00	; 0
+     826:	d0 e0       	ldi	r29, 0x00	; 0
+     828:	ce 01       	movw	r24, r28
+		if((i == 6) || (i == 7) || (i == 8) || (i == 11) || (i == 13) || (i == 16) || (i == 17) || (i == 18)){
+     82a:	9e 01       	movw	r18, r28
+     82c:	26 50       	subi	r18, 0x06	; 6
+     82e:	31 09       	sbc	r19, r1
+     830:	23 30       	cpi	r18, 0x03	; 3
+     832:	31 05       	cpc	r19, r1
+     834:	48 f0       	brcs	.+18     	; 0x848 <doubleColor_B+0x28>
+     836:	cb 30       	cpi	r28, 0x0B	; 11
+     838:	d1 05       	cpc	r29, r1
+     83a:	31 f0       	breq	.+12     	; 0x848 <doubleColor_B+0x28>
+     83c:	cd 30       	cpi	r28, 0x0D	; 13
+     83e:	d1 05       	cpc	r29, r1
+     840:	19 f0       	breq	.+6      	; 0x848 <doubleColor_B+0x28>
+     842:	40 97       	sbiw	r24, 0x10	; 16
+     844:	03 97       	sbiw	r24, 0x03	; 3
+     846:	d8 f4       	brcc	.+54     	; 0x87e <doubleColor_B+0x5e>
+			if(secondColor == RAINBOW){
+     848:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     84c:	8a 30       	cpi	r24, 0x0A	; 10
+     84e:	89 f4       	brne	.+34     	; 0x872 <doubleColor_B+0x52>
+				led[i].red = rRed;
+     850:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <rRed>
+     854:	fe 01       	movw	r30, r28
+     856:	ee 0f       	add	r30, r30
+     858:	ff 1f       	adc	r31, r31
+     85a:	ec 0f       	add	r30, r28
+     85c:	fd 1f       	adc	r31, r29
+     85e:	e4 5b       	subi	r30, 0xB4	; 180
+     860:	fe 4f       	sbci	r31, 0xFE	; 254
+     862:	81 83       	std	Z+1, r24	; 0x01
+				led[i].green = rGreen;
+     864:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <rGreen>
+     868:	80 83       	st	Z, r24
+				led[i].blue = rBlue;
+     86a:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <rBlue>
+     86e:	82 83       	std	Z+2, r24	; 0x02
+     870:	20 c0       	rjmp	.+64     	; 0x8b2 <doubleColor_B+0x92>
+				}else{
+				setColor(i,secondColor);
+     872:	60 91 00 01 	lds	r22, 0x0100	; 0x800100 <__data_start>
+     876:	8c 2f       	mov	r24, r28
+     878:	0e 94 85 03 	call	0x70a	; 0x70a <setColor>
+     87c:	1a c0       	rjmp	.+52     	; 0x8b2 <doubleColor_B+0x92>
+			}
+		}else{
+			if(firstColor == RAINBOW){
+     87e:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     882:	8a 30       	cpi	r24, 0x0A	; 10
+     884:	89 f4       	brne	.+34     	; 0x8a8 <doubleColor_B+0x88>
+				led[i].red = rRed;
+     886:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <rRed>
+     88a:	fe 01       	movw	r30, r28
+     88c:	ee 0f       	add	r30, r30
+     88e:	ff 1f       	adc	r31, r31
+     890:	ec 0f       	add	r30, r28
+     892:	fd 1f       	adc	r31, r29
+     894:	e4 5b       	subi	r30, 0xB4	; 180
+     896:	fe 4f       	sbci	r31, 0xFE	; 254
+     898:	81 83       	std	Z+1, r24	; 0x01
+				led[i].green = rGreen;
+     89a:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <rGreen>
+     89e:	80 83       	st	Z, r24
+				led[i].blue = rBlue;
+     8a0:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <rBlue>
+     8a4:	82 83       	std	Z+2, r24	; 0x02
+     8a6:	05 c0       	rjmp	.+10     	; 0x8b2 <doubleColor_B+0x92>
+				}else{
+				setColor(i,firstColor);
+     8a8:	60 91 48 01 	lds	r22, 0x0148	; 0x800148 <firstColor>
+     8ac:	8c 2f       	mov	r24, r28
+     8ae:	0e 94 85 03 	call	0x70a	; 0x70a <setColor>
+/************************************************************
+	2色モードの点灯色制御 回の字
+************************************************************/
+void doubleColor_B(void)
+{
+	for(int i=0; i<LEDNUM; i++){
+     8b2:	21 96       	adiw	r28, 0x01	; 1
+     8b4:	c9 31       	cpi	r28, 0x19	; 25
+     8b6:	d1 05       	cpc	r29, r1
+     8b8:	09 f0       	breq	.+2      	; 0x8bc <doubleColor_B+0x9c>
+     8ba:	b6 cf       	rjmp	.-148    	; 0x828 <doubleColor_B+0x8>
+				}else{
+				setColor(i,firstColor);
+			}
+		}
+	}
+}
+     8bc:	df 91       	pop	r29
+     8be:	cf 91       	pop	r28
+     8c0:	08 95       	ret
+
+000008c2 <gradation_LB_RT>:
+
+/************************************************************
+	2色モードの点灯色制御 左下から右上へグラデーション
+************************************************************/
+void gradation_LB_RT(void)
+{
+     8c2:	2f 92       	push	r2
+     8c4:	3f 92       	push	r3
+     8c6:	4f 92       	push	r4
+     8c8:	5f 92       	push	r5
+     8ca:	6f 92       	push	r6
+     8cc:	7f 92       	push	r7
+     8ce:	8f 92       	push	r8
+     8d0:	9f 92       	push	r9
+     8d2:	af 92       	push	r10
+     8d4:	bf 92       	push	r11
+     8d6:	cf 92       	push	r12
+     8d8:	df 92       	push	r13
+     8da:	ef 92       	push	r14
+     8dc:	ff 92       	push	r15
+     8de:	0f 93       	push	r16
+     8e0:	1f 93       	push	r17
+     8e2:	cf 93       	push	r28
+     8e4:	df 93       	push	r29
+     8e6:	cd b7       	in	r28, 0x3d	; 61
+     8e8:	de b7       	in	r29, 0x3e	; 62
+     8ea:	64 97       	sbiw	r28, 0x14	; 20
+     8ec:	0f b6       	in	r0, 0x3f	; 63
+     8ee:	f8 94       	cli
+     8f0:	de bf       	out	0x3e, r29	; 62
+     8f2:	0f be       	out	0x3f, r0	; 63
+     8f4:	cd bf       	out	0x3d, r28	; 61
+	LedParam first = {presetColor[firstColor].green, presetColor[firstColor].red, presetColor[firstColor].blue};
+     8f6:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     8fa:	90 e0       	ldi	r25, 0x00	; 0
+     8fc:	fc 01       	movw	r30, r24
+     8fe:	ee 0f       	add	r30, r30
+     900:	ff 1f       	adc	r31, r31
+     902:	8e 0f       	add	r24, r30
+     904:	9f 1f       	adc	r25, r31
+     906:	fc 01       	movw	r30, r24
+     908:	e6 5e       	subi	r30, 0xE6	; 230
+     90a:	fe 4f       	sbci	r31, 0xFE	; 254
+     90c:	30 81       	ld	r19, Z
+     90e:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     912:	90 e0       	ldi	r25, 0x00	; 0
+     914:	fc 01       	movw	r30, r24
+     916:	ee 0f       	add	r30, r30
+     918:	ff 1f       	adc	r31, r31
+     91a:	8e 0f       	add	r24, r30
+     91c:	9f 1f       	adc	r25, r31
+     91e:	fc 01       	movw	r30, r24
+     920:	e6 5e       	subi	r30, 0xE6	; 230
+     922:	fe 4f       	sbci	r31, 0xFE	; 254
+     924:	21 81       	ldd	r18, Z+1	; 0x01
+     926:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <firstColor>
+     92a:	90 e0       	ldi	r25, 0x00	; 0
+     92c:	fc 01       	movw	r30, r24
+     92e:	ee 0f       	add	r30, r30
+     930:	ff 1f       	adc	r31, r31
+     932:	8e 0f       	add	r24, r30
+     934:	9f 1f       	adc	r25, r31
+     936:	fc 01       	movw	r30, r24
+     938:	e6 5e       	subi	r30, 0xE6	; 230
+     93a:	fe 4f       	sbci	r31, 0xFE	; 254
+     93c:	42 81       	ldd	r20, Z+2	; 0x02
+	LedParam second = {presetColor[secondColor].green, presetColor[secondColor].red, presetColor[secondColor].blue};
+     93e:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     942:	90 e0       	ldi	r25, 0x00	; 0
+     944:	fc 01       	movw	r30, r24
+     946:	ee 0f       	add	r30, r30
+     948:	ff 1f       	adc	r31, r31
+     94a:	8e 0f       	add	r24, r30
+     94c:	9f 1f       	adc	r25, r31
+     94e:	fc 01       	movw	r30, r24
+     950:	e6 5e       	subi	r30, 0xE6	; 230
+     952:	fe 4f       	sbci	r31, 0xFE	; 254
+     954:	50 81       	ld	r21, Z
+     956:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     95a:	90 e0       	ldi	r25, 0x00	; 0
+     95c:	fc 01       	movw	r30, r24
+     95e:	ee 0f       	add	r30, r30
+     960:	ff 1f       	adc	r31, r31
+     962:	8e 0f       	add	r24, r30
+     964:	9f 1f       	adc	r25, r31
+     966:	fc 01       	movw	r30, r24
+     968:	e6 5e       	subi	r30, 0xE6	; 230
+     96a:	fe 4f       	sbci	r31, 0xFE	; 254
+     96c:	61 81       	ldd	r22, Z+1	; 0x01
+     96e:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     972:	90 e0       	ldi	r25, 0x00	; 0
+     974:	fc 01       	movw	r30, r24
+     976:	ee 0f       	add	r30, r30
+     978:	ff 1f       	adc	r31, r31
+     97a:	8e 0f       	add	r24, r30
+     97c:	9f 1f       	adc	r25, r31
+     97e:	fc 01       	movw	r30, r24
+     980:	e6 5e       	subi	r30, 0xE6	; 230
+     982:	fe 4f       	sbci	r31, 0xFE	; 254
+     984:	82 81       	ldd	r24, Z+2	; 0x02
+	LedParam defColor;
+	uint8_t incOrDec = 0;
+	
+	//firstとsecondの色の差分をdefColorにセット
+	//オーバーフロー処理が面倒な為、四捨五入はしない
+	if(first.green > second.green){
+     986:	53 17       	cp	r21, r19
+     988:	88 f4       	brcc	.+34     	; 0x9ac <__stack+0xad>
+		defColor.green = (first.green - second.green) / 8;
+     98a:	a3 2f       	mov	r26, r19
+     98c:	b0 e0       	ldi	r27, 0x00	; 0
+     98e:	a5 1b       	sub	r26, r21
+     990:	b1 09       	sbc	r27, r1
+     992:	fd 01       	movw	r30, r26
+     994:	0a f4       	brpl	.+2      	; 0x998 <__stack+0x99>
+     996:	37 96       	adiw	r30, 0x07	; 7
+     998:	f5 95       	asr	r31
+     99a:	e7 95       	ror	r30
+     99c:	f5 95       	asr	r31
+     99e:	e7 95       	ror	r30
+     9a0:	f5 95       	asr	r31
+     9a2:	e7 95       	ror	r30
+     9a4:	eb 87       	std	Y+11, r30	; 0x0b
+		incOrDec |= 0x01; //デクリメント
+     9a6:	33 24       	eor	r3, r3
+     9a8:	33 94       	inc	r3
+     9aa:	0f c0       	rjmp	.+30     	; 0x9ca <__stack+0xcb>
+	}else{
+		 defColor.green = (second.green - first.green) / 8;
+     9ac:	e5 2f       	mov	r30, r21
+     9ae:	f0 e0       	ldi	r31, 0x00	; 0
+     9b0:	e3 1b       	sub	r30, r19
+     9b2:	f1 09       	sbc	r31, r1
+     9b4:	df 01       	movw	r26, r30
+     9b6:	0a f4       	brpl	.+2      	; 0x9ba <__stack+0xbb>
+     9b8:	17 96       	adiw	r26, 0x07	; 7
+     9ba:	b5 95       	asr	r27
+     9bc:	a7 95       	ror	r26
+     9be:	b5 95       	asr	r27
+     9c0:	a7 95       	ror	r26
+     9c2:	b5 95       	asr	r27
+     9c4:	a7 95       	ror	r26
+     9c6:	ab 87       	std	Y+11, r26	; 0x0b
+void gradation_LB_RT(void)
+{
+	LedParam first = {presetColor[firstColor].green, presetColor[firstColor].red, presetColor[firstColor].blue};
+	LedParam second = {presetColor[secondColor].green, presetColor[secondColor].red, presetColor[secondColor].blue};
+	LedParam defColor;
+	uint8_t incOrDec = 0;
+     9c8:	31 2c       	mov	r3, r1
+		defColor.green = (first.green - second.green) / 8;
+		incOrDec |= 0x01; //デクリメント
+	}else{
+		 defColor.green = (second.green - first.green) / 8;
+	}
+	if(first.red > second.red){
+     9ca:	62 17       	cp	r22, r18
+     9cc:	90 f4       	brcc	.+36     	; 0x9f2 <__stack+0xf3>
+		defColor.red = (first.red - second.red) / 8;
+     9ce:	30 e0       	ldi	r19, 0x00	; 0
+     9d0:	26 1b       	sub	r18, r22
+     9d2:	31 09       	sbc	r19, r1
+     9d4:	b9 01       	movw	r22, r18
+     9d6:	12 f4       	brpl	.+4      	; 0x9dc <__stack+0xdd>
+     9d8:	69 5f       	subi	r22, 0xF9	; 249
+     9da:	7f 4f       	sbci	r23, 0xFF	; 255
+     9dc:	75 95       	asr	r23
+     9de:	67 95       	ror	r22
+     9e0:	75 95       	asr	r23
+     9e2:	67 95       	ror	r22
+     9e4:	75 95       	asr	r23
+     9e6:	67 95       	ror	r22
+     9e8:	6c 87       	std	Y+12, r22	; 0x0c
+		incOrDec |= 0x02; //デクリメント
+     9ea:	93 2d       	mov	r25, r3
+     9ec:	92 60       	ori	r25, 0x02	; 2
+     9ee:	39 2e       	mov	r3, r25
+     9f0:	0f c0       	rjmp	.+30     	; 0xa10 <__stack+0x111>
+	}else{
+		defColor.red = (second.red - first.red) / 8;
+     9f2:	70 e0       	ldi	r23, 0x00	; 0
+     9f4:	fb 01       	movw	r30, r22
+     9f6:	e2 1b       	sub	r30, r18
+     9f8:	f1 09       	sbc	r31, r1
+     9fa:	bf 01       	movw	r22, r30
+     9fc:	12 f4       	brpl	.+4      	; 0xa02 <__stack+0x103>
+     9fe:	69 5f       	subi	r22, 0xF9	; 249
+     a00:	7f 4f       	sbci	r23, 0xFF	; 255
+     a02:	75 95       	asr	r23
+     a04:	67 95       	ror	r22
+     a06:	75 95       	asr	r23
+     a08:	67 95       	ror	r22
+     a0a:	75 95       	asr	r23
+     a0c:	67 95       	ror	r22
+     a0e:	6c 87       	std	Y+12, r22	; 0x0c
+	}
+	if(first.blue > second.blue){
+     a10:	84 17       	cp	r24, r20
+     a12:	90 f4       	brcc	.+36     	; 0xa38 <__stack+0x139>
+		defColor.blue = (second.blue - first.blue) / 8;
+     a14:	90 e0       	ldi	r25, 0x00	; 0
+     a16:	84 1b       	sub	r24, r20
+     a18:	91 09       	sbc	r25, r1
+     a1a:	9c 01       	movw	r18, r24
+     a1c:	12 f4       	brpl	.+4      	; 0xa22 <__stack+0x123>
+     a1e:	29 5f       	subi	r18, 0xF9	; 249
+     a20:	3f 4f       	sbci	r19, 0xFF	; 255
+     a22:	35 95       	asr	r19
+     a24:	27 95       	ror	r18
+     a26:	35 95       	asr	r19
+     a28:	27 95       	ror	r18
+     a2a:	35 95       	asr	r19
+     a2c:	27 95       	ror	r18
+     a2e:	22 2e       	mov	r2, r18
+		incOrDec |= 0x04; //デクリメント
+     a30:	f3 2d       	mov	r31, r3
+     a32:	f4 60       	ori	r31, 0x04	; 4
+     a34:	3f 2e       	mov	r3, r31
+     a36:	0e c0       	rjmp	.+28     	; 0xa54 <__stack+0x155>
+	}else{
+		defColor.blue = (second.blue - first.blue) / 8;
+     a38:	90 e0       	ldi	r25, 0x00	; 0
+     a3a:	84 1b       	sub	r24, r20
+     a3c:	91 09       	sbc	r25, r1
+     a3e:	9c 01       	movw	r18, r24
+     a40:	12 f4       	brpl	.+4      	; 0xa46 <__stack+0x147>
+     a42:	29 5f       	subi	r18, 0xF9	; 249
+     a44:	3f 4f       	sbci	r19, 0xFF	; 255
+     a46:	35 95       	asr	r19
+     a48:	27 95       	ror	r18
+     a4a:	35 95       	asr	r19
+     a4c:	27 95       	ror	r18
+     a4e:	35 95       	asr	r19
+     a50:	27 95       	ror	r18
+     a52:	22 2e       	mov	r2, r18
+void gradation_LB_RT(void)
+{
+	LedParam first = {presetColor[firstColor].green, presetColor[firstColor].red, presetColor[firstColor].blue};
+	LedParam second = {presetColor[secondColor].green, presetColor[secondColor].red, presetColor[secondColor].blue};
+	LedParam defColor;
+	uint8_t incOrDec = 0;
+     a54:	88 24       	eor	r8, r8
+     a56:	83 94       	inc	r8
+     a58:	91 2c       	mov	r9, r1
+     a5a:	00 e0       	ldi	r16, 0x00	; 0
+     a5c:	10 e0       	ldi	r17, 0x00	; 0
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 8;
+				else led[i].green += defColor.green * 8;
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 8;
+				else led[i].red += defColor.red * 8;
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 8;
+				else led[i].blue += defColor.blue * 8;
+     a5e:	a2 2c       	mov	r10, r2
+     a60:	b1 2c       	mov	r11, r1
+     a62:	35 01       	movw	r6, r10
+     a64:	66 0c       	add	r6, r6
+     a66:	77 1c       	adc	r7, r7
+     a68:	66 0c       	add	r6, r6
+     a6a:	77 1c       	adc	r7, r7
+     a6c:	66 0c       	add	r6, r6
+     a6e:	77 1c       	adc	r7, r7
+				break;
+			case 4:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 8;
+				else led[i].green += defColor.green * 8;
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 8;
+				else led[i].red += defColor.red * 8;
+     a70:	8c 85       	ldd	r24, Y+12	; 0x0c
+     a72:	c8 2e       	mov	r12, r24
+     a74:	d1 2c       	mov	r13, r1
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 7;
+				else led[i].blue += defColor.blue * 7;
+				break;
+			case 4:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 8;
+				else led[i].green += defColor.green * 8;
+     a76:	9b 85       	ldd	r25, Y+11	; 0x0b
+     a78:	e9 2e       	mov	r14, r25
+     a7a:	f1 2c       	mov	r15, r1
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 6;
+				else led[i].green += defColor.green * 6;
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 6;
+				else led[i].red += defColor.red * 6;
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 6;
+				else led[i].blue += defColor.blue * 6;
+     a7c:	25 01       	movw	r4, r10
+     a7e:	44 0c       	add	r4, r4
+     a80:	55 1c       	adc	r5, r5
+     a82:	f2 01       	movw	r30, r4
+     a84:	ea 0d       	add	r30, r10
+     a86:	fb 1d       	adc	r31, r11
+     a88:	fa 83       	std	Y+2, r31	; 0x02
+     a8a:	e9 83       	std	Y+1, r30	; 0x01
+     a8c:	ee 0f       	add	r30, r30
+     a8e:	ff 1f       	adc	r31, r31
+     a90:	fe 87       	std	Y+14, r31	; 0x0e
+     a92:	ed 87       	std	Y+13, r30	; 0x0d
+			case 6:
+			case 14:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 6;
+				else led[i].green += defColor.green * 6;
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 6;
+				else led[i].red += defColor.red * 6;
+     a94:	c6 01       	movw	r24, r12
+     a96:	88 0f       	add	r24, r24
+     a98:	99 1f       	adc	r25, r25
+     a9a:	9c 83       	std	Y+4, r25	; 0x04
+     a9c:	8b 83       	std	Y+3, r24	; 0x03
+     a9e:	8c 0d       	add	r24, r12
+     aa0:	9d 1d       	adc	r25, r13
+     aa2:	9e 83       	std	Y+6, r25	; 0x06
+     aa4:	8d 83       	std	Y+5, r24	; 0x05
+     aa6:	88 0f       	add	r24, r24
+     aa8:	99 1f       	adc	r25, r25
+     aaa:	98 8b       	std	Y+16, r25	; 0x10
+     aac:	8f 87       	std	Y+15, r24	; 0x0f
+				break;
+			case 2:
+			case 6:
+			case 14:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 6;
+				else led[i].green += defColor.green * 6;
+     aae:	f7 01       	movw	r30, r14
+     ab0:	ee 0f       	add	r30, r30
+     ab2:	ff 1f       	adc	r31, r31
+     ab4:	f8 87       	std	Y+8, r31	; 0x08
+     ab6:	ef 83       	std	Y+7, r30	; 0x07
+     ab8:	ee 0d       	add	r30, r14
+     aba:	ff 1d       	adc	r31, r15
+     abc:	fa 87       	std	Y+10, r31	; 0x0a
+     abe:	e9 87       	std	Y+9, r30	; 0x09
+     ac0:	ee 0f       	add	r30, r30
+     ac2:	ff 1f       	adc	r31, r31
+     ac4:	fa 8b       	std	Y+18, r31	; 0x12
+     ac6:	e9 8b       	std	Y+17, r30	; 0x11
+     ac8:	3b 8a       	std	Y+19, r3	; 0x13
+     aca:	2c 8a       	std	Y+20, r2	; 0x14
+     acc:	05 c0       	rjmp	.+10     	; 0xad8 <__stack+0x1d9>
+     ace:	0f 5f       	subi	r16, 0xFF	; 255
+     ad0:	1f 4f       	sbci	r17, 0xFF	; 255
+     ad2:	ff ef       	ldi	r31, 0xFF	; 255
+     ad4:	8f 1a       	sub	r8, r31
+     ad6:	9f 0a       	sbc	r9, r31
+     ad8:	18 01       	movw	r2, r16
+	}else{
+		defColor.blue = (second.blue - first.blue) / 8;
+	}
+	
+	for(int i=0; i<LEDNUM; i++){
+		setColor(i,firstColor);
+     ada:	60 91 48 01 	lds	r22, 0x0148	; 0x800148 <firstColor>
+     ade:	80 2f       	mov	r24, r16
+     ae0:	0e 94 85 03 	call	0x70a	; 0x70a <setColor>
+		switch(i){
+     ae4:	09 31       	cpi	r16, 0x19	; 25
+     ae6:	11 05       	cpc	r17, r1
+     ae8:	08 f0       	brcs	.+2      	; 0xaec <__stack+0x1ed>
+     aea:	9f c2       	rjmp	.+1342   	; 0x102a <__stack+0x72b>
+     aec:	f8 01       	movw	r30, r16
+     aee:	e2 5c       	subi	r30, 0xC2	; 194
+     af0:	ff 4f       	sbci	r31, 0xFF	; 255
+     af2:	0c 94 e4 0e 	jmp	0x1dc8	; 0x1dc8 <__tablejump2__>
+			case 20:
+				break;
+			case 19:
+			case 21:
+				if(incOrDec & 0x01) led[i].green -= defColor.green;
+     af6:	8b 89       	ldd	r24, Y+19	; 0x13
+     af8:	80 ff       	sbrs	r24, 0
+     afa:	0c c0       	rjmp	.+24     	; 0xb14 <__stack+0x215>
+     afc:	f8 01       	movw	r30, r16
+     afe:	ee 0f       	add	r30, r30
+     b00:	ff 1f       	adc	r31, r31
+     b02:	e0 0f       	add	r30, r16
+     b04:	f1 1f       	adc	r31, r17
+     b06:	e4 5b       	subi	r30, 0xB4	; 180
+     b08:	fe 4f       	sbci	r31, 0xFE	; 254
+     b0a:	80 81       	ld	r24, Z
+     b0c:	9b 85       	ldd	r25, Y+11	; 0x0b
+     b0e:	89 1b       	sub	r24, r25
+     b10:	80 83       	st	Z, r24
+     b12:	0b c0       	rjmp	.+22     	; 0xb2a <__stack+0x22b>
+				else led[i].green += defColor.green;
+     b14:	f8 01       	movw	r30, r16
+     b16:	ee 0f       	add	r30, r30
+     b18:	ff 1f       	adc	r31, r31
+     b1a:	e0 0f       	add	r30, r16
+     b1c:	f1 1f       	adc	r31, r17
+     b1e:	e4 5b       	subi	r30, 0xB4	; 180
+     b20:	fe 4f       	sbci	r31, 0xFE	; 254
+     b22:	80 81       	ld	r24, Z
+     b24:	9b 85       	ldd	r25, Y+11	; 0x0b
+     b26:	89 0f       	add	r24, r25
+     b28:	80 83       	st	Z, r24
+				if(incOrDec & 0x02) led[i].red -= defColor.red;
+     b2a:	eb 89       	ldd	r30, Y+19	; 0x13
+     b2c:	e1 ff       	sbrs	r30, 1
+     b2e:	0c c0       	rjmp	.+24     	; 0xb48 <__stack+0x249>
+     b30:	f1 01       	movw	r30, r2
+     b32:	ee 0f       	add	r30, r30
+     b34:	ff 1f       	adc	r31, r31
+     b36:	e2 0d       	add	r30, r2
+     b38:	f3 1d       	adc	r31, r3
+     b3a:	e4 5b       	subi	r30, 0xB4	; 180
+     b3c:	fe 4f       	sbci	r31, 0xFE	; 254
+     b3e:	81 81       	ldd	r24, Z+1	; 0x01
+     b40:	9c 85       	ldd	r25, Y+12	; 0x0c
+     b42:	89 1b       	sub	r24, r25
+     b44:	81 83       	std	Z+1, r24	; 0x01
+     b46:	0b c0       	rjmp	.+22     	; 0xb5e <__stack+0x25f>
+				else led[i].red += defColor.red;
+     b48:	f1 01       	movw	r30, r2
+     b4a:	ee 0f       	add	r30, r30
+     b4c:	ff 1f       	adc	r31, r31
+     b4e:	e2 0d       	add	r30, r2
+     b50:	f3 1d       	adc	r31, r3
+     b52:	e4 5b       	subi	r30, 0xB4	; 180
+     b54:	fe 4f       	sbci	r31, 0xFE	; 254
+     b56:	81 81       	ldd	r24, Z+1	; 0x01
+     b58:	9c 85       	ldd	r25, Y+12	; 0x0c
+     b5a:	89 0f       	add	r24, r25
+     b5c:	81 83       	std	Z+1, r24	; 0x01
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue;
+     b5e:	eb 89       	ldd	r30, Y+19	; 0x13
+     b60:	e2 ff       	sbrs	r30, 2
+     b62:	0c c0       	rjmp	.+24     	; 0xb7c <__stack+0x27d>
+     b64:	f1 01       	movw	r30, r2
+     b66:	ee 0f       	add	r30, r30
+     b68:	ff 1f       	adc	r31, r31
+     b6a:	e2 0d       	add	r30, r2
+     b6c:	f3 1d       	adc	r31, r3
+     b6e:	e4 5b       	subi	r30, 0xB4	; 180
+     b70:	fe 4f       	sbci	r31, 0xFE	; 254
+     b72:	82 81       	ldd	r24, Z+2	; 0x02
+     b74:	9c 89       	ldd	r25, Y+20	; 0x14
+     b76:	89 1b       	sub	r24, r25
+     b78:	82 83       	std	Z+2, r24	; 0x02
+     b7a:	57 c2       	rjmp	.+1198   	; 0x102a <__stack+0x72b>
+				else led[i].blue += defColor.blue;
+     b7c:	f1 01       	movw	r30, r2
+     b7e:	ee 0f       	add	r30, r30
+     b80:	ff 1f       	adc	r31, r31
+     b82:	e2 0d       	add	r30, r2
+     b84:	f3 1d       	adc	r31, r3
+     b86:	e4 5b       	subi	r30, 0xB4	; 180
+     b88:	fe 4f       	sbci	r31, 0xFE	; 254
+     b8a:	82 81       	ldd	r24, Z+2	; 0x02
+     b8c:	9c 89       	ldd	r25, Y+20	; 0x14
+     b8e:	89 0f       	add	r24, r25
+     b90:	82 83       	std	Z+2, r24	; 0x02
+     b92:	4b c2       	rjmp	.+1174   	; 0x102a <__stack+0x72b>
+				break;
+			case 10:
+			case 18:
+			case 22:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 2;
+     b94:	eb 89       	ldd	r30, Y+19	; 0x13
+     b96:	e0 ff       	sbrs	r30, 0
+     b98:	0c c0       	rjmp	.+24     	; 0xbb2 <__stack+0x2b3>
+     b9a:	f8 01       	movw	r30, r16
+     b9c:	ee 0f       	add	r30, r30
+     b9e:	ff 1f       	adc	r31, r31
+     ba0:	e0 0f       	add	r30, r16
+     ba2:	f1 1f       	adc	r31, r17
+     ba4:	e4 5b       	subi	r30, 0xB4	; 180
+     ba6:	fe 4f       	sbci	r31, 0xFE	; 254
+     ba8:	80 81       	ld	r24, Z
+     baa:	9f 81       	ldd	r25, Y+7	; 0x07
+     bac:	89 1b       	sub	r24, r25
+     bae:	80 83       	st	Z, r24
+     bb0:	0b c0       	rjmp	.+22     	; 0xbc8 <__stack+0x2c9>
+				else led[i].green += defColor.green * 2;
+     bb2:	f8 01       	movw	r30, r16
+     bb4:	ee 0f       	add	r30, r30
+     bb6:	ff 1f       	adc	r31, r31
+     bb8:	e0 0f       	add	r30, r16
+     bba:	f1 1f       	adc	r31, r17
+     bbc:	e4 5b       	subi	r30, 0xB4	; 180
+     bbe:	fe 4f       	sbci	r31, 0xFE	; 254
+     bc0:	80 81       	ld	r24, Z
+     bc2:	9f 81       	ldd	r25, Y+7	; 0x07
+     bc4:	89 0f       	add	r24, r25
+     bc6:	80 83       	st	Z, r24
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 2;
+     bc8:	eb 89       	ldd	r30, Y+19	; 0x13
+     bca:	e1 ff       	sbrs	r30, 1
+     bcc:	0c c0       	rjmp	.+24     	; 0xbe6 <__stack+0x2e7>
+     bce:	f1 01       	movw	r30, r2
+     bd0:	ee 0f       	add	r30, r30
+     bd2:	ff 1f       	adc	r31, r31
+     bd4:	e2 0d       	add	r30, r2
+     bd6:	f3 1d       	adc	r31, r3
+     bd8:	e4 5b       	subi	r30, 0xB4	; 180
+     bda:	fe 4f       	sbci	r31, 0xFE	; 254
+     bdc:	81 81       	ldd	r24, Z+1	; 0x01
+     bde:	9b 81       	ldd	r25, Y+3	; 0x03
+     be0:	89 1b       	sub	r24, r25
+     be2:	81 83       	std	Z+1, r24	; 0x01
+     be4:	0b c0       	rjmp	.+22     	; 0xbfc <__stack+0x2fd>
+				else led[i].red += defColor.red * 2;
+     be6:	f1 01       	movw	r30, r2
+     be8:	ee 0f       	add	r30, r30
+     bea:	ff 1f       	adc	r31, r31
+     bec:	e2 0d       	add	r30, r2
+     bee:	f3 1d       	adc	r31, r3
+     bf0:	e4 5b       	subi	r30, 0xB4	; 180
+     bf2:	fe 4f       	sbci	r31, 0xFE	; 254
+     bf4:	81 81       	ldd	r24, Z+1	; 0x01
+     bf6:	9b 81       	ldd	r25, Y+3	; 0x03
+     bf8:	89 0f       	add	r24, r25
+     bfa:	81 83       	std	Z+1, r24	; 0x01
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 2;
+     bfc:	eb 89       	ldd	r30, Y+19	; 0x13
+     bfe:	e2 ff       	sbrs	r30, 2
+     c00:	0b c0       	rjmp	.+22     	; 0xc18 <__stack+0x319>
+     c02:	f1 01       	movw	r30, r2
+     c04:	ee 0f       	add	r30, r30
+     c06:	ff 1f       	adc	r31, r31
+     c08:	e2 0d       	add	r30, r2
+     c0a:	f3 1d       	adc	r31, r3
+     c0c:	e4 5b       	subi	r30, 0xB4	; 180
+     c0e:	fe 4f       	sbci	r31, 0xFE	; 254
+     c10:	82 81       	ldd	r24, Z+2	; 0x02
+     c12:	84 19       	sub	r24, r4
+     c14:	82 83       	std	Z+2, r24	; 0x02
+     c16:	09 c2       	rjmp	.+1042   	; 0x102a <__stack+0x72b>
+				else led[i].blue += defColor.blue * 2;
+     c18:	f1 01       	movw	r30, r2
+     c1a:	ee 0f       	add	r30, r30
+     c1c:	ff 1f       	adc	r31, r31
+     c1e:	e2 0d       	add	r30, r2
+     c20:	f3 1d       	adc	r31, r3
+     c22:	e4 5b       	subi	r30, 0xB4	; 180
+     c24:	fe 4f       	sbci	r31, 0xFE	; 254
+     c26:	82 81       	ldd	r24, Z+2	; 0x02
+     c28:	84 0d       	add	r24, r4
+     c2a:	82 83       	std	Z+2, r24	; 0x02
+     c2c:	fe c1       	rjmp	.+1020   	; 0x102a <__stack+0x72b>
+				break;
+			case 9:
+			case 11:
+			case 17:
+			case 23:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 3;
+     c2e:	fb 89       	ldd	r31, Y+19	; 0x13
+     c30:	f0 ff       	sbrs	r31, 0
+     c32:	0c c0       	rjmp	.+24     	; 0xc4c <__stack+0x34d>
+     c34:	f8 01       	movw	r30, r16
+     c36:	ee 0f       	add	r30, r30
+     c38:	ff 1f       	adc	r31, r31
+     c3a:	e0 0f       	add	r30, r16
+     c3c:	f1 1f       	adc	r31, r17
+     c3e:	e4 5b       	subi	r30, 0xB4	; 180
+     c40:	fe 4f       	sbci	r31, 0xFE	; 254
+     c42:	80 81       	ld	r24, Z
+     c44:	99 85       	ldd	r25, Y+9	; 0x09
+     c46:	89 1b       	sub	r24, r25
+     c48:	80 83       	st	Z, r24
+     c4a:	0b c0       	rjmp	.+22     	; 0xc62 <__stack+0x363>
+				else led[i].green += defColor.green * 3;
+     c4c:	f8 01       	movw	r30, r16
+     c4e:	ee 0f       	add	r30, r30
+     c50:	ff 1f       	adc	r31, r31
+     c52:	e0 0f       	add	r30, r16
+     c54:	f1 1f       	adc	r31, r17
+     c56:	e4 5b       	subi	r30, 0xB4	; 180
+     c58:	fe 4f       	sbci	r31, 0xFE	; 254
+     c5a:	80 81       	ld	r24, Z
+     c5c:	99 85       	ldd	r25, Y+9	; 0x09
+     c5e:	89 0f       	add	r24, r25
+     c60:	80 83       	st	Z, r24
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 3;
+     c62:	eb 89       	ldd	r30, Y+19	; 0x13
+     c64:	e1 ff       	sbrs	r30, 1
+     c66:	0c c0       	rjmp	.+24     	; 0xc80 <__stack+0x381>
+     c68:	f1 01       	movw	r30, r2
+     c6a:	ee 0f       	add	r30, r30
+     c6c:	ff 1f       	adc	r31, r31
+     c6e:	e2 0d       	add	r30, r2
+     c70:	f3 1d       	adc	r31, r3
+     c72:	e4 5b       	subi	r30, 0xB4	; 180
+     c74:	fe 4f       	sbci	r31, 0xFE	; 254
+     c76:	81 81       	ldd	r24, Z+1	; 0x01
+     c78:	9d 81       	ldd	r25, Y+5	; 0x05
+     c7a:	89 1b       	sub	r24, r25
+     c7c:	81 83       	std	Z+1, r24	; 0x01
+     c7e:	0b c0       	rjmp	.+22     	; 0xc96 <__stack+0x397>
+				else led[i].red += defColor.red * 3;
+     c80:	f1 01       	movw	r30, r2
+     c82:	ee 0f       	add	r30, r30
+     c84:	ff 1f       	adc	r31, r31
+     c86:	e2 0d       	add	r30, r2
+     c88:	f3 1d       	adc	r31, r3
+     c8a:	e4 5b       	subi	r30, 0xB4	; 180
+     c8c:	fe 4f       	sbci	r31, 0xFE	; 254
+     c8e:	81 81       	ldd	r24, Z+1	; 0x01
+     c90:	9d 81       	ldd	r25, Y+5	; 0x05
+     c92:	89 0f       	add	r24, r25
+     c94:	81 83       	std	Z+1, r24	; 0x01
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 3;
+     c96:	eb 89       	ldd	r30, Y+19	; 0x13
+     c98:	e2 ff       	sbrs	r30, 2
+     c9a:	0c c0       	rjmp	.+24     	; 0xcb4 <__stack+0x3b5>
+     c9c:	f1 01       	movw	r30, r2
+     c9e:	ee 0f       	add	r30, r30
+     ca0:	ff 1f       	adc	r31, r31
+     ca2:	e2 0d       	add	r30, r2
+     ca4:	f3 1d       	adc	r31, r3
+     ca6:	e4 5b       	subi	r30, 0xB4	; 180
+     ca8:	fe 4f       	sbci	r31, 0xFE	; 254
+     caa:	82 81       	ldd	r24, Z+2	; 0x02
+     cac:	99 81       	ldd	r25, Y+1	; 0x01
+     cae:	89 1b       	sub	r24, r25
+     cb0:	82 83       	std	Z+2, r24	; 0x02
+     cb2:	bb c1       	rjmp	.+886    	; 0x102a <__stack+0x72b>
+				else led[i].blue += defColor.blue * 3;
+     cb4:	f1 01       	movw	r30, r2
+     cb6:	ee 0f       	add	r30, r30
+     cb8:	ff 1f       	adc	r31, r31
+     cba:	e2 0d       	add	r30, r2
+     cbc:	f3 1d       	adc	r31, r3
+     cbe:	e4 5b       	subi	r30, 0xB4	; 180
+     cc0:	fe 4f       	sbci	r31, 0xFE	; 254
+     cc2:	82 81       	ldd	r24, Z+2	; 0x02
+     cc4:	99 81       	ldd	r25, Y+1	; 0x01
+     cc6:	89 0f       	add	r24, r25
+     cc8:	82 83       	std	Z+2, r24	; 0x02
+     cca:	af c1       	rjmp	.+862    	; 0x102a <__stack+0x72b>
+			case 0:
+			case 8:
+			case 12:
+			case 16:
+			case 24:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 4;
+     ccc:	eb 89       	ldd	r30, Y+19	; 0x13
+     cce:	e0 ff       	sbrs	r30, 0
+     cd0:	0e c0       	rjmp	.+28     	; 0xcee <__stack+0x3ef>
+     cd2:	f8 01       	movw	r30, r16
+     cd4:	ee 0f       	add	r30, r30
+     cd6:	ff 1f       	adc	r31, r31
+     cd8:	e0 0f       	add	r30, r16
+     cda:	f1 1f       	adc	r31, r17
+     cdc:	e4 5b       	subi	r30, 0xB4	; 180
+     cde:	fe 4f       	sbci	r31, 0xFE	; 254
+     ce0:	80 81       	ld	r24, Z
+     ce2:	94 e0       	ldi	r25, 0x04	; 4
+     ce4:	e9 9e       	mul	r14, r25
+     ce6:	80 19       	sub	r24, r0
+     ce8:	11 24       	eor	r1, r1
+     cea:	80 83       	st	Z, r24
+     cec:	0d c0       	rjmp	.+26     	; 0xd08 <__stack+0x409>
+				else led[i].green += defColor.green * 4;
+     cee:	f8 01       	movw	r30, r16
+     cf0:	ee 0f       	add	r30, r30
+     cf2:	ff 1f       	adc	r31, r31
+     cf4:	e0 0f       	add	r30, r16
+     cf6:	f1 1f       	adc	r31, r17
+     cf8:	e4 5b       	subi	r30, 0xB4	; 180
+     cfa:	fe 4f       	sbci	r31, 0xFE	; 254
+     cfc:	80 81       	ld	r24, Z
+     cfe:	94 e0       	ldi	r25, 0x04	; 4
+     d00:	e9 9e       	mul	r14, r25
+     d02:	80 0d       	add	r24, r0
+     d04:	11 24       	eor	r1, r1
+     d06:	80 83       	st	Z, r24
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 4;
+     d08:	eb 89       	ldd	r30, Y+19	; 0x13
+     d0a:	e1 ff       	sbrs	r30, 1
+     d0c:	0e c0       	rjmp	.+28     	; 0xd2a <__stack+0x42b>
+     d0e:	f1 01       	movw	r30, r2
+     d10:	ee 0f       	add	r30, r30
+     d12:	ff 1f       	adc	r31, r31
+     d14:	e2 0d       	add	r30, r2
+     d16:	f3 1d       	adc	r31, r3
+     d18:	e4 5b       	subi	r30, 0xB4	; 180
+     d1a:	fe 4f       	sbci	r31, 0xFE	; 254
+     d1c:	81 81       	ldd	r24, Z+1	; 0x01
+     d1e:	94 e0       	ldi	r25, 0x04	; 4
+     d20:	c9 9e       	mul	r12, r25
+     d22:	80 19       	sub	r24, r0
+     d24:	11 24       	eor	r1, r1
+     d26:	81 83       	std	Z+1, r24	; 0x01
+     d28:	0d c0       	rjmp	.+26     	; 0xd44 <__stack+0x445>
+				else led[i].red += defColor.red * 4;
+     d2a:	f1 01       	movw	r30, r2
+     d2c:	ee 0f       	add	r30, r30
+     d2e:	ff 1f       	adc	r31, r31
+     d30:	e2 0d       	add	r30, r2
+     d32:	f3 1d       	adc	r31, r3
+     d34:	e4 5b       	subi	r30, 0xB4	; 180
+     d36:	fe 4f       	sbci	r31, 0xFE	; 254
+     d38:	81 81       	ldd	r24, Z+1	; 0x01
+     d3a:	94 e0       	ldi	r25, 0x04	; 4
+     d3c:	c9 9e       	mul	r12, r25
+     d3e:	80 0d       	add	r24, r0
+     d40:	11 24       	eor	r1, r1
+     d42:	81 83       	std	Z+1, r24	; 0x01
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 4;
+     d44:	eb 89       	ldd	r30, Y+19	; 0x13
+     d46:	e2 ff       	sbrs	r30, 2
+     d48:	0e c0       	rjmp	.+28     	; 0xd66 <__stack+0x467>
+     d4a:	f1 01       	movw	r30, r2
+     d4c:	ee 0f       	add	r30, r30
+     d4e:	ff 1f       	adc	r31, r31
+     d50:	e2 0d       	add	r30, r2
+     d52:	f3 1d       	adc	r31, r3
+     d54:	e4 5b       	subi	r30, 0xB4	; 180
+     d56:	fe 4f       	sbci	r31, 0xFE	; 254
+     d58:	82 81       	ldd	r24, Z+2	; 0x02
+     d5a:	94 e0       	ldi	r25, 0x04	; 4
+     d5c:	a9 9e       	mul	r10, r25
+     d5e:	80 19       	sub	r24, r0
+     d60:	11 24       	eor	r1, r1
+     d62:	82 83       	std	Z+2, r24	; 0x02
+     d64:	62 c1       	rjmp	.+708    	; 0x102a <__stack+0x72b>
+				else led[i].blue += defColor.blue * 4;
+     d66:	f1 01       	movw	r30, r2
+     d68:	ee 0f       	add	r30, r30
+     d6a:	ff 1f       	adc	r31, r31
+     d6c:	e2 0d       	add	r30, r2
+     d6e:	f3 1d       	adc	r31, r3
+     d70:	e4 5b       	subi	r30, 0xB4	; 180
+     d72:	fe 4f       	sbci	r31, 0xFE	; 254
+     d74:	82 81       	ldd	r24, Z+2	; 0x02
+     d76:	94 e0       	ldi	r25, 0x04	; 4
+     d78:	a9 9e       	mul	r10, r25
+     d7a:	80 0d       	add	r24, r0
+     d7c:	11 24       	eor	r1, r1
+     d7e:	82 83       	std	Z+2, r24	; 0x02
+     d80:	54 c1       	rjmp	.+680    	; 0x102a <__stack+0x72b>
+				break;
+			case 1:
+			case 7:
+			case 13:
+			case 15:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 5;
+     d82:	eb 89       	ldd	r30, Y+19	; 0x13
+     d84:	e0 ff       	sbrs	r30, 0
+     d86:	12 c0       	rjmp	.+36     	; 0xdac <__stack+0x4ad>
+     d88:	f8 01       	movw	r30, r16
+     d8a:	ee 0f       	add	r30, r30
+     d8c:	ff 1f       	adc	r31, r31
+     d8e:	e0 0f       	add	r30, r16
+     d90:	f1 1f       	adc	r31, r17
+     d92:	e4 5b       	subi	r30, 0xB4	; 180
+     d94:	fe 4f       	sbci	r31, 0xFE	; 254
+     d96:	20 81       	ld	r18, Z
+     d98:	c7 01       	movw	r24, r14
+     d9a:	88 0f       	add	r24, r24
+     d9c:	99 1f       	adc	r25, r25
+     d9e:	88 0f       	add	r24, r24
+     da0:	99 1f       	adc	r25, r25
+     da2:	8e 0d       	add	r24, r14
+     da4:	9f 1d       	adc	r25, r15
+     da6:	28 1b       	sub	r18, r24
+     da8:	20 83       	st	Z, r18
+     daa:	0d c0       	rjmp	.+26     	; 0xdc6 <__stack+0x4c7>
+				else led[i].green += defColor.green * 5;
+     dac:	f8 01       	movw	r30, r16
+     dae:	ee 0f       	add	r30, r30
+     db0:	ff 1f       	adc	r31, r31
+     db2:	e0 0f       	add	r30, r16
+     db4:	f1 1f       	adc	r31, r17
+     db6:	e4 5b       	subi	r30, 0xB4	; 180
+     db8:	fe 4f       	sbci	r31, 0xFE	; 254
+     dba:	80 81       	ld	r24, Z
+     dbc:	95 e0       	ldi	r25, 0x05	; 5
+     dbe:	e9 9e       	mul	r14, r25
+     dc0:	80 0d       	add	r24, r0
+     dc2:	11 24       	eor	r1, r1
+     dc4:	80 83       	st	Z, r24
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 5;
+     dc6:	eb 89       	ldd	r30, Y+19	; 0x13
+     dc8:	e1 ff       	sbrs	r30, 1
+     dca:	12 c0       	rjmp	.+36     	; 0xdf0 <__stack+0x4f1>
+     dcc:	f1 01       	movw	r30, r2
+     dce:	ee 0f       	add	r30, r30
+     dd0:	ff 1f       	adc	r31, r31
+     dd2:	e2 0d       	add	r30, r2
+     dd4:	f3 1d       	adc	r31, r3
+     dd6:	e4 5b       	subi	r30, 0xB4	; 180
+     dd8:	fe 4f       	sbci	r31, 0xFE	; 254
+     dda:	21 81       	ldd	r18, Z+1	; 0x01
+     ddc:	c6 01       	movw	r24, r12
+     dde:	88 0f       	add	r24, r24
+     de0:	99 1f       	adc	r25, r25
+     de2:	88 0f       	add	r24, r24
+     de4:	99 1f       	adc	r25, r25
+     de6:	8c 0d       	add	r24, r12
+     de8:	9d 1d       	adc	r25, r13
+     dea:	28 1b       	sub	r18, r24
+     dec:	21 83       	std	Z+1, r18	; 0x01
+     dee:	0d c0       	rjmp	.+26     	; 0xe0a <__stack+0x50b>
+				else led[i].red += defColor.red * 5;
+     df0:	f1 01       	movw	r30, r2
+     df2:	ee 0f       	add	r30, r30
+     df4:	ff 1f       	adc	r31, r31
+     df6:	e2 0d       	add	r30, r2
+     df8:	f3 1d       	adc	r31, r3
+     dfa:	e4 5b       	subi	r30, 0xB4	; 180
+     dfc:	fe 4f       	sbci	r31, 0xFE	; 254
+     dfe:	81 81       	ldd	r24, Z+1	; 0x01
+     e00:	95 e0       	ldi	r25, 0x05	; 5
+     e02:	c9 9e       	mul	r12, r25
+     e04:	80 0d       	add	r24, r0
+     e06:	11 24       	eor	r1, r1
+     e08:	81 83       	std	Z+1, r24	; 0x01
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 5;
+     e0a:	eb 89       	ldd	r30, Y+19	; 0x13
+     e0c:	e2 ff       	sbrs	r30, 2
+     e0e:	12 c0       	rjmp	.+36     	; 0xe34 <__stack+0x535>
+     e10:	f1 01       	movw	r30, r2
+     e12:	ee 0f       	add	r30, r30
+     e14:	ff 1f       	adc	r31, r31
+     e16:	e2 0d       	add	r30, r2
+     e18:	f3 1d       	adc	r31, r3
+     e1a:	e4 5b       	subi	r30, 0xB4	; 180
+     e1c:	fe 4f       	sbci	r31, 0xFE	; 254
+     e1e:	82 81       	ldd	r24, Z+2	; 0x02
+     e20:	95 01       	movw	r18, r10
+     e22:	22 0f       	add	r18, r18
+     e24:	33 1f       	adc	r19, r19
+     e26:	22 0f       	add	r18, r18
+     e28:	33 1f       	adc	r19, r19
+     e2a:	2a 0d       	add	r18, r10
+     e2c:	3b 1d       	adc	r19, r11
+     e2e:	82 1b       	sub	r24, r18
+     e30:	82 83       	std	Z+2, r24	; 0x02
+     e32:	fb c0       	rjmp	.+502    	; 0x102a <__stack+0x72b>
+				else led[i].blue += defColor.blue * 5;
+     e34:	f1 01       	movw	r30, r2
+     e36:	ee 0f       	add	r30, r30
+     e38:	ff 1f       	adc	r31, r31
+     e3a:	e2 0d       	add	r30, r2
+     e3c:	f3 1d       	adc	r31, r3
+     e3e:	e4 5b       	subi	r30, 0xB4	; 180
+     e40:	fe 4f       	sbci	r31, 0xFE	; 254
+     e42:	82 81       	ldd	r24, Z+2	; 0x02
+     e44:	95 e0       	ldi	r25, 0x05	; 5
+     e46:	a9 9e       	mul	r10, r25
+     e48:	80 0d       	add	r24, r0
+     e4a:	11 24       	eor	r1, r1
+     e4c:	82 83       	std	Z+2, r24	; 0x02
+     e4e:	ed c0       	rjmp	.+474    	; 0x102a <__stack+0x72b>
+				break;
+			case 2:
+			case 6:
+			case 14:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 6;
+     e50:	eb 89       	ldd	r30, Y+19	; 0x13
+     e52:	e0 ff       	sbrs	r30, 0
+     e54:	0c c0       	rjmp	.+24     	; 0xe6e <__stack+0x56f>
+     e56:	f8 01       	movw	r30, r16
+     e58:	ee 0f       	add	r30, r30
+     e5a:	ff 1f       	adc	r31, r31
+     e5c:	e0 0f       	add	r30, r16
+     e5e:	f1 1f       	adc	r31, r17
+     e60:	e4 5b       	subi	r30, 0xB4	; 180
+     e62:	fe 4f       	sbci	r31, 0xFE	; 254
+     e64:	80 81       	ld	r24, Z
+     e66:	99 89       	ldd	r25, Y+17	; 0x11
+     e68:	89 1b       	sub	r24, r25
+     e6a:	80 83       	st	Z, r24
+     e6c:	0b c0       	rjmp	.+22     	; 0xe84 <__stack+0x585>
+				else led[i].green += defColor.green * 6;
+     e6e:	f8 01       	movw	r30, r16
+     e70:	ee 0f       	add	r30, r30
+     e72:	ff 1f       	adc	r31, r31
+     e74:	e0 0f       	add	r30, r16
+     e76:	f1 1f       	adc	r31, r17
+     e78:	e4 5b       	subi	r30, 0xB4	; 180
+     e7a:	fe 4f       	sbci	r31, 0xFE	; 254
+     e7c:	80 81       	ld	r24, Z
+     e7e:	99 89       	ldd	r25, Y+17	; 0x11
+     e80:	89 0f       	add	r24, r25
+     e82:	80 83       	st	Z, r24
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 6;
+     e84:	eb 89       	ldd	r30, Y+19	; 0x13
+     e86:	e1 ff       	sbrs	r30, 1
+     e88:	0c c0       	rjmp	.+24     	; 0xea2 <__stack+0x5a3>
+     e8a:	f1 01       	movw	r30, r2
+     e8c:	ee 0f       	add	r30, r30
+     e8e:	ff 1f       	adc	r31, r31
+     e90:	e2 0d       	add	r30, r2
+     e92:	f3 1d       	adc	r31, r3
+     e94:	e4 5b       	subi	r30, 0xB4	; 180
+     e96:	fe 4f       	sbci	r31, 0xFE	; 254
+     e98:	81 81       	ldd	r24, Z+1	; 0x01
+     e9a:	9f 85       	ldd	r25, Y+15	; 0x0f
+     e9c:	89 1b       	sub	r24, r25
+     e9e:	81 83       	std	Z+1, r24	; 0x01
+     ea0:	0b c0       	rjmp	.+22     	; 0xeb8 <__stack+0x5b9>
+				else led[i].red += defColor.red * 6;
+     ea2:	f1 01       	movw	r30, r2
+     ea4:	ee 0f       	add	r30, r30
+     ea6:	ff 1f       	adc	r31, r31
+     ea8:	e2 0d       	add	r30, r2
+     eaa:	f3 1d       	adc	r31, r3
+     eac:	e4 5b       	subi	r30, 0xB4	; 180
+     eae:	fe 4f       	sbci	r31, 0xFE	; 254
+     eb0:	81 81       	ldd	r24, Z+1	; 0x01
+     eb2:	9f 85       	ldd	r25, Y+15	; 0x0f
+     eb4:	89 0f       	add	r24, r25
+     eb6:	81 83       	std	Z+1, r24	; 0x01
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 6;
+     eb8:	eb 89       	ldd	r30, Y+19	; 0x13
+     eba:	e2 ff       	sbrs	r30, 2
+     ebc:	0c c0       	rjmp	.+24     	; 0xed6 <__stack+0x5d7>
+     ebe:	f1 01       	movw	r30, r2
+     ec0:	ee 0f       	add	r30, r30
+     ec2:	ff 1f       	adc	r31, r31
+     ec4:	e2 0d       	add	r30, r2
+     ec6:	f3 1d       	adc	r31, r3
+     ec8:	e4 5b       	subi	r30, 0xB4	; 180
+     eca:	fe 4f       	sbci	r31, 0xFE	; 254
+     ecc:	82 81       	ldd	r24, Z+2	; 0x02
+     ece:	9d 85       	ldd	r25, Y+13	; 0x0d
+     ed0:	89 1b       	sub	r24, r25
+     ed2:	82 83       	std	Z+2, r24	; 0x02
+     ed4:	aa c0       	rjmp	.+340    	; 0x102a <__stack+0x72b>
+				else led[i].blue += defColor.blue * 6;
+     ed6:	f1 01       	movw	r30, r2
+     ed8:	ee 0f       	add	r30, r30
+     eda:	ff 1f       	adc	r31, r31
+     edc:	e2 0d       	add	r30, r2
+     ede:	f3 1d       	adc	r31, r3
+     ee0:	e4 5b       	subi	r30, 0xB4	; 180
+     ee2:	fe 4f       	sbci	r31, 0xFE	; 254
+     ee4:	82 81       	ldd	r24, Z+2	; 0x02
+     ee6:	9d 85       	ldd	r25, Y+13	; 0x0d
+     ee8:	89 0f       	add	r24, r25
+     eea:	82 83       	std	Z+2, r24	; 0x02
+     eec:	9e c0       	rjmp	.+316    	; 0x102a <__stack+0x72b>
+				break;
+			case 3:
+			case 5:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 7;
+     eee:	eb 89       	ldd	r30, Y+19	; 0x13
+     ef0:	e0 ff       	sbrs	r30, 0
+     ef2:	14 c0       	rjmp	.+40     	; 0xf1c <__stack+0x61d>
+     ef4:	f8 01       	movw	r30, r16
+     ef6:	ee 0f       	add	r30, r30
+     ef8:	ff 1f       	adc	r31, r31
+     efa:	e0 0f       	add	r30, r16
+     efc:	f1 1f       	adc	r31, r17
+     efe:	e4 5b       	subi	r30, 0xB4	; 180
+     f00:	fe 4f       	sbci	r31, 0xFE	; 254
+     f02:	20 81       	ld	r18, Z
+     f04:	c7 01       	movw	r24, r14
+     f06:	88 0f       	add	r24, r24
+     f08:	99 1f       	adc	r25, r25
+     f0a:	88 0f       	add	r24, r24
+     f0c:	99 1f       	adc	r25, r25
+     f0e:	88 0f       	add	r24, r24
+     f10:	99 1f       	adc	r25, r25
+     f12:	8e 19       	sub	r24, r14
+     f14:	9f 09       	sbc	r25, r15
+     f16:	28 1b       	sub	r18, r24
+     f18:	20 83       	st	Z, r18
+     f1a:	0d c0       	rjmp	.+26     	; 0xf36 <__stack+0x637>
+				else led[i].green += defColor.green * 7;
+     f1c:	f8 01       	movw	r30, r16
+     f1e:	ee 0f       	add	r30, r30
+     f20:	ff 1f       	adc	r31, r31
+     f22:	e0 0f       	add	r30, r16
+     f24:	f1 1f       	adc	r31, r17
+     f26:	e4 5b       	subi	r30, 0xB4	; 180
+     f28:	fe 4f       	sbci	r31, 0xFE	; 254
+     f2a:	80 81       	ld	r24, Z
+     f2c:	97 e0       	ldi	r25, 0x07	; 7
+     f2e:	e9 9e       	mul	r14, r25
+     f30:	80 0d       	add	r24, r0
+     f32:	11 24       	eor	r1, r1
+     f34:	80 83       	st	Z, r24
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 7;
+     f36:	eb 89       	ldd	r30, Y+19	; 0x13
+     f38:	e1 ff       	sbrs	r30, 1
+     f3a:	14 c0       	rjmp	.+40     	; 0xf64 <__stack+0x665>
+     f3c:	f1 01       	movw	r30, r2
+     f3e:	ee 0f       	add	r30, r30
+     f40:	ff 1f       	adc	r31, r31
+     f42:	e2 0d       	add	r30, r2
+     f44:	f3 1d       	adc	r31, r3
+     f46:	e4 5b       	subi	r30, 0xB4	; 180
+     f48:	fe 4f       	sbci	r31, 0xFE	; 254
+     f4a:	21 81       	ldd	r18, Z+1	; 0x01
+     f4c:	c6 01       	movw	r24, r12
+     f4e:	88 0f       	add	r24, r24
+     f50:	99 1f       	adc	r25, r25
+     f52:	88 0f       	add	r24, r24
+     f54:	99 1f       	adc	r25, r25
+     f56:	88 0f       	add	r24, r24
+     f58:	99 1f       	adc	r25, r25
+     f5a:	8c 19       	sub	r24, r12
+     f5c:	9d 09       	sbc	r25, r13
+     f5e:	28 1b       	sub	r18, r24
+     f60:	21 83       	std	Z+1, r18	; 0x01
+     f62:	0d c0       	rjmp	.+26     	; 0xf7e <__stack+0x67f>
+				else led[i].red += defColor.red * 7;
+     f64:	f1 01       	movw	r30, r2
+     f66:	ee 0f       	add	r30, r30
+     f68:	ff 1f       	adc	r31, r31
+     f6a:	e2 0d       	add	r30, r2
+     f6c:	f3 1d       	adc	r31, r3
+     f6e:	e4 5b       	subi	r30, 0xB4	; 180
+     f70:	fe 4f       	sbci	r31, 0xFE	; 254
+     f72:	81 81       	ldd	r24, Z+1	; 0x01
+     f74:	97 e0       	ldi	r25, 0x07	; 7
+     f76:	c9 9e       	mul	r12, r25
+     f78:	80 0d       	add	r24, r0
+     f7a:	11 24       	eor	r1, r1
+     f7c:	81 83       	std	Z+1, r24	; 0x01
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 7;
+     f7e:	eb 89       	ldd	r30, Y+19	; 0x13
+     f80:	e2 ff       	sbrs	r30, 2
+     f82:	0e c0       	rjmp	.+28     	; 0xfa0 <__stack+0x6a1>
+     f84:	f1 01       	movw	r30, r2
+     f86:	ee 0f       	add	r30, r30
+     f88:	ff 1f       	adc	r31, r31
+     f8a:	e2 0d       	add	r30, r2
+     f8c:	f3 1d       	adc	r31, r3
+     f8e:	e4 5b       	subi	r30, 0xB4	; 180
+     f90:	fe 4f       	sbci	r31, 0xFE	; 254
+     f92:	82 81       	ldd	r24, Z+2	; 0x02
+     f94:	93 01       	movw	r18, r6
+     f96:	2a 19       	sub	r18, r10
+     f98:	3b 09       	sbc	r19, r11
+     f9a:	82 1b       	sub	r24, r18
+     f9c:	82 83       	std	Z+2, r24	; 0x02
+     f9e:	45 c0       	rjmp	.+138    	; 0x102a <__stack+0x72b>
+				else led[i].blue += defColor.blue * 7;
+     fa0:	f1 01       	movw	r30, r2
+     fa2:	ee 0f       	add	r30, r30
+     fa4:	ff 1f       	adc	r31, r31
+     fa6:	e2 0d       	add	r30, r2
+     fa8:	f3 1d       	adc	r31, r3
+     faa:	e4 5b       	subi	r30, 0xB4	; 180
+     fac:	fe 4f       	sbci	r31, 0xFE	; 254
+     fae:	22 81       	ldd	r18, Z+2	; 0x02
+     fb0:	c3 01       	movw	r24, r6
+     fb2:	8a 19       	sub	r24, r10
+     fb4:	9b 09       	sbc	r25, r11
+     fb6:	82 0f       	add	r24, r18
+     fb8:	82 83       	std	Z+2, r24	; 0x02
+     fba:	37 c0       	rjmp	.+110    	; 0x102a <__stack+0x72b>
+				break;
+			case 4:
+				if(incOrDec & 0x01) led[i].green -= defColor.green * 8;
+     fbc:	fb 89       	ldd	r31, Y+19	; 0x13
+     fbe:	f0 ff       	sbrs	r31, 0
+     fc0:	09 c0       	rjmp	.+18     	; 0xfd4 <__stack+0x6d5>
+     fc2:	ec e4       	ldi	r30, 0x4C	; 76
+     fc4:	f1 e0       	ldi	r31, 0x01	; 1
+     fc6:	84 85       	ldd	r24, Z+12	; 0x0c
+     fc8:	98 e0       	ldi	r25, 0x08	; 8
+     fca:	e9 9e       	mul	r14, r25
+     fcc:	80 19       	sub	r24, r0
+     fce:	11 24       	eor	r1, r1
+     fd0:	84 87       	std	Z+12, r24	; 0x0c
+     fd2:	08 c0       	rjmp	.+16     	; 0xfe4 <__stack+0x6e5>
+				else led[i].green += defColor.green * 8;
+     fd4:	ec e4       	ldi	r30, 0x4C	; 76
+     fd6:	f1 e0       	ldi	r31, 0x01	; 1
+     fd8:	84 85       	ldd	r24, Z+12	; 0x0c
+     fda:	98 e0       	ldi	r25, 0x08	; 8
+     fdc:	e9 9e       	mul	r14, r25
+     fde:	80 0d       	add	r24, r0
+     fe0:	11 24       	eor	r1, r1
+     fe2:	84 87       	std	Z+12, r24	; 0x0c
+				if(incOrDec & 0x02) led[i].red -= defColor.red * 8;
+     fe4:	eb 89       	ldd	r30, Y+19	; 0x13
+     fe6:	e1 ff       	sbrs	r30, 1
+     fe8:	09 c0       	rjmp	.+18     	; 0xffc <__stack+0x6fd>
+     fea:	ec e4       	ldi	r30, 0x4C	; 76
+     fec:	f1 e0       	ldi	r31, 0x01	; 1
+     fee:	85 85       	ldd	r24, Z+13	; 0x0d
+     ff0:	98 e0       	ldi	r25, 0x08	; 8
+     ff2:	c9 9e       	mul	r12, r25
+     ff4:	80 19       	sub	r24, r0
+     ff6:	11 24       	eor	r1, r1
+     ff8:	85 87       	std	Z+13, r24	; 0x0d
+     ffa:	08 c0       	rjmp	.+16     	; 0x100c <__stack+0x70d>
+				else led[i].red += defColor.red * 8;
+     ffc:	ec e4       	ldi	r30, 0x4C	; 76
+     ffe:	f1 e0       	ldi	r31, 0x01	; 1
+    1000:	85 85       	ldd	r24, Z+13	; 0x0d
+    1002:	98 e0       	ldi	r25, 0x08	; 8
+    1004:	c9 9e       	mul	r12, r25
+    1006:	80 0d       	add	r24, r0
+    1008:	11 24       	eor	r1, r1
+    100a:	85 87       	std	Z+13, r24	; 0x0d
+				if(incOrDec & 0x04) led[i].blue -= defColor.blue * 8;
+    100c:	eb 89       	ldd	r30, Y+19	; 0x13
+    100e:	e2 ff       	sbrs	r30, 2
+    1010:	06 c0       	rjmp	.+12     	; 0x101e <__stack+0x71f>
+    1012:	ec e4       	ldi	r30, 0x4C	; 76
+    1014:	f1 e0       	ldi	r31, 0x01	; 1
+    1016:	86 85       	ldd	r24, Z+14	; 0x0e
+    1018:	86 19       	sub	r24, r6
+    101a:	86 87       	std	Z+14, r24	; 0x0e
+    101c:	58 cd       	rjmp	.-1360   	; 0xace <__stack+0x1cf>
+				else led[i].blue += defColor.blue * 8;
+    101e:	ec e4       	ldi	r30, 0x4C	; 76
+    1020:	f1 e0       	ldi	r31, 0x01	; 1
+    1022:	86 85       	ldd	r24, Z+14	; 0x0e
+    1024:	86 0d       	add	r24, r6
+    1026:	86 87       	std	Z+14, r24	; 0x0e
+    1028:	52 cd       	rjmp	.-1372   	; 0xace <__stack+0x1cf>
+		incOrDec |= 0x04; //デクリメント
+	}else{
+		defColor.blue = (second.blue - first.blue) / 8;
+	}
+	
+	for(int i=0; i<LEDNUM; i++){
+    102a:	f9 e1       	ldi	r31, 0x19	; 25
+    102c:	8f 16       	cp	r8, r31
+    102e:	91 04       	cpc	r9, r1
+    1030:	0c f4       	brge	.+2      	; 0x1034 <__stack+0x735>
+    1032:	4d cd       	rjmp	.-1382   	; 0xace <__stack+0x1cf>
+		}
+	}
+	
+	
+	
+}
+    1034:	64 96       	adiw	r28, 0x14	; 20
+    1036:	0f b6       	in	r0, 0x3f	; 63
+    1038:	f8 94       	cli
+    103a:	de bf       	out	0x3e, r29	; 62
+    103c:	0f be       	out	0x3f, r0	; 63
+    103e:	cd bf       	out	0x3d, r28	; 61
+    1040:	df 91       	pop	r29
+    1042:	cf 91       	pop	r28
+    1044:	1f 91       	pop	r17
+    1046:	0f 91       	pop	r16
+    1048:	ff 90       	pop	r15
+    104a:	ef 90       	pop	r14
+    104c:	df 90       	pop	r13
+    104e:	cf 90       	pop	r12
+    1050:	bf 90       	pop	r11
+    1052:	af 90       	pop	r10
+    1054:	9f 90       	pop	r9
+    1056:	8f 90       	pop	r8
+    1058:	7f 90       	pop	r7
+    105a:	6f 90       	pop	r6
+    105c:	5f 90       	pop	r5
+    105e:	4f 90       	pop	r4
+    1060:	3f 90       	pop	r3
+    1062:	2f 90       	pop	r2
+    1064:	08 95       	ret
+
+00001066 <brightnessAudioAll>:
+/************************************************************
+	オーディオレベルを元に輝度を反映
+		全LED同じ割合
+************************************************************/
+void brightnessAudioAll(void)
+{
+    1066:	cf 92       	push	r12
+    1068:	df 92       	push	r13
+    106a:	ef 92       	push	r14
+    106c:	ff 92       	push	r15
+    106e:	0f 93       	push	r16
+    1070:	1f 93       	push	r17
+    1072:	cf 93       	push	r28
+    1074:	df 93       	push	r29
+			led[i].green = led[i].green * tmp + 0.5;
+			led[i].blue = led[i].blue * tmp + 0.5;
+		}		
+	}*/
+	
+	float tmp = (float)audioLevel / (AUDIO_LEVEL_MAX - AUDIO_LEVEL_OFFSET);
+    1076:	60 91 40 01 	lds	r22, 0x0140	; 0x800140 <audioLevel>
+    107a:	70 91 41 01 	lds	r23, 0x0141	; 0x800141 <audioLevel+0x1>
+    107e:	80 e0       	ldi	r24, 0x00	; 0
+    1080:	90 e0       	ldi	r25, 0x00	; 0
+    1082:	0e 94 c0 0d 	call	0x1b80	; 0x1b80 <__floatunsisf>
+    1086:	20 e0       	ldi	r18, 0x00	; 0
+    1088:	30 e0       	ldi	r19, 0x00	; 0
+    108a:	48 e4       	ldi	r20, 0x48	; 72
+    108c:	54 e4       	ldi	r21, 0x44	; 68
+    108e:	0e 94 1f 0d 	call	0x1a3e	; 0x1a3e <__divsf3>
+    1092:	6b 01       	movw	r12, r22
+    1094:	7c 01       	movw	r14, r24
+	
+	for(int i=0; i<LEDNUM; i++){
+    1096:	00 e0       	ldi	r16, 0x00	; 0
+    1098:	10 e0       	ldi	r17, 0x00	; 0
+		led[i].red = led[i].red * tmp + 0.5;
+    109a:	e8 01       	movw	r28, r16
+    109c:	cc 0f       	add	r28, r28
+    109e:	dd 1f       	adc	r29, r29
+    10a0:	c0 0f       	add	r28, r16
+    10a2:	d1 1f       	adc	r29, r17
+    10a4:	c4 5b       	subi	r28, 0xB4	; 180
+    10a6:	de 4f       	sbci	r29, 0xFE	; 254
+    10a8:	69 81       	ldd	r22, Y+1	; 0x01
+    10aa:	70 e0       	ldi	r23, 0x00	; 0
+    10ac:	80 e0       	ldi	r24, 0x00	; 0
+    10ae:	90 e0       	ldi	r25, 0x00	; 0
+    10b0:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    10b4:	a7 01       	movw	r20, r14
+    10b6:	96 01       	movw	r18, r12
+    10b8:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    10bc:	20 e0       	ldi	r18, 0x00	; 0
+    10be:	30 e0       	ldi	r19, 0x00	; 0
+    10c0:	40 e0       	ldi	r20, 0x00	; 0
+    10c2:	5f e3       	ldi	r21, 0x3F	; 63
+    10c4:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    10c8:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    10cc:	69 83       	std	Y+1, r22	; 0x01
+		led[i].green = led[i].green * tmp + 0.5;
+    10ce:	68 81       	ld	r22, Y
+    10d0:	70 e0       	ldi	r23, 0x00	; 0
+    10d2:	80 e0       	ldi	r24, 0x00	; 0
+    10d4:	90 e0       	ldi	r25, 0x00	; 0
+    10d6:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    10da:	a7 01       	movw	r20, r14
+    10dc:	96 01       	movw	r18, r12
+    10de:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    10e2:	20 e0       	ldi	r18, 0x00	; 0
+    10e4:	30 e0       	ldi	r19, 0x00	; 0
+    10e6:	40 e0       	ldi	r20, 0x00	; 0
+    10e8:	5f e3       	ldi	r21, 0x3F	; 63
+    10ea:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    10ee:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    10f2:	68 83       	st	Y, r22
+		led[i].blue = led[i].blue * tmp + 0.5;
+    10f4:	6a 81       	ldd	r22, Y+2	; 0x02
+    10f6:	70 e0       	ldi	r23, 0x00	; 0
+    10f8:	80 e0       	ldi	r24, 0x00	; 0
+    10fa:	90 e0       	ldi	r25, 0x00	; 0
+    10fc:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1100:	a7 01       	movw	r20, r14
+    1102:	96 01       	movw	r18, r12
+    1104:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1108:	20 e0       	ldi	r18, 0x00	; 0
+    110a:	30 e0       	ldi	r19, 0x00	; 0
+    110c:	40 e0       	ldi	r20, 0x00	; 0
+    110e:	5f e3       	ldi	r21, 0x3F	; 63
+    1110:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1114:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1118:	6a 83       	std	Y+2, r22	; 0x02
+		}		
+	}*/
+	
+	float tmp = (float)audioLevel / (AUDIO_LEVEL_MAX - AUDIO_LEVEL_OFFSET);
+	
+	for(int i=0; i<LEDNUM; i++){
+    111a:	0f 5f       	subi	r16, 0xFF	; 255
+    111c:	1f 4f       	sbci	r17, 0xFF	; 255
+    111e:	09 31       	cpi	r16, 0x19	; 25
+    1120:	11 05       	cpc	r17, r1
+    1122:	09 f0       	breq	.+2      	; 0x1126 <brightnessAudioAll+0xc0>
+    1124:	ba cf       	rjmp	.-140    	; 0x109a <brightnessAudioAll+0x34>
+		led[i].red = led[i].red * tmp + 0.5;
+		led[i].green = led[i].green * tmp + 0.5;
+		led[i].blue = led[i].blue * tmp + 0.5;
+	}
+}
+    1126:	df 91       	pop	r29
+    1128:	cf 91       	pop	r28
+    112a:	1f 91       	pop	r17
+    112c:	0f 91       	pop	r16
+    112e:	ff 90       	pop	r15
+    1130:	ef 90       	pop	r14
+    1132:	df 90       	pop	r13
+    1134:	cf 90       	pop	r12
+    1136:	08 95       	ret
+
+00001138 <brightnessAudioMeter>:
+/************************************************************
+	オーディオレベルを元に輝度を反映
+		斜め方向に輝度を変更
+************************************************************/
+void brightnessAudioMeter(void)
+{	
+    1138:	4f 92       	push	r4
+    113a:	5f 92       	push	r5
+    113c:	6f 92       	push	r6
+    113e:	7f 92       	push	r7
+    1140:	8f 92       	push	r8
+    1142:	9f 92       	push	r9
+    1144:	af 92       	push	r10
+    1146:	bf 92       	push	r11
+    1148:	cf 92       	push	r12
+    114a:	df 92       	push	r13
+    114c:	ef 92       	push	r14
+    114e:	ff 92       	push	r15
+    1150:	0f 93       	push	r16
+    1152:	1f 93       	push	r17
+    1154:	cf 93       	push	r28
+    1156:	df 93       	push	r29
+    1158:	cd b7       	in	r28, 0x3d	; 61
+    115a:	de b7       	in	r29, 0x3e	; 62
+    115c:	c0 54       	subi	r28, 0x40	; 64
+    115e:	d1 09       	sbc	r29, r1
+    1160:	0f b6       	in	r0, 0x3f	; 63
+    1162:	f8 94       	cli
+    1164:	de bf       	out	0x3e, r29	; 62
+    1166:	0f be       	out	0x3f, r0	; 63
+    1168:	cd bf       	out	0x3d, r28	; 61
+	float ref;
+	
+	ref = (AUDIO_LEVEL_MAX - AUDIO_LEVEL_OFFSET) / 9.0;
+	
+	for(int i=0; i<9; i++){
+		if(0.0 < (audioLevel - ref * (i + 1))){
+    116a:	60 91 40 01 	lds	r22, 0x0140	; 0x800140 <audioLevel>
+    116e:	70 91 41 01 	lds	r23, 0x0141	; 0x800141 <audioLevel+0x1>
+    1172:	80 e0       	ldi	r24, 0x00	; 0
+    1174:	90 e0       	ldi	r25, 0x00	; 0
+    1176:	0e 94 c0 0d 	call	0x1b80	; 0x1b80 <__floatunsisf>
+    117a:	2c e1       	ldi	r18, 0x1C	; 28
+    117c:	37 ec       	ldi	r19, 0xC7	; 199
+    117e:	41 eb       	ldi	r20, 0xB1	; 177
+    1180:	52 e4       	ldi	r21, 0x42	; 66
+    1182:	0e 94 b2 0c 	call	0x1964	; 0x1964 <__subsf3>
+    1186:	20 e0       	ldi	r18, 0x00	; 0
+    1188:	30 e0       	ldi	r19, 0x00	; 0
+    118a:	a9 01       	movw	r20, r18
+    118c:	0e 94 4e 0e 	call	0x1c9c	; 0x1c9c <__gesf2>
+    1190:	18 16       	cp	r1, r24
+    1192:	0c f4       	brge	.+2      	; 0x1196 <brightnessAudioMeter+0x5e>
+    1194:	68 c3       	rjmp	.+1744   	; 0x1866 <brightnessAudioMeter+0x72e>
+	float tmp[9];
+	float ref;
+	
+	ref = (AUDIO_LEVEL_MAX - AUDIO_LEVEL_OFFSET) / 9.0;
+	
+	for(int i=0; i<9; i++){
+    1196:	00 e0       	ldi	r16, 0x00	; 0
+    1198:	10 e0       	ldi	r17, 0x00	; 0
+    119a:	05 c3       	rjmp	.+1546   	; 0x17a6 <brightnessAudioMeter+0x66e>
+		if(0.0 < (audioLevel - ref * (i + 1))){
+    119c:	60 91 40 01 	lds	r22, 0x0140	; 0x800140 <audioLevel>
+    11a0:	70 91 41 01 	lds	r23, 0x0141	; 0x800141 <audioLevel+0x1>
+    11a4:	78 01       	movw	r14, r16
+    11a6:	8f ef       	ldi	r24, 0xFF	; 255
+    11a8:	e8 1a       	sub	r14, r24
+    11aa:	f8 0a       	sbc	r15, r24
+    11ac:	80 e0       	ldi	r24, 0x00	; 0
+    11ae:	90 e0       	ldi	r25, 0x00	; 0
+    11b0:	0e 94 c0 0d 	call	0x1b80	; 0x1b80 <__floatunsisf>
+    11b4:	2b 01       	movw	r4, r22
+    11b6:	3c 01       	movw	r6, r24
+    11b8:	b7 01       	movw	r22, r14
+    11ba:	0f 2c       	mov	r0, r15
+    11bc:	00 0c       	add	r0, r0
+    11be:	88 0b       	sbc	r24, r24
+    11c0:	99 0b       	sbc	r25, r25
+    11c2:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    11c6:	2c e1       	ldi	r18, 0x1C	; 28
+    11c8:	37 ec       	ldi	r19, 0xC7	; 199
+    11ca:	41 eb       	ldi	r20, 0xB1	; 177
+    11cc:	52 e4       	ldi	r21, 0x42	; 66
+    11ce:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    11d2:	9b 01       	movw	r18, r22
+    11d4:	ac 01       	movw	r20, r24
+    11d6:	c3 01       	movw	r24, r6
+    11d8:	b2 01       	movw	r22, r4
+    11da:	0e 94 b2 0c 	call	0x1964	; 0x1964 <__subsf3>
+    11de:	20 e0       	ldi	r18, 0x00	; 0
+    11e0:	30 e0       	ldi	r19, 0x00	; 0
+    11e2:	a9 01       	movw	r20, r18
+    11e4:	0e 94 4e 0e 	call	0x1c9c	; 0x1c9c <__gesf2>
+    11e8:	18 16       	cp	r1, r24
+    11ea:	0c f0       	brlt	.+2      	; 0x11ee <brightnessAudioMeter+0xb6>
+    11ec:	dc c2       	rjmp	.+1464   	; 0x17a6 <brightnessAudioMeter+0x66e>
+			tmp[i] = 1.0;
+    11ee:	d6 01       	movw	r26, r12
+    11f0:	8d 92       	st	X+, r8
+    11f2:	9d 92       	st	X+, r9
+    11f4:	ad 92       	st	X+, r10
+    11f6:	bd 92       	st	X+, r11
+    11f8:	6d 01       	movw	r12, r26
+	float ref;
+	
+	ref = (AUDIO_LEVEL_MAX - AUDIO_LEVEL_OFFSET) / 9.0;
+	
+	for(int i=0; i<9; i++){
+		if(0.0 < (audioLevel - ref * (i + 1))){
+    11fa:	87 01       	movw	r16, r14
+	float tmp[9];
+	float ref;
+	
+	ref = (AUDIO_LEVEL_MAX - AUDIO_LEVEL_OFFSET) / 9.0;
+	
+	for(int i=0; i<9; i++){
+    11fc:	09 30       	cpi	r16, 0x09	; 9
+    11fe:	11 05       	cpc	r17, r1
+    1200:	69 f6       	brne	.-102    	; 0x119c <brightnessAudioMeter+0x64>
+    1202:	e5 c2       	rjmp	.+1482   	; 0x17ce <brightnessAudioMeter+0x696>
+		if(0.0 < (audioLevel - ref * (i + 1))){
+			tmp[i] = 1.0;
+		}else{
+			tmp[i] = 0.5;
+			for(int j=i; j<9; j++) tmp[j] = 0.0;
+    1204:	11 92       	st	Z+, r1
+    1206:	11 92       	st	Z+, r1
+    1208:	11 92       	st	Z+, r1
+    120a:	11 92       	st	Z+, r1
+    120c:	0f 5f       	subi	r16, 0xFF	; 255
+    120e:	1f 4f       	sbci	r17, 0xFF	; 255
+    1210:	09 30       	cpi	r16, 0x09	; 9
+    1212:	11 05       	cpc	r17, r1
+    1214:	bc f3       	brlt	.-18     	; 0x1204 <brightnessAudioMeter+0xcc>
+    1216:	db c2       	rjmp	.+1462   	; 0x17ce <brightnessAudioMeter+0x696>
+    1218:	bf ef       	ldi	r27, 0xFF	; 255
+    121a:	eb 1a       	sub	r14, r27
+    121c:	fb 0a       	sbc	r15, r27
+    121e:	c7 01       	movw	r24, r14
+    1220:	01 97       	sbiw	r24, 0x01	; 1
+			break;
+		}
+	}
+	
+	for(int i=0; i<LEDNUM; i++){
+		switch(i){
+    1222:	89 31       	cpi	r24, 0x19	; 25
+    1224:	91 05       	cpc	r25, r1
+    1226:	08 f0       	brcs	.+2      	; 0x122a <brightnessAudioMeter+0xf2>
+    1228:	b8 c2       	rjmp	.+1392   	; 0x179a <brightnessAudioMeter+0x662>
+    122a:	fc 01       	movw	r30, r24
+    122c:	e9 5a       	subi	r30, 0xA9	; 169
+    122e:	ff 4f       	sbci	r31, 0xFF	; 255
+    1230:	0c 94 e4 0e 	jmp	0x1dc8	; 0x1dc8 <__tablejump2__>
+			case 20:
+				led[i].red = led[i].red * tmp[0] + 0.5;
+    1234:	f6 01       	movw	r30, r12
+    1236:	65 ad       	ldd	r22, Z+61	; 0x3d
+    1238:	70 e0       	ldi	r23, 0x00	; 0
+    123a:	80 e0       	ldi	r24, 0x00	; 0
+    123c:	90 e0       	ldi	r25, 0x00	; 0
+    123e:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1242:	a3 01       	movw	r20, r6
+    1244:	92 01       	movw	r18, r4
+    1246:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    124a:	20 e0       	ldi	r18, 0x00	; 0
+    124c:	30 e0       	ldi	r19, 0x00	; 0
+    124e:	40 e0       	ldi	r20, 0x00	; 0
+    1250:	5f e3       	ldi	r21, 0x3F	; 63
+    1252:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1256:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    125a:	d6 01       	movw	r26, r12
+    125c:	dd 96       	adiw	r26, 0x3d	; 61
+    125e:	6c 93       	st	X, r22
+    1260:	dd 97       	sbiw	r26, 0x3d	; 61
+				led[i].green = led[i].green * tmp[0] + 0.5;
+    1262:	dc 96       	adiw	r26, 0x3c	; 60
+    1264:	6c 91       	ld	r22, X
+    1266:	70 e0       	ldi	r23, 0x00	; 0
+    1268:	80 e0       	ldi	r24, 0x00	; 0
+    126a:	90 e0       	ldi	r25, 0x00	; 0
+    126c:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1270:	a3 01       	movw	r20, r6
+    1272:	92 01       	movw	r18, r4
+    1274:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1278:	20 e0       	ldi	r18, 0x00	; 0
+    127a:	30 e0       	ldi	r19, 0x00	; 0
+    127c:	40 e0       	ldi	r20, 0x00	; 0
+    127e:	5f e3       	ldi	r21, 0x3F	; 63
+    1280:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1284:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1288:	f6 01       	movw	r30, r12
+    128a:	64 af       	std	Z+60, r22	; 0x3c
+				led[i].blue = led[i].blue * tmp[0] + 0.5;
+    128c:	66 ad       	ldd	r22, Z+62	; 0x3e
+    128e:	70 e0       	ldi	r23, 0x00	; 0
+    1290:	80 e0       	ldi	r24, 0x00	; 0
+    1292:	90 e0       	ldi	r25, 0x00	; 0
+    1294:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1298:	a3 01       	movw	r20, r6
+    129a:	92 01       	movw	r18, r4
+    129c:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    12a0:	20 e0       	ldi	r18, 0x00	; 0
+    12a2:	30 e0       	ldi	r19, 0x00	; 0
+    12a4:	40 e0       	ldi	r20, 0x00	; 0
+    12a6:	5f e3       	ldi	r21, 0x3F	; 63
+    12a8:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    12ac:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    12b0:	d6 01       	movw	r26, r12
+    12b2:	de 96       	adiw	r26, 0x3e	; 62
+    12b4:	6c 93       	st	X, r22
+				break;
+    12b6:	b0 cf       	rjmp	.-160    	; 0x1218 <brightnessAudioMeter+0xe0>
+			case 19:
+			case 21:
+				led[i].red = led[i].red * tmp[1] + 0.5;
+    12b8:	8c 01       	movw	r16, r24
+    12ba:	00 0f       	add	r16, r16
+    12bc:	11 1f       	adc	r17, r17
+    12be:	80 0f       	add	r24, r16
+    12c0:	91 1f       	adc	r25, r17
+    12c2:	8c 01       	movw	r16, r24
+    12c4:	04 5b       	subi	r16, 0xB4	; 180
+    12c6:	1e 4f       	sbci	r17, 0xFE	; 254
+    12c8:	f8 01       	movw	r30, r16
+    12ca:	61 81       	ldd	r22, Z+1	; 0x01
+    12cc:	70 e0       	ldi	r23, 0x00	; 0
+    12ce:	80 e0       	ldi	r24, 0x00	; 0
+    12d0:	90 e0       	ldi	r25, 0x00	; 0
+    12d2:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    12d6:	2d a1       	ldd	r18, Y+37	; 0x25
+    12d8:	3e a1       	ldd	r19, Y+38	; 0x26
+    12da:	4f a1       	ldd	r20, Y+39	; 0x27
+    12dc:	58 a5       	ldd	r21, Y+40	; 0x28
+    12de:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    12e2:	20 e0       	ldi	r18, 0x00	; 0
+    12e4:	30 e0       	ldi	r19, 0x00	; 0
+    12e6:	40 e0       	ldi	r20, 0x00	; 0
+    12e8:	5f e3       	ldi	r21, 0x3F	; 63
+    12ea:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    12ee:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    12f2:	d8 01       	movw	r26, r16
+    12f4:	11 96       	adiw	r26, 0x01	; 1
+    12f6:	6c 93       	st	X, r22
+    12f8:	11 97       	sbiw	r26, 0x01	; 1
+				led[i].green = led[i].green * tmp[1] + 0.5;
+    12fa:	6c 91       	ld	r22, X
+    12fc:	70 e0       	ldi	r23, 0x00	; 0
+    12fe:	80 e0       	ldi	r24, 0x00	; 0
+    1300:	90 e0       	ldi	r25, 0x00	; 0
+    1302:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1306:	2d a1       	ldd	r18, Y+37	; 0x25
+    1308:	3e a1       	ldd	r19, Y+38	; 0x26
+    130a:	4f a1       	ldd	r20, Y+39	; 0x27
+    130c:	58 a5       	ldd	r21, Y+40	; 0x28
+    130e:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1312:	20 e0       	ldi	r18, 0x00	; 0
+    1314:	30 e0       	ldi	r19, 0x00	; 0
+    1316:	40 e0       	ldi	r20, 0x00	; 0
+    1318:	5f e3       	ldi	r21, 0x3F	; 63
+    131a:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    131e:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1322:	f8 01       	movw	r30, r16
+    1324:	60 83       	st	Z, r22
+				led[i].blue = led[i].blue * tmp[1] + 0.5;
+    1326:	62 81       	ldd	r22, Z+2	; 0x02
+    1328:	70 e0       	ldi	r23, 0x00	; 0
+    132a:	80 e0       	ldi	r24, 0x00	; 0
+    132c:	90 e0       	ldi	r25, 0x00	; 0
+    132e:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1332:	2d a1       	ldd	r18, Y+37	; 0x25
+    1334:	3e a1       	ldd	r19, Y+38	; 0x26
+    1336:	4f a1       	ldd	r20, Y+39	; 0x27
+    1338:	58 a5       	ldd	r21, Y+40	; 0x28
+    133a:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    133e:	20 e0       	ldi	r18, 0x00	; 0
+    1340:	30 e0       	ldi	r19, 0x00	; 0
+    1342:	40 e0       	ldi	r20, 0x00	; 0
+    1344:	5f e3       	ldi	r21, 0x3F	; 63
+    1346:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    134a:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    134e:	d8 01       	movw	r26, r16
+    1350:	12 96       	adiw	r26, 0x02	; 2
+    1352:	6c 93       	st	X, r22
+				break;
+    1354:	22 c2       	rjmp	.+1092   	; 0x179a <brightnessAudioMeter+0x662>
+			case 10:
+			case 18:
+			case 22:
+				led[i].red = led[i].red * tmp[2] + 0.5;
+    1356:	8c 01       	movw	r16, r24
+    1358:	00 0f       	add	r16, r16
+    135a:	11 1f       	adc	r17, r17
+    135c:	80 0f       	add	r24, r16
+    135e:	91 1f       	adc	r25, r17
+    1360:	8c 01       	movw	r16, r24
+    1362:	04 5b       	subi	r16, 0xB4	; 180
+    1364:	1e 4f       	sbci	r17, 0xFE	; 254
+    1366:	f8 01       	movw	r30, r16
+    1368:	61 81       	ldd	r22, Z+1	; 0x01
+    136a:	70 e0       	ldi	r23, 0x00	; 0
+    136c:	80 e0       	ldi	r24, 0x00	; 0
+    136e:	90 e0       	ldi	r25, 0x00	; 0
+    1370:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1374:	29 a5       	ldd	r18, Y+41	; 0x29
+    1376:	3a a5       	ldd	r19, Y+42	; 0x2a
+    1378:	4b a5       	ldd	r20, Y+43	; 0x2b
+    137a:	5c a5       	ldd	r21, Y+44	; 0x2c
+    137c:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1380:	20 e0       	ldi	r18, 0x00	; 0
+    1382:	30 e0       	ldi	r19, 0x00	; 0
+    1384:	40 e0       	ldi	r20, 0x00	; 0
+    1386:	5f e3       	ldi	r21, 0x3F	; 63
+    1388:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    138c:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1390:	d8 01       	movw	r26, r16
+    1392:	11 96       	adiw	r26, 0x01	; 1
+    1394:	6c 93       	st	X, r22
+    1396:	11 97       	sbiw	r26, 0x01	; 1
+				led[i].green = led[i].green * tmp[2] + 0.5;
+    1398:	6c 91       	ld	r22, X
+    139a:	70 e0       	ldi	r23, 0x00	; 0
+    139c:	80 e0       	ldi	r24, 0x00	; 0
+    139e:	90 e0       	ldi	r25, 0x00	; 0
+    13a0:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    13a4:	29 a5       	ldd	r18, Y+41	; 0x29
+    13a6:	3a a5       	ldd	r19, Y+42	; 0x2a
+    13a8:	4b a5       	ldd	r20, Y+43	; 0x2b
+    13aa:	5c a5       	ldd	r21, Y+44	; 0x2c
+    13ac:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    13b0:	20 e0       	ldi	r18, 0x00	; 0
+    13b2:	30 e0       	ldi	r19, 0x00	; 0
+    13b4:	40 e0       	ldi	r20, 0x00	; 0
+    13b6:	5f e3       	ldi	r21, 0x3F	; 63
+    13b8:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    13bc:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    13c0:	f8 01       	movw	r30, r16
+    13c2:	60 83       	st	Z, r22
+				led[i].blue = led[i].blue * tmp[2] + 0.5;
+    13c4:	62 81       	ldd	r22, Z+2	; 0x02
+    13c6:	70 e0       	ldi	r23, 0x00	; 0
+    13c8:	80 e0       	ldi	r24, 0x00	; 0
+    13ca:	90 e0       	ldi	r25, 0x00	; 0
+    13cc:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    13d0:	29 a5       	ldd	r18, Y+41	; 0x29
+    13d2:	3a a5       	ldd	r19, Y+42	; 0x2a
+    13d4:	4b a5       	ldd	r20, Y+43	; 0x2b
+    13d6:	5c a5       	ldd	r21, Y+44	; 0x2c
+    13d8:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    13dc:	20 e0       	ldi	r18, 0x00	; 0
+    13de:	30 e0       	ldi	r19, 0x00	; 0
+    13e0:	40 e0       	ldi	r20, 0x00	; 0
+    13e2:	5f e3       	ldi	r21, 0x3F	; 63
+    13e4:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    13e8:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    13ec:	d8 01       	movw	r26, r16
+    13ee:	12 96       	adiw	r26, 0x02	; 2
+    13f0:	6c 93       	st	X, r22
+				break;
+    13f2:	d3 c1       	rjmp	.+934    	; 0x179a <brightnessAudioMeter+0x662>
+			case 9:
+			case 11:
+			case 17:
+			case 23:
+				led[i].red = led[i].red * tmp[3] + 0.5;
+    13f4:	8c 01       	movw	r16, r24
+    13f6:	00 0f       	add	r16, r16
+    13f8:	11 1f       	adc	r17, r17
+    13fa:	80 0f       	add	r24, r16
+    13fc:	91 1f       	adc	r25, r17
+    13fe:	8c 01       	movw	r16, r24
+    1400:	04 5b       	subi	r16, 0xB4	; 180
+    1402:	1e 4f       	sbci	r17, 0xFE	; 254
+    1404:	f8 01       	movw	r30, r16
+    1406:	61 81       	ldd	r22, Z+1	; 0x01
+    1408:	70 e0       	ldi	r23, 0x00	; 0
+    140a:	80 e0       	ldi	r24, 0x00	; 0
+    140c:	90 e0       	ldi	r25, 0x00	; 0
+    140e:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1412:	2d a5       	ldd	r18, Y+45	; 0x2d
+    1414:	3e a5       	ldd	r19, Y+46	; 0x2e
+    1416:	4f a5       	ldd	r20, Y+47	; 0x2f
+    1418:	58 a9       	ldd	r21, Y+48	; 0x30
+    141a:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    141e:	20 e0       	ldi	r18, 0x00	; 0
+    1420:	30 e0       	ldi	r19, 0x00	; 0
+    1422:	40 e0       	ldi	r20, 0x00	; 0
+    1424:	5f e3       	ldi	r21, 0x3F	; 63
+    1426:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    142a:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    142e:	d8 01       	movw	r26, r16
+    1430:	11 96       	adiw	r26, 0x01	; 1
+    1432:	6c 93       	st	X, r22
+    1434:	11 97       	sbiw	r26, 0x01	; 1
+				led[i].green = led[i].green * tmp[3] + 0.5;
+    1436:	6c 91       	ld	r22, X
+    1438:	70 e0       	ldi	r23, 0x00	; 0
+    143a:	80 e0       	ldi	r24, 0x00	; 0
+    143c:	90 e0       	ldi	r25, 0x00	; 0
+    143e:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1442:	2d a5       	ldd	r18, Y+45	; 0x2d
+    1444:	3e a5       	ldd	r19, Y+46	; 0x2e
+    1446:	4f a5       	ldd	r20, Y+47	; 0x2f
+    1448:	58 a9       	ldd	r21, Y+48	; 0x30
+    144a:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    144e:	20 e0       	ldi	r18, 0x00	; 0
+    1450:	30 e0       	ldi	r19, 0x00	; 0
+    1452:	40 e0       	ldi	r20, 0x00	; 0
+    1454:	5f e3       	ldi	r21, 0x3F	; 63
+    1456:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    145a:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    145e:	f8 01       	movw	r30, r16
+    1460:	60 83       	st	Z, r22
+				led[i].blue = led[i].blue * tmp[3] + 0.5;
+    1462:	62 81       	ldd	r22, Z+2	; 0x02
+    1464:	70 e0       	ldi	r23, 0x00	; 0
+    1466:	80 e0       	ldi	r24, 0x00	; 0
+    1468:	90 e0       	ldi	r25, 0x00	; 0
+    146a:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    146e:	2d a5       	ldd	r18, Y+45	; 0x2d
+    1470:	3e a5       	ldd	r19, Y+46	; 0x2e
+    1472:	4f a5       	ldd	r20, Y+47	; 0x2f
+    1474:	58 a9       	ldd	r21, Y+48	; 0x30
+    1476:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    147a:	20 e0       	ldi	r18, 0x00	; 0
+    147c:	30 e0       	ldi	r19, 0x00	; 0
+    147e:	40 e0       	ldi	r20, 0x00	; 0
+    1480:	5f e3       	ldi	r21, 0x3F	; 63
+    1482:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1486:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    148a:	d8 01       	movw	r26, r16
+    148c:	12 96       	adiw	r26, 0x02	; 2
+    148e:	6c 93       	st	X, r22
+				break;
+    1490:	84 c1       	rjmp	.+776    	; 0x179a <brightnessAudioMeter+0x662>
+			case 0:
+			case 8:
+			case 12:
+			case 16:
+			case 24:
+				led[i].red = led[i].red * tmp[4] + 0.5;
+    1492:	8c 01       	movw	r16, r24
+    1494:	00 0f       	add	r16, r16
+    1496:	11 1f       	adc	r17, r17
+    1498:	80 0f       	add	r24, r16
+    149a:	91 1f       	adc	r25, r17
+    149c:	8c 01       	movw	r16, r24
+    149e:	04 5b       	subi	r16, 0xB4	; 180
+    14a0:	1e 4f       	sbci	r17, 0xFE	; 254
+    14a2:	f8 01       	movw	r30, r16
+    14a4:	61 81       	ldd	r22, Z+1	; 0x01
+    14a6:	70 e0       	ldi	r23, 0x00	; 0
+    14a8:	80 e0       	ldi	r24, 0x00	; 0
+    14aa:	90 e0       	ldi	r25, 0x00	; 0
+    14ac:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    14b0:	29 a9       	ldd	r18, Y+49	; 0x31
+    14b2:	3a a9       	ldd	r19, Y+50	; 0x32
+    14b4:	4b a9       	ldd	r20, Y+51	; 0x33
+    14b6:	5c a9       	ldd	r21, Y+52	; 0x34
+    14b8:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    14bc:	20 e0       	ldi	r18, 0x00	; 0
+    14be:	30 e0       	ldi	r19, 0x00	; 0
+    14c0:	40 e0       	ldi	r20, 0x00	; 0
+    14c2:	5f e3       	ldi	r21, 0x3F	; 63
+    14c4:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    14c8:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    14cc:	d8 01       	movw	r26, r16
+    14ce:	11 96       	adiw	r26, 0x01	; 1
+    14d0:	6c 93       	st	X, r22
+    14d2:	11 97       	sbiw	r26, 0x01	; 1
+				led[i].green = led[i].green * tmp[4] + 0.5;
+    14d4:	6c 91       	ld	r22, X
+    14d6:	70 e0       	ldi	r23, 0x00	; 0
+    14d8:	80 e0       	ldi	r24, 0x00	; 0
+    14da:	90 e0       	ldi	r25, 0x00	; 0
+    14dc:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    14e0:	29 a9       	ldd	r18, Y+49	; 0x31
+    14e2:	3a a9       	ldd	r19, Y+50	; 0x32
+    14e4:	4b a9       	ldd	r20, Y+51	; 0x33
+    14e6:	5c a9       	ldd	r21, Y+52	; 0x34
+    14e8:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    14ec:	20 e0       	ldi	r18, 0x00	; 0
+    14ee:	30 e0       	ldi	r19, 0x00	; 0
+    14f0:	40 e0       	ldi	r20, 0x00	; 0
+    14f2:	5f e3       	ldi	r21, 0x3F	; 63
+    14f4:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    14f8:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    14fc:	f8 01       	movw	r30, r16
+    14fe:	60 83       	st	Z, r22
+				led[i].blue = led[i].blue * tmp[4] + 0.5;
+    1500:	62 81       	ldd	r22, Z+2	; 0x02
+    1502:	70 e0       	ldi	r23, 0x00	; 0
+    1504:	80 e0       	ldi	r24, 0x00	; 0
+    1506:	90 e0       	ldi	r25, 0x00	; 0
+    1508:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    150c:	29 a9       	ldd	r18, Y+49	; 0x31
+    150e:	3a a9       	ldd	r19, Y+50	; 0x32
+    1510:	4b a9       	ldd	r20, Y+51	; 0x33
+    1512:	5c a9       	ldd	r21, Y+52	; 0x34
+    1514:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1518:	20 e0       	ldi	r18, 0x00	; 0
+    151a:	30 e0       	ldi	r19, 0x00	; 0
+    151c:	40 e0       	ldi	r20, 0x00	; 0
+    151e:	5f e3       	ldi	r21, 0x3F	; 63
+    1520:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1524:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1528:	d8 01       	movw	r26, r16
+    152a:	12 96       	adiw	r26, 0x02	; 2
+    152c:	6c 93       	st	X, r22
+				break;
+    152e:	35 c1       	rjmp	.+618    	; 0x179a <brightnessAudioMeter+0x662>
+			case 1:
+			case 7:
+			case 13:
+			case 15:
+				led[i].red = led[i].red * tmp[5] + 0.5;
+    1530:	8c 01       	movw	r16, r24
+    1532:	00 0f       	add	r16, r16
+    1534:	11 1f       	adc	r17, r17
+    1536:	80 0f       	add	r24, r16
+    1538:	91 1f       	adc	r25, r17
+    153a:	8c 01       	movw	r16, r24
+    153c:	04 5b       	subi	r16, 0xB4	; 180
+    153e:	1e 4f       	sbci	r17, 0xFE	; 254
+    1540:	f8 01       	movw	r30, r16
+    1542:	61 81       	ldd	r22, Z+1	; 0x01
+    1544:	70 e0       	ldi	r23, 0x00	; 0
+    1546:	80 e0       	ldi	r24, 0x00	; 0
+    1548:	90 e0       	ldi	r25, 0x00	; 0
+    154a:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    154e:	2d a9       	ldd	r18, Y+53	; 0x35
+    1550:	3e a9       	ldd	r19, Y+54	; 0x36
+    1552:	4f a9       	ldd	r20, Y+55	; 0x37
+    1554:	58 ad       	ldd	r21, Y+56	; 0x38
+    1556:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    155a:	20 e0       	ldi	r18, 0x00	; 0
+    155c:	30 e0       	ldi	r19, 0x00	; 0
+    155e:	40 e0       	ldi	r20, 0x00	; 0
+    1560:	5f e3       	ldi	r21, 0x3F	; 63
+    1562:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1566:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    156a:	d8 01       	movw	r26, r16
+    156c:	11 96       	adiw	r26, 0x01	; 1
+    156e:	6c 93       	st	X, r22
+    1570:	11 97       	sbiw	r26, 0x01	; 1
+				led[i].green = led[i].green * tmp[5] + 0.5;
+    1572:	6c 91       	ld	r22, X
+    1574:	70 e0       	ldi	r23, 0x00	; 0
+    1576:	80 e0       	ldi	r24, 0x00	; 0
+    1578:	90 e0       	ldi	r25, 0x00	; 0
+    157a:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    157e:	2d a9       	ldd	r18, Y+53	; 0x35
+    1580:	3e a9       	ldd	r19, Y+54	; 0x36
+    1582:	4f a9       	ldd	r20, Y+55	; 0x37
+    1584:	58 ad       	ldd	r21, Y+56	; 0x38
+    1586:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    158a:	20 e0       	ldi	r18, 0x00	; 0
+    158c:	30 e0       	ldi	r19, 0x00	; 0
+    158e:	40 e0       	ldi	r20, 0x00	; 0
+    1590:	5f e3       	ldi	r21, 0x3F	; 63
+    1592:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1596:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    159a:	f8 01       	movw	r30, r16
+    159c:	60 83       	st	Z, r22
+				led[i].blue = led[i].blue * tmp[5] + 0.5;
+    159e:	62 81       	ldd	r22, Z+2	; 0x02
+    15a0:	70 e0       	ldi	r23, 0x00	; 0
+    15a2:	80 e0       	ldi	r24, 0x00	; 0
+    15a4:	90 e0       	ldi	r25, 0x00	; 0
+    15a6:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    15aa:	2d a9       	ldd	r18, Y+53	; 0x35
+    15ac:	3e a9       	ldd	r19, Y+54	; 0x36
+    15ae:	4f a9       	ldd	r20, Y+55	; 0x37
+    15b0:	58 ad       	ldd	r21, Y+56	; 0x38
+    15b2:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    15b6:	20 e0       	ldi	r18, 0x00	; 0
+    15b8:	30 e0       	ldi	r19, 0x00	; 0
+    15ba:	40 e0       	ldi	r20, 0x00	; 0
+    15bc:	5f e3       	ldi	r21, 0x3F	; 63
+    15be:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    15c2:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    15c6:	d8 01       	movw	r26, r16
+    15c8:	12 96       	adiw	r26, 0x02	; 2
+    15ca:	6c 93       	st	X, r22
+				break;
+    15cc:	e6 c0       	rjmp	.+460    	; 0x179a <brightnessAudioMeter+0x662>
+			case 2:
+			case 6:
+			case 14:
+				led[i].red = led[i].red * tmp[6] + 0.5;
+    15ce:	8c 01       	movw	r16, r24
+    15d0:	00 0f       	add	r16, r16
+    15d2:	11 1f       	adc	r17, r17
+    15d4:	80 0f       	add	r24, r16
+    15d6:	91 1f       	adc	r25, r17
+    15d8:	8c 01       	movw	r16, r24
+    15da:	04 5b       	subi	r16, 0xB4	; 180
+    15dc:	1e 4f       	sbci	r17, 0xFE	; 254
+    15de:	f8 01       	movw	r30, r16
+    15e0:	61 81       	ldd	r22, Z+1	; 0x01
+    15e2:	70 e0       	ldi	r23, 0x00	; 0
+    15e4:	80 e0       	ldi	r24, 0x00	; 0
+    15e6:	90 e0       	ldi	r25, 0x00	; 0
+    15e8:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    15ec:	29 ad       	ldd	r18, Y+57	; 0x39
+    15ee:	3a ad       	ldd	r19, Y+58	; 0x3a
+    15f0:	4b ad       	ldd	r20, Y+59	; 0x3b
+    15f2:	5c ad       	ldd	r21, Y+60	; 0x3c
+    15f4:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    15f8:	20 e0       	ldi	r18, 0x00	; 0
+    15fa:	30 e0       	ldi	r19, 0x00	; 0
+    15fc:	40 e0       	ldi	r20, 0x00	; 0
+    15fe:	5f e3       	ldi	r21, 0x3F	; 63
+    1600:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1604:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1608:	d8 01       	movw	r26, r16
+    160a:	11 96       	adiw	r26, 0x01	; 1
+    160c:	6c 93       	st	X, r22
+    160e:	11 97       	sbiw	r26, 0x01	; 1
+				led[i].green = led[i].green * tmp[6] + 0.5;
+    1610:	6c 91       	ld	r22, X
+    1612:	70 e0       	ldi	r23, 0x00	; 0
+    1614:	80 e0       	ldi	r24, 0x00	; 0
+    1616:	90 e0       	ldi	r25, 0x00	; 0
+    1618:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    161c:	29 ad       	ldd	r18, Y+57	; 0x39
+    161e:	3a ad       	ldd	r19, Y+58	; 0x3a
+    1620:	4b ad       	ldd	r20, Y+59	; 0x3b
+    1622:	5c ad       	ldd	r21, Y+60	; 0x3c
+    1624:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1628:	20 e0       	ldi	r18, 0x00	; 0
+    162a:	30 e0       	ldi	r19, 0x00	; 0
+    162c:	40 e0       	ldi	r20, 0x00	; 0
+    162e:	5f e3       	ldi	r21, 0x3F	; 63
+    1630:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1634:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1638:	f8 01       	movw	r30, r16
+    163a:	60 83       	st	Z, r22
+				led[i].blue = led[i].blue * tmp[6] + 0.5;
+    163c:	62 81       	ldd	r22, Z+2	; 0x02
+    163e:	70 e0       	ldi	r23, 0x00	; 0
+    1640:	80 e0       	ldi	r24, 0x00	; 0
+    1642:	90 e0       	ldi	r25, 0x00	; 0
+    1644:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1648:	29 ad       	ldd	r18, Y+57	; 0x39
+    164a:	3a ad       	ldd	r19, Y+58	; 0x3a
+    164c:	4b ad       	ldd	r20, Y+59	; 0x3b
+    164e:	5c ad       	ldd	r21, Y+60	; 0x3c
+    1650:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1654:	20 e0       	ldi	r18, 0x00	; 0
+    1656:	30 e0       	ldi	r19, 0x00	; 0
+    1658:	40 e0       	ldi	r20, 0x00	; 0
+    165a:	5f e3       	ldi	r21, 0x3F	; 63
+    165c:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1660:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1664:	d8 01       	movw	r26, r16
+    1666:	12 96       	adiw	r26, 0x02	; 2
+    1668:	6c 93       	st	X, r22
+				break;
+    166a:	97 c0       	rjmp	.+302    	; 0x179a <brightnessAudioMeter+0x662>
+			case 3:
+			case 5:
+				led[i].red = led[i].red * tmp[7] + 0.5;
+    166c:	8c 01       	movw	r16, r24
+    166e:	00 0f       	add	r16, r16
+    1670:	11 1f       	adc	r17, r17
+    1672:	80 0f       	add	r24, r16
+    1674:	91 1f       	adc	r25, r17
+    1676:	8c 01       	movw	r16, r24
+    1678:	04 5b       	subi	r16, 0xB4	; 180
+    167a:	1e 4f       	sbci	r17, 0xFE	; 254
+    167c:	f8 01       	movw	r30, r16
+    167e:	61 81       	ldd	r22, Z+1	; 0x01
+    1680:	70 e0       	ldi	r23, 0x00	; 0
+    1682:	80 e0       	ldi	r24, 0x00	; 0
+    1684:	90 e0       	ldi	r25, 0x00	; 0
+    1686:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    168a:	21 96       	adiw	r28, 0x01	; 1
+    168c:	2c ad       	ldd	r18, Y+60	; 0x3c
+    168e:	3d ad       	ldd	r19, Y+61	; 0x3d
+    1690:	4e ad       	ldd	r20, Y+62	; 0x3e
+    1692:	5f ad       	ldd	r21, Y+63	; 0x3f
+    1694:	21 97       	sbiw	r28, 0x01	; 1
+    1696:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    169a:	20 e0       	ldi	r18, 0x00	; 0
+    169c:	30 e0       	ldi	r19, 0x00	; 0
+    169e:	40 e0       	ldi	r20, 0x00	; 0
+    16a0:	5f e3       	ldi	r21, 0x3F	; 63
+    16a2:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    16a6:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    16aa:	d8 01       	movw	r26, r16
+    16ac:	11 96       	adiw	r26, 0x01	; 1
+    16ae:	6c 93       	st	X, r22
+    16b0:	11 97       	sbiw	r26, 0x01	; 1
+				led[i].green = led[i].green * tmp[7] + 0.5;
+    16b2:	6c 91       	ld	r22, X
+    16b4:	70 e0       	ldi	r23, 0x00	; 0
+    16b6:	80 e0       	ldi	r24, 0x00	; 0
+    16b8:	90 e0       	ldi	r25, 0x00	; 0
+    16ba:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    16be:	21 96       	adiw	r28, 0x01	; 1
+    16c0:	2c ad       	ldd	r18, Y+60	; 0x3c
+    16c2:	3d ad       	ldd	r19, Y+61	; 0x3d
+    16c4:	4e ad       	ldd	r20, Y+62	; 0x3e
+    16c6:	5f ad       	ldd	r21, Y+63	; 0x3f
+    16c8:	21 97       	sbiw	r28, 0x01	; 1
+    16ca:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    16ce:	20 e0       	ldi	r18, 0x00	; 0
+    16d0:	30 e0       	ldi	r19, 0x00	; 0
+    16d2:	40 e0       	ldi	r20, 0x00	; 0
+    16d4:	5f e3       	ldi	r21, 0x3F	; 63
+    16d6:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    16da:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    16de:	f8 01       	movw	r30, r16
+    16e0:	60 83       	st	Z, r22
+				led[i].blue = led[i].blue * tmp[7] + 0.5;
+    16e2:	62 81       	ldd	r22, Z+2	; 0x02
+    16e4:	70 e0       	ldi	r23, 0x00	; 0
+    16e6:	80 e0       	ldi	r24, 0x00	; 0
+    16e8:	90 e0       	ldi	r25, 0x00	; 0
+    16ea:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    16ee:	21 96       	adiw	r28, 0x01	; 1
+    16f0:	2c ad       	ldd	r18, Y+60	; 0x3c
+    16f2:	3d ad       	ldd	r19, Y+61	; 0x3d
+    16f4:	4e ad       	ldd	r20, Y+62	; 0x3e
+    16f6:	5f ad       	ldd	r21, Y+63	; 0x3f
+    16f8:	21 97       	sbiw	r28, 0x01	; 1
+    16fa:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    16fe:	20 e0       	ldi	r18, 0x00	; 0
+    1700:	30 e0       	ldi	r19, 0x00	; 0
+    1702:	40 e0       	ldi	r20, 0x00	; 0
+    1704:	5f e3       	ldi	r21, 0x3F	; 63
+    1706:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    170a:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    170e:	d8 01       	movw	r26, r16
+    1710:	12 96       	adiw	r26, 0x02	; 2
+    1712:	6c 93       	st	X, r22
+				break;
+    1714:	42 c0       	rjmp	.+132    	; 0x179a <brightnessAudioMeter+0x662>
+			case 4:
+				led[i].red = led[i].red * tmp[8] + 0.5;
+    1716:	f6 01       	movw	r30, r12
+    1718:	65 85       	ldd	r22, Z+13	; 0x0d
+    171a:	70 e0       	ldi	r23, 0x00	; 0
+    171c:	80 e0       	ldi	r24, 0x00	; 0
+    171e:	90 e0       	ldi	r25, 0x00	; 0
+    1720:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1724:	a5 01       	movw	r20, r10
+    1726:	94 01       	movw	r18, r8
+    1728:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    172c:	20 e0       	ldi	r18, 0x00	; 0
+    172e:	30 e0       	ldi	r19, 0x00	; 0
+    1730:	40 e0       	ldi	r20, 0x00	; 0
+    1732:	5f e3       	ldi	r21, 0x3F	; 63
+    1734:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1738:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    173c:	d6 01       	movw	r26, r12
+    173e:	1d 96       	adiw	r26, 0x0d	; 13
+    1740:	6c 93       	st	X, r22
+    1742:	1d 97       	sbiw	r26, 0x0d	; 13
+				led[i].green = led[i].green * tmp[8] + 0.5;
+    1744:	1c 96       	adiw	r26, 0x0c	; 12
+    1746:	6c 91       	ld	r22, X
+    1748:	70 e0       	ldi	r23, 0x00	; 0
+    174a:	80 e0       	ldi	r24, 0x00	; 0
+    174c:	90 e0       	ldi	r25, 0x00	; 0
+    174e:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    1752:	a5 01       	movw	r20, r10
+    1754:	94 01       	movw	r18, r8
+    1756:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    175a:	20 e0       	ldi	r18, 0x00	; 0
+    175c:	30 e0       	ldi	r19, 0x00	; 0
+    175e:	40 e0       	ldi	r20, 0x00	; 0
+    1760:	5f e3       	ldi	r21, 0x3F	; 63
+    1762:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    1766:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    176a:	f6 01       	movw	r30, r12
+    176c:	64 87       	std	Z+12, r22	; 0x0c
+				led[i].blue = led[i].blue * tmp[8] + 0.5;
+    176e:	66 85       	ldd	r22, Z+14	; 0x0e
+    1770:	70 e0       	ldi	r23, 0x00	; 0
+    1772:	80 e0       	ldi	r24, 0x00	; 0
+    1774:	90 e0       	ldi	r25, 0x00	; 0
+    1776:	0e 94 c2 0d 	call	0x1b84	; 0x1b84 <__floatsisf>
+    177a:	a5 01       	movw	r20, r10
+    177c:	94 01       	movw	r18, r8
+    177e:	0e 94 53 0e 	call	0x1ca6	; 0x1ca6 <__mulsf3>
+    1782:	20 e0       	ldi	r18, 0x00	; 0
+    1784:	30 e0       	ldi	r19, 0x00	; 0
+    1786:	40 e0       	ldi	r20, 0x00	; 0
+    1788:	5f e3       	ldi	r21, 0x3F	; 63
+    178a:	0e 94 b3 0c 	call	0x1966	; 0x1966 <__addsf3>
+    178e:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__fixunssfsi>
+    1792:	d6 01       	movw	r26, r12
+    1794:	1e 96       	adiw	r26, 0x0e	; 14
+    1796:	6c 93       	st	X, r22
+				break;
+    1798:	3f cd       	rjmp	.-1410   	; 0x1218 <brightnessAudioMeter+0xe0>
+			for(int j=i; j<9; j++) tmp[j] = 0.0;
+			break;
+		}
+	}
+	
+	for(int i=0; i<LEDNUM; i++){
+    179a:	b9 e1       	ldi	r27, 0x19	; 25
+    179c:	eb 16       	cp	r14, r27
+    179e:	f1 04       	cpc	r15, r1
+    17a0:	0c f4       	brge	.+2      	; 0x17a4 <brightnessAudioMeter+0x66c>
+    17a2:	3a cd       	rjmp	.-1420   	; 0x1218 <brightnessAudioMeter+0xe0>
+    17a4:	77 c0       	rjmp	.+238    	; 0x1894 <brightnessAudioMeter+0x75c>
+	
+	for(int i=0; i<9; i++){
+		if(0.0 < (audioLevel - ref * (i + 1))){
+			tmp[i] = 1.0;
+		}else{
+			tmp[i] = 0.5;
+    17a6:	f8 01       	movw	r30, r16
+    17a8:	ee 0f       	add	r30, r30
+    17aa:	ff 1f       	adc	r31, r31
+    17ac:	ee 0f       	add	r30, r30
+    17ae:	ff 1f       	adc	r31, r31
+    17b0:	81 e0       	ldi	r24, 0x01	; 1
+    17b2:	90 e0       	ldi	r25, 0x00	; 0
+    17b4:	8c 0f       	add	r24, r28
+    17b6:	9d 1f       	adc	r25, r29
+    17b8:	e8 0f       	add	r30, r24
+    17ba:	f9 1f       	adc	r31, r25
+    17bc:	80 e0       	ldi	r24, 0x00	; 0
+    17be:	90 e0       	ldi	r25, 0x00	; 0
+    17c0:	a0 e0       	ldi	r26, 0x00	; 0
+    17c2:	bf e3       	ldi	r27, 0x3F	; 63
+    17c4:	80 83       	st	Z, r24
+    17c6:	91 83       	std	Z+1, r25	; 0x01
+    17c8:	a2 83       	std	Z+2, r26	; 0x02
+    17ca:	b3 83       	std	Z+3, r27	; 0x03
+    17cc:	1b cd       	rjmp	.-1482   	; 0x1204 <brightnessAudioMeter+0xcc>
+				led[i].red = led[i].red * tmp[7] + 0.5;
+				led[i].green = led[i].green * tmp[7] + 0.5;
+				led[i].blue = led[i].blue * tmp[7] + 0.5;
+				break;
+			case 4:
+				led[i].red = led[i].red * tmp[8] + 0.5;
+    17ce:	89 a0       	ldd	r8, Y+33	; 0x21
+    17d0:	9a a0       	ldd	r9, Y+34	; 0x22
+    17d2:	ab a0       	ldd	r10, Y+35	; 0x23
+    17d4:	bc a0       	ldd	r11, Y+36	; 0x24
+	}
+	
+	for(int i=0; i<LEDNUM; i++){
+		switch(i){
+			case 20:
+				led[i].red = led[i].red * tmp[0] + 0.5;
+    17d6:	49 80       	ldd	r4, Y+1	; 0x01
+    17d8:	5a 80       	ldd	r5, Y+2	; 0x02
+    17da:	6b 80       	ldd	r6, Y+3	; 0x03
+    17dc:	7c 80       	ldd	r7, Y+4	; 0x04
+				led[i].green = led[i].green * tmp[6] + 0.5;
+				led[i].blue = led[i].blue * tmp[6] + 0.5;
+				break;
+			case 3:
+			case 5:
+				led[i].red = led[i].red * tmp[7] + 0.5;
+    17de:	8d 8d       	ldd	r24, Y+29	; 0x1d
+    17e0:	9e 8d       	ldd	r25, Y+30	; 0x1e
+    17e2:	af 8d       	ldd	r26, Y+31	; 0x1f
+    17e4:	b8 a1       	ldd	r27, Y+32	; 0x20
+    17e6:	21 96       	adiw	r28, 0x01	; 1
+    17e8:	8c af       	std	Y+60, r24	; 0x3c
+    17ea:	9d af       	std	Y+61, r25	; 0x3d
+    17ec:	ae af       	std	Y+62, r26	; 0x3e
+    17ee:	bf af       	std	Y+63, r27	; 0x3f
+    17f0:	21 97       	sbiw	r28, 0x01	; 1
+				led[i].green = led[i].green * tmp[0] + 0.5;
+				led[i].blue = led[i].blue * tmp[0] + 0.5;
+				break;
+			case 19:
+			case 21:
+				led[i].red = led[i].red * tmp[1] + 0.5;
+    17f2:	8d 81       	ldd	r24, Y+5	; 0x05
+    17f4:	9e 81       	ldd	r25, Y+6	; 0x06
+    17f6:	af 81       	ldd	r26, Y+7	; 0x07
+    17f8:	b8 85       	ldd	r27, Y+8	; 0x08
+    17fa:	8d a3       	std	Y+37, r24	; 0x25
+    17fc:	9e a3       	std	Y+38, r25	; 0x26
+    17fe:	af a3       	std	Y+39, r26	; 0x27
+    1800:	b8 a7       	std	Y+40, r27	; 0x28
+				led[i].blue = led[i].blue * tmp[1] + 0.5;
+				break;
+			case 10:
+			case 18:
+			case 22:
+				led[i].red = led[i].red * tmp[2] + 0.5;
+    1802:	89 85       	ldd	r24, Y+9	; 0x09
+    1804:	9a 85       	ldd	r25, Y+10	; 0x0a
+    1806:	ab 85       	ldd	r26, Y+11	; 0x0b
+    1808:	bc 85       	ldd	r27, Y+12	; 0x0c
+    180a:	89 a7       	std	Y+41, r24	; 0x29
+    180c:	9a a7       	std	Y+42, r25	; 0x2a
+    180e:	ab a7       	std	Y+43, r26	; 0x2b
+    1810:	bc a7       	std	Y+44, r27	; 0x2c
+				break;
+			case 9:
+			case 11:
+			case 17:
+			case 23:
+				led[i].red = led[i].red * tmp[3] + 0.5;
+    1812:	8d 85       	ldd	r24, Y+13	; 0x0d
+    1814:	9e 85       	ldd	r25, Y+14	; 0x0e
+    1816:	af 85       	ldd	r26, Y+15	; 0x0f
+    1818:	b8 89       	ldd	r27, Y+16	; 0x10
+    181a:	8d a7       	std	Y+45, r24	; 0x2d
+    181c:	9e a7       	std	Y+46, r25	; 0x2e
+    181e:	af a7       	std	Y+47, r26	; 0x2f
+    1820:	b8 ab       	std	Y+48, r27	; 0x30
+			case 0:
+			case 8:
+			case 12:
+			case 16:
+			case 24:
+				led[i].red = led[i].red * tmp[4] + 0.5;
+    1822:	89 89       	ldd	r24, Y+17	; 0x11
+    1824:	9a 89       	ldd	r25, Y+18	; 0x12
+    1826:	ab 89       	ldd	r26, Y+19	; 0x13
+    1828:	bc 89       	ldd	r27, Y+20	; 0x14
+    182a:	89 ab       	std	Y+49, r24	; 0x31
+    182c:	9a ab       	std	Y+50, r25	; 0x32
+    182e:	ab ab       	std	Y+51, r26	; 0x33
+    1830:	bc ab       	std	Y+52, r27	; 0x34
+				break;
+			case 1:
+			case 7:
+			case 13:
+			case 15:
+				led[i].red = led[i].red * tmp[5] + 0.5;
+    1832:	8d 89       	ldd	r24, Y+21	; 0x15
+    1834:	9e 89       	ldd	r25, Y+22	; 0x16
+    1836:	af 89       	ldd	r26, Y+23	; 0x17
+    1838:	b8 8d       	ldd	r27, Y+24	; 0x18
+    183a:	8d ab       	std	Y+53, r24	; 0x35
+    183c:	9e ab       	std	Y+54, r25	; 0x36
+    183e:	af ab       	std	Y+55, r26	; 0x37
+    1840:	b8 af       	std	Y+56, r27	; 0x38
+				led[i].blue = led[i].blue * tmp[5] + 0.5;
+				break;
+			case 2:
+			case 6:
+			case 14:
+				led[i].red = led[i].red * tmp[6] + 0.5;
+    1842:	89 8d       	ldd	r24, Y+25	; 0x19
+    1844:	9a 8d       	ldd	r25, Y+26	; 0x1a
+    1846:	ab 8d       	ldd	r26, Y+27	; 0x1b
+    1848:	bc 8d       	ldd	r27, Y+28	; 0x1c
+    184a:	89 af       	std	Y+57, r24	; 0x39
+    184c:	9a af       	std	Y+58, r25	; 0x3a
+    184e:	ab af       	std	Y+59, r26	; 0x3b
+    1850:	bc af       	std	Y+60, r27	; 0x3c
+    1852:	ee 24       	eor	r14, r14
+    1854:	e3 94       	inc	r14
+    1856:	f1 2c       	mov	r15, r1
+				led[i].red = led[i].red * tmp[7] + 0.5;
+				led[i].green = led[i].green * tmp[7] + 0.5;
+				led[i].blue = led[i].blue * tmp[7] + 0.5;
+				break;
+			case 4:
+				led[i].red = led[i].red * tmp[8] + 0.5;
+    1858:	0f 2e       	mov	r0, r31
+    185a:	fc e4       	ldi	r31, 0x4C	; 76
+    185c:	cf 2e       	mov	r12, r31
+    185e:	f1 e0       	ldi	r31, 0x01	; 1
+    1860:	df 2e       	mov	r13, r31
+    1862:	f0 2d       	mov	r31, r0
+    1864:	dc cc       	rjmp	.-1608   	; 0x121e <brightnessAudioMeter+0xe6>
+	
+	ref = (AUDIO_LEVEL_MAX - AUDIO_LEVEL_OFFSET) / 9.0;
+	
+	for(int i=0; i<9; i++){
+		if(0.0 < (audioLevel - ref * (i + 1))){
+			tmp[i] = 1.0;
+    1866:	80 e0       	ldi	r24, 0x00	; 0
+    1868:	90 e0       	ldi	r25, 0x00	; 0
+    186a:	a0 e8       	ldi	r26, 0x80	; 128
+    186c:	bf e3       	ldi	r27, 0x3F	; 63
+    186e:	89 83       	std	Y+1, r24	; 0x01
+    1870:	9a 83       	std	Y+2, r25	; 0x02
+    1872:	ab 83       	std	Y+3, r26	; 0x03
+    1874:	bc 83       	std	Y+4, r27	; 0x04
+    1876:	6e 01       	movw	r12, r28
+    1878:	95 e0       	ldi	r25, 0x05	; 5
+    187a:	c9 0e       	add	r12, r25
+    187c:	d1 1c       	adc	r13, r1
+    187e:	01 e0       	ldi	r16, 0x01	; 1
+    1880:	10 e0       	ldi	r17, 0x00	; 0
+    1882:	0f 2e       	mov	r0, r31
+    1884:	81 2c       	mov	r8, r1
+    1886:	91 2c       	mov	r9, r1
+    1888:	f0 e8       	ldi	r31, 0x80	; 128
+    188a:	af 2e       	mov	r10, r31
+    188c:	ff e3       	ldi	r31, 0x3F	; 63
+    188e:	bf 2e       	mov	r11, r31
+    1890:	f0 2d       	mov	r31, r0
+    1892:	84 cc       	rjmp	.-1784   	; 0x119c <brightnessAudioMeter+0x64>
+				led[i].green = led[i].green * tmp[8] + 0.5;
+				led[i].blue = led[i].blue * tmp[8] + 0.5;
+				break;
+		}
+	}
+}
+    1894:	c0 5c       	subi	r28, 0xC0	; 192
+    1896:	df 4f       	sbci	r29, 0xFF	; 255
+    1898:	0f b6       	in	r0, 0x3f	; 63
+    189a:	f8 94       	cli
+    189c:	de bf       	out	0x3e, r29	; 62
+    189e:	0f be       	out	0x3f, r0	; 63
+    18a0:	cd bf       	out	0x3d, r28	; 61
+    18a2:	df 91       	pop	r29
+    18a4:	cf 91       	pop	r28
+    18a6:	1f 91       	pop	r17
+    18a8:	0f 91       	pop	r16
+    18aa:	ff 90       	pop	r15
+    18ac:	ef 90       	pop	r14
+    18ae:	df 90       	pop	r13
+    18b0:	cf 90       	pop	r12
+    18b2:	bf 90       	pop	r11
+    18b4:	af 90       	pop	r10
+    18b6:	9f 90       	pop	r9
+    18b8:	8f 90       	pop	r8
+    18ba:	7f 90       	pop	r7
+    18bc:	6f 90       	pop	r6
+    18be:	5f 90       	pop	r5
+    18c0:	4f 90       	pop	r4
+    18c2:	08 95       	ret
+
+000018c4 <updateLed>:
+
+/************************************************************
+	全LEDの点灯色の更新
+************************************************************/
+void updateLed(void)
+{
+    18c4:	1f 93       	push	r17
+    18c6:	cf 93       	push	r28
+    18c8:	df 93       	push	r29
+    18ca:	cd b7       	in	r28, 0x3d	; 61
+    18cc:	de b7       	in	r29, 0x3e	; 62
+    18ce:	27 97       	sbiw	r28, 0x07	; 7
+    18d0:	0f b6       	in	r0, 0x3f	; 63
+    18d2:	f8 94       	cli
+    18d4:	de bf       	out	0x3e, r29	; 62
+    18d6:	0f be       	out	0x3f, r0	; 63
+    18d8:	cd bf       	out	0x3d, r28	; 61
+	volatile uint8_t *port = &LED_PORT;			//LEDが接続されているポートのアドレス
+	volatile uint8_t *ptr = led;				//データ出力用の変数の先頭アドレス
+	volatile uint16_t i = sizeof(led);			//データのバイト数
+    18da:	8b e4       	ldi	r24, 0x4B	; 75
+    18dc:	90 e0       	ldi	r25, 0x00	; 0
+    18de:	9a 83       	std	Y+2, r25	; 0x02
+    18e0:	89 83       	std	Y+1, r24	; 0x01
+	volatile uint8_t b, hi, lo, next, bit;
+
+	b = *ptr++;
+    18e2:	80 91 4c 01 	lds	r24, 0x014C	; 0x80014c <led>
+    18e6:	8b 83       	std	Y+3, r24	; 0x03
+	hi = PORTD | _BV(LED_PIN);
+    18e8:	8b b1       	in	r24, 0x0b	; 11
+    18ea:	80 61       	ori	r24, 0x10	; 16
+    18ec:	8c 83       	std	Y+4, r24	; 0x04
+	lo = PORTD & ~_BV(LED_PIN);
+    18ee:	8b b1       	in	r24, 0x0b	; 11
+    18f0:	8f 7e       	andi	r24, 0xEF	; 239
+    18f2:	8d 83       	std	Y+5, r24	; 0x05
+	next = lo;
+    18f4:	8d 81       	ldd	r24, Y+5	; 0x05
+    18f6:	8e 83       	std	Y+6, r24	; 0x06
+	bit = 8;
+    18f8:	88 e0       	ldi	r24, 0x08	; 8
+    18fa:	8f 83       	std	Y+7, r24	; 0x07
+	
+	//タイマ割り込み禁止
+	TIMSK0 = 0x00;
+    18fc:	6e e6       	ldi	r22, 0x6E	; 110
+    18fe:	70 e0       	ldi	r23, 0x00	; 0
+    1900:	fb 01       	movw	r30, r22
+    1902:	10 82       	st	Z, r1
+
+	asm volatile(
+    1904:	5c 81       	ldd	r21, Y+4	; 0x04
+    1906:	1d 81       	ldd	r17, Y+5	; 0x05
+    1908:	4b 81       	ldd	r20, Y+3	; 0x03
+    190a:	3f 81       	ldd	r19, Y+7	; 0x07
+    190c:	2e 81       	ldd	r18, Y+6	; 0x06
+    190e:	89 81       	ldd	r24, Y+1	; 0x01
+    1910:	9a 81       	ldd	r25, Y+2	; 0x02
+    1912:	eb e2       	ldi	r30, 0x2B	; 43
+    1914:	f0 e0       	ldi	r31, 0x00	; 0
+    1916:	ad e4       	ldi	r26, 0x4D	; 77
+    1918:	b1 e0       	ldi	r27, 0x01	; 1
+
+0000191a <HEAD20>:
+    191a:	50 83       	st	Z, r21
+    191c:	47 fd       	sbrc	r20, 7
+    191e:	25 2f       	mov	r18, r21
+    1920:	3a 95       	dec	r19
+    1922:	20 83       	st	Z, r18
+    1924:	21 2f       	mov	r18, r17
+    1926:	31 f0       	breq	.+12     	; 0x1934 <NEXTBYTE20>
+    1928:	44 1f       	adc	r20, r20
+    192a:	00 c0       	rjmp	.+0      	; 0x192c <HEAD20+0x12>
+    192c:	00 c0       	rjmp	.+0      	; 0x192e <HEAD20+0x14>
+    192e:	10 83       	st	Z, r17
+    1930:	00 00       	nop
+    1932:	f3 cf       	rjmp	.-26     	; 0x191a <HEAD20>
+
+00001934 <NEXTBYTE20>:
+    1934:	38 e0       	ldi	r19, 0x08	; 8
+    1936:	4d 91       	ld	r20, X+
+    1938:	10 83       	st	Z, r17
+    193a:	00 00       	nop
+    193c:	01 97       	sbiw	r24, 0x01	; 1
+    193e:	69 f7       	brne	.-38     	; 0x191a <HEAD20>
+    1940:	4b 83       	std	Y+3, r20	; 0x03
+    1942:	3f 83       	std	Y+7, r19	; 0x07
+    1944:	2e 83       	std	Y+6, r18	; 0x06
+    1946:	9a 83       	std	Y+2, r25	; 0x02
+    1948:	89 83       	std	Y+1, r24	; 0x01
+		: [PTR]    "e" (ptr),
+		[HI]     "r" (hi),
+		[LO]     "r" (lo));
+	
+	//タイマ割り込み再開
+	TIMSK0 = 0x02;
+    194a:	82 e0       	ldi	r24, 0x02	; 2
+    194c:	fb 01       	movw	r30, r22
+    194e:	80 83       	st	Z, r24
+    1950:	27 96       	adiw	r28, 0x07	; 7
+    1952:	0f b6       	in	r0, 0x3f	; 63
+    1954:	f8 94       	cli
+    1956:	de bf       	out	0x3e, r29	; 62
+    1958:	0f be       	out	0x3f, r0	; 63
+    195a:	cd bf       	out	0x3d, r28	; 61
+    195c:	df 91       	pop	r29
+    195e:	cf 91       	pop	r28
+    1960:	1f 91       	pop	r17
+    1962:	08 95       	ret
+
+00001964 <__subsf3>:
+    1964:	50 58       	subi	r21, 0x80	; 128
+
+00001966 <__addsf3>:
+    1966:	bb 27       	eor	r27, r27
+    1968:	aa 27       	eor	r26, r26
+    196a:	0e 94 ca 0c 	call	0x1994	; 0x1994 <__addsf3x>
+    196e:	0c 94 14 0e 	jmp	0x1c28	; 0x1c28 <__fp_round>
+    1972:	0e 94 06 0e 	call	0x1c0c	; 0x1c0c <__fp_pscA>
+    1976:	38 f0       	brcs	.+14     	; 0x1986 <__addsf3+0x20>
+    1978:	0e 94 0d 0e 	call	0x1c1a	; 0x1c1a <__fp_pscB>
+    197c:	20 f0       	brcs	.+8      	; 0x1986 <__addsf3+0x20>
+    197e:	39 f4       	brne	.+14     	; 0x198e <__addsf3+0x28>
+    1980:	9f 3f       	cpi	r25, 0xFF	; 255
+    1982:	19 f4       	brne	.+6      	; 0x198a <__addsf3+0x24>
+    1984:	26 f4       	brtc	.+8      	; 0x198e <__addsf3+0x28>
+    1986:	0c 94 03 0e 	jmp	0x1c06	; 0x1c06 <__fp_nan>
+    198a:	0e f4       	brtc	.+2      	; 0x198e <__addsf3+0x28>
+    198c:	e0 95       	com	r30
+    198e:	e7 fb       	bst	r30, 7
+    1990:	0c 94 fd 0d 	jmp	0x1bfa	; 0x1bfa <__fp_inf>
+
+00001994 <__addsf3x>:
+    1994:	e9 2f       	mov	r30, r25
+    1996:	0e 94 25 0e 	call	0x1c4a	; 0x1c4a <__fp_split3>
+    199a:	58 f3       	brcs	.-42     	; 0x1972 <__addsf3+0xc>
+    199c:	ba 17       	cp	r27, r26
+    199e:	62 07       	cpc	r22, r18
+    19a0:	73 07       	cpc	r23, r19
+    19a2:	84 07       	cpc	r24, r20
+    19a4:	95 07       	cpc	r25, r21
+    19a6:	20 f0       	brcs	.+8      	; 0x19b0 <__addsf3x+0x1c>
+    19a8:	79 f4       	brne	.+30     	; 0x19c8 <__addsf3x+0x34>
+    19aa:	a6 f5       	brtc	.+104    	; 0x1a14 <__addsf3x+0x80>
+    19ac:	0c 94 47 0e 	jmp	0x1c8e	; 0x1c8e <__fp_zero>
+    19b0:	0e f4       	brtc	.+2      	; 0x19b4 <__addsf3x+0x20>
+    19b2:	e0 95       	com	r30
+    19b4:	0b 2e       	mov	r0, r27
+    19b6:	ba 2f       	mov	r27, r26
+    19b8:	a0 2d       	mov	r26, r0
+    19ba:	0b 01       	movw	r0, r22
+    19bc:	b9 01       	movw	r22, r18
+    19be:	90 01       	movw	r18, r0
+    19c0:	0c 01       	movw	r0, r24
+    19c2:	ca 01       	movw	r24, r20
+    19c4:	a0 01       	movw	r20, r0
+    19c6:	11 24       	eor	r1, r1
+    19c8:	ff 27       	eor	r31, r31
+    19ca:	59 1b       	sub	r21, r25
+    19cc:	99 f0       	breq	.+38     	; 0x19f4 <__addsf3x+0x60>
+    19ce:	59 3f       	cpi	r21, 0xF9	; 249
+    19d0:	50 f4       	brcc	.+20     	; 0x19e6 <__addsf3x+0x52>
+    19d2:	50 3e       	cpi	r21, 0xE0	; 224
+    19d4:	68 f1       	brcs	.+90     	; 0x1a30 <__addsf3x+0x9c>
+    19d6:	1a 16       	cp	r1, r26
+    19d8:	f0 40       	sbci	r31, 0x00	; 0
+    19da:	a2 2f       	mov	r26, r18
+    19dc:	23 2f       	mov	r18, r19
+    19de:	34 2f       	mov	r19, r20
+    19e0:	44 27       	eor	r20, r20
+    19e2:	58 5f       	subi	r21, 0xF8	; 248
+    19e4:	f3 cf       	rjmp	.-26     	; 0x19cc <__addsf3x+0x38>
+    19e6:	46 95       	lsr	r20
+    19e8:	37 95       	ror	r19
+    19ea:	27 95       	ror	r18
+    19ec:	a7 95       	ror	r26
+    19ee:	f0 40       	sbci	r31, 0x00	; 0
+    19f0:	53 95       	inc	r21
+    19f2:	c9 f7       	brne	.-14     	; 0x19e6 <__addsf3x+0x52>
+    19f4:	7e f4       	brtc	.+30     	; 0x1a14 <__addsf3x+0x80>
+    19f6:	1f 16       	cp	r1, r31
+    19f8:	ba 0b       	sbc	r27, r26
+    19fa:	62 0b       	sbc	r22, r18
+    19fc:	73 0b       	sbc	r23, r19
+    19fe:	84 0b       	sbc	r24, r20
+    1a00:	ba f0       	brmi	.+46     	; 0x1a30 <__addsf3x+0x9c>
+    1a02:	91 50       	subi	r25, 0x01	; 1
+    1a04:	a1 f0       	breq	.+40     	; 0x1a2e <__addsf3x+0x9a>
+    1a06:	ff 0f       	add	r31, r31
+    1a08:	bb 1f       	adc	r27, r27
+    1a0a:	66 1f       	adc	r22, r22
+    1a0c:	77 1f       	adc	r23, r23
+    1a0e:	88 1f       	adc	r24, r24
+    1a10:	c2 f7       	brpl	.-16     	; 0x1a02 <__addsf3x+0x6e>
+    1a12:	0e c0       	rjmp	.+28     	; 0x1a30 <__addsf3x+0x9c>
+    1a14:	ba 0f       	add	r27, r26
+    1a16:	62 1f       	adc	r22, r18
+    1a18:	73 1f       	adc	r23, r19
+    1a1a:	84 1f       	adc	r24, r20
+    1a1c:	48 f4       	brcc	.+18     	; 0x1a30 <__addsf3x+0x9c>
+    1a1e:	87 95       	ror	r24
+    1a20:	77 95       	ror	r23
+    1a22:	67 95       	ror	r22
+    1a24:	b7 95       	ror	r27
+    1a26:	f7 95       	ror	r31
+    1a28:	9e 3f       	cpi	r25, 0xFE	; 254
+    1a2a:	08 f0       	brcs	.+2      	; 0x1a2e <__addsf3x+0x9a>
+    1a2c:	b0 cf       	rjmp	.-160    	; 0x198e <__addsf3+0x28>
+    1a2e:	93 95       	inc	r25
+    1a30:	88 0f       	add	r24, r24
+    1a32:	08 f0       	brcs	.+2      	; 0x1a36 <__addsf3x+0xa2>
+    1a34:	99 27       	eor	r25, r25
+    1a36:	ee 0f       	add	r30, r30
+    1a38:	97 95       	ror	r25
+    1a3a:	87 95       	ror	r24
+    1a3c:	08 95       	ret
+
+00001a3e <__divsf3>:
+    1a3e:	0e 94 33 0d 	call	0x1a66	; 0x1a66 <__divsf3x>
+    1a42:	0c 94 14 0e 	jmp	0x1c28	; 0x1c28 <__fp_round>
+    1a46:	0e 94 0d 0e 	call	0x1c1a	; 0x1c1a <__fp_pscB>
+    1a4a:	58 f0       	brcs	.+22     	; 0x1a62 <__divsf3+0x24>
+    1a4c:	0e 94 06 0e 	call	0x1c0c	; 0x1c0c <__fp_pscA>
+    1a50:	40 f0       	brcs	.+16     	; 0x1a62 <__divsf3+0x24>
+    1a52:	29 f4       	brne	.+10     	; 0x1a5e <__divsf3+0x20>
+    1a54:	5f 3f       	cpi	r21, 0xFF	; 255
+    1a56:	29 f0       	breq	.+10     	; 0x1a62 <__divsf3+0x24>
+    1a58:	0c 94 fd 0d 	jmp	0x1bfa	; 0x1bfa <__fp_inf>
+    1a5c:	51 11       	cpse	r21, r1
+    1a5e:	0c 94 48 0e 	jmp	0x1c90	; 0x1c90 <__fp_szero>
+    1a62:	0c 94 03 0e 	jmp	0x1c06	; 0x1c06 <__fp_nan>
+
+00001a66 <__divsf3x>:
+    1a66:	0e 94 25 0e 	call	0x1c4a	; 0x1c4a <__fp_split3>
+    1a6a:	68 f3       	brcs	.-38     	; 0x1a46 <__divsf3+0x8>
+
+00001a6c <__divsf3_pse>:
+    1a6c:	99 23       	and	r25, r25
+    1a6e:	b1 f3       	breq	.-20     	; 0x1a5c <__divsf3+0x1e>
+    1a70:	55 23       	and	r21, r21
+    1a72:	91 f3       	breq	.-28     	; 0x1a58 <__divsf3+0x1a>
+    1a74:	95 1b       	sub	r25, r21
+    1a76:	55 0b       	sbc	r21, r21
+    1a78:	bb 27       	eor	r27, r27
+    1a7a:	aa 27       	eor	r26, r26
+    1a7c:	62 17       	cp	r22, r18
+    1a7e:	73 07       	cpc	r23, r19
+    1a80:	84 07       	cpc	r24, r20
+    1a82:	38 f0       	brcs	.+14     	; 0x1a92 <__divsf3_pse+0x26>
+    1a84:	9f 5f       	subi	r25, 0xFF	; 255
+    1a86:	5f 4f       	sbci	r21, 0xFF	; 255
+    1a88:	22 0f       	add	r18, r18
+    1a8a:	33 1f       	adc	r19, r19
+    1a8c:	44 1f       	adc	r20, r20
+    1a8e:	aa 1f       	adc	r26, r26
+    1a90:	a9 f3       	breq	.-22     	; 0x1a7c <__divsf3_pse+0x10>
+    1a92:	35 d0       	rcall	.+106    	; 0x1afe <__divsf3_pse+0x92>
+    1a94:	0e 2e       	mov	r0, r30
+    1a96:	3a f0       	brmi	.+14     	; 0x1aa6 <__divsf3_pse+0x3a>
+    1a98:	e0 e8       	ldi	r30, 0x80	; 128
+    1a9a:	32 d0       	rcall	.+100    	; 0x1b00 <__divsf3_pse+0x94>
+    1a9c:	91 50       	subi	r25, 0x01	; 1
+    1a9e:	50 40       	sbci	r21, 0x00	; 0
+    1aa0:	e6 95       	lsr	r30
+    1aa2:	00 1c       	adc	r0, r0
+    1aa4:	ca f7       	brpl	.-14     	; 0x1a98 <__divsf3_pse+0x2c>
+    1aa6:	2b d0       	rcall	.+86     	; 0x1afe <__divsf3_pse+0x92>
+    1aa8:	fe 2f       	mov	r31, r30
+    1aaa:	29 d0       	rcall	.+82     	; 0x1afe <__divsf3_pse+0x92>
+    1aac:	66 0f       	add	r22, r22
+    1aae:	77 1f       	adc	r23, r23
+    1ab0:	88 1f       	adc	r24, r24
+    1ab2:	bb 1f       	adc	r27, r27
+    1ab4:	26 17       	cp	r18, r22
+    1ab6:	37 07       	cpc	r19, r23
+    1ab8:	48 07       	cpc	r20, r24
+    1aba:	ab 07       	cpc	r26, r27
+    1abc:	b0 e8       	ldi	r27, 0x80	; 128
+    1abe:	09 f0       	breq	.+2      	; 0x1ac2 <__divsf3_pse+0x56>
+    1ac0:	bb 0b       	sbc	r27, r27
+    1ac2:	80 2d       	mov	r24, r0
+    1ac4:	bf 01       	movw	r22, r30
+    1ac6:	ff 27       	eor	r31, r31
+    1ac8:	93 58       	subi	r25, 0x83	; 131
+    1aca:	5f 4f       	sbci	r21, 0xFF	; 255
+    1acc:	3a f0       	brmi	.+14     	; 0x1adc <__divsf3_pse+0x70>
+    1ace:	9e 3f       	cpi	r25, 0xFE	; 254
+    1ad0:	51 05       	cpc	r21, r1
+    1ad2:	78 f0       	brcs	.+30     	; 0x1af2 <__divsf3_pse+0x86>
+    1ad4:	0c 94 fd 0d 	jmp	0x1bfa	; 0x1bfa <__fp_inf>
+    1ad8:	0c 94 48 0e 	jmp	0x1c90	; 0x1c90 <__fp_szero>
+    1adc:	5f 3f       	cpi	r21, 0xFF	; 255
+    1ade:	e4 f3       	brlt	.-8      	; 0x1ad8 <__divsf3_pse+0x6c>
+    1ae0:	98 3e       	cpi	r25, 0xE8	; 232
+    1ae2:	d4 f3       	brlt	.-12     	; 0x1ad8 <__divsf3_pse+0x6c>
+    1ae4:	86 95       	lsr	r24
+    1ae6:	77 95       	ror	r23
+    1ae8:	67 95       	ror	r22
+    1aea:	b7 95       	ror	r27
+    1aec:	f7 95       	ror	r31
+    1aee:	9f 5f       	subi	r25, 0xFF	; 255
+    1af0:	c9 f7       	brne	.-14     	; 0x1ae4 <__divsf3_pse+0x78>
+    1af2:	88 0f       	add	r24, r24
+    1af4:	91 1d       	adc	r25, r1
+    1af6:	96 95       	lsr	r25
+    1af8:	87 95       	ror	r24
+    1afa:	97 f9       	bld	r25, 7
+    1afc:	08 95       	ret
+    1afe:	e1 e0       	ldi	r30, 0x01	; 1
+    1b00:	66 0f       	add	r22, r22
+    1b02:	77 1f       	adc	r23, r23
+    1b04:	88 1f       	adc	r24, r24
+    1b06:	bb 1f       	adc	r27, r27
+    1b08:	62 17       	cp	r22, r18
+    1b0a:	73 07       	cpc	r23, r19
+    1b0c:	84 07       	cpc	r24, r20
+    1b0e:	ba 07       	cpc	r27, r26
+    1b10:	20 f0       	brcs	.+8      	; 0x1b1a <__divsf3_pse+0xae>
+    1b12:	62 1b       	sub	r22, r18
+    1b14:	73 0b       	sbc	r23, r19
+    1b16:	84 0b       	sbc	r24, r20
+    1b18:	ba 0b       	sbc	r27, r26
+    1b1a:	ee 1f       	adc	r30, r30
+    1b1c:	88 f7       	brcc	.-30     	; 0x1b00 <__divsf3_pse+0x94>
+    1b1e:	e0 95       	com	r30
+    1b20:	08 95       	ret
+
+00001b22 <__fixunssfsi>:
+    1b22:	0e 94 2d 0e 	call	0x1c5a	; 0x1c5a <__fp_splitA>
+    1b26:	88 f0       	brcs	.+34     	; 0x1b4a <__fixunssfsi+0x28>
+    1b28:	9f 57       	subi	r25, 0x7F	; 127
+    1b2a:	98 f0       	brcs	.+38     	; 0x1b52 <__fixunssfsi+0x30>
+    1b2c:	b9 2f       	mov	r27, r25
+    1b2e:	99 27       	eor	r25, r25
+    1b30:	b7 51       	subi	r27, 0x17	; 23
+    1b32:	b0 f0       	brcs	.+44     	; 0x1b60 <__fixunssfsi+0x3e>
+    1b34:	e1 f0       	breq	.+56     	; 0x1b6e <__fixunssfsi+0x4c>
+    1b36:	66 0f       	add	r22, r22
+    1b38:	77 1f       	adc	r23, r23
+    1b3a:	88 1f       	adc	r24, r24
+    1b3c:	99 1f       	adc	r25, r25
+    1b3e:	1a f0       	brmi	.+6      	; 0x1b46 <__fixunssfsi+0x24>
+    1b40:	ba 95       	dec	r27
+    1b42:	c9 f7       	brne	.-14     	; 0x1b36 <__fixunssfsi+0x14>
+    1b44:	14 c0       	rjmp	.+40     	; 0x1b6e <__fixunssfsi+0x4c>
+    1b46:	b1 30       	cpi	r27, 0x01	; 1
+    1b48:	91 f0       	breq	.+36     	; 0x1b6e <__fixunssfsi+0x4c>
+    1b4a:	0e 94 47 0e 	call	0x1c8e	; 0x1c8e <__fp_zero>
+    1b4e:	b1 e0       	ldi	r27, 0x01	; 1
+    1b50:	08 95       	ret
+    1b52:	0c 94 47 0e 	jmp	0x1c8e	; 0x1c8e <__fp_zero>
+    1b56:	67 2f       	mov	r22, r23
+    1b58:	78 2f       	mov	r23, r24
+    1b5a:	88 27       	eor	r24, r24
+    1b5c:	b8 5f       	subi	r27, 0xF8	; 248
+    1b5e:	39 f0       	breq	.+14     	; 0x1b6e <__fixunssfsi+0x4c>
+    1b60:	b9 3f       	cpi	r27, 0xF9	; 249
+    1b62:	cc f3       	brlt	.-14     	; 0x1b56 <__fixunssfsi+0x34>
+    1b64:	86 95       	lsr	r24
+    1b66:	77 95       	ror	r23
+    1b68:	67 95       	ror	r22
+    1b6a:	b3 95       	inc	r27
+    1b6c:	d9 f7       	brne	.-10     	; 0x1b64 <__fixunssfsi+0x42>
+    1b6e:	3e f4       	brtc	.+14     	; 0x1b7e <__fixunssfsi+0x5c>
+    1b70:	90 95       	com	r25
+    1b72:	80 95       	com	r24
+    1b74:	70 95       	com	r23
+    1b76:	61 95       	neg	r22
+    1b78:	7f 4f       	sbci	r23, 0xFF	; 255
+    1b7a:	8f 4f       	sbci	r24, 0xFF	; 255
+    1b7c:	9f 4f       	sbci	r25, 0xFF	; 255
+    1b7e:	08 95       	ret
+
+00001b80 <__floatunsisf>:
+    1b80:	e8 94       	clt
+    1b82:	09 c0       	rjmp	.+18     	; 0x1b96 <__floatsisf+0x12>
+
+00001b84 <__floatsisf>:
+    1b84:	97 fb       	bst	r25, 7
+    1b86:	3e f4       	brtc	.+14     	; 0x1b96 <__floatsisf+0x12>
+    1b88:	90 95       	com	r25
+    1b8a:	80 95       	com	r24
+    1b8c:	70 95       	com	r23
+    1b8e:	61 95       	neg	r22
+    1b90:	7f 4f       	sbci	r23, 0xFF	; 255
+    1b92:	8f 4f       	sbci	r24, 0xFF	; 255
+    1b94:	9f 4f       	sbci	r25, 0xFF	; 255
+    1b96:	99 23       	and	r25, r25
+    1b98:	a9 f0       	breq	.+42     	; 0x1bc4 <__floatsisf+0x40>
+    1b9a:	f9 2f       	mov	r31, r25
+    1b9c:	96 e9       	ldi	r25, 0x96	; 150
+    1b9e:	bb 27       	eor	r27, r27
+    1ba0:	93 95       	inc	r25
+    1ba2:	f6 95       	lsr	r31
+    1ba4:	87 95       	ror	r24
+    1ba6:	77 95       	ror	r23
+    1ba8:	67 95       	ror	r22
+    1baa:	b7 95       	ror	r27
+    1bac:	f1 11       	cpse	r31, r1
+    1bae:	f8 cf       	rjmp	.-16     	; 0x1ba0 <__floatsisf+0x1c>
+    1bb0:	fa f4       	brpl	.+62     	; 0x1bf0 <__floatsisf+0x6c>
+    1bb2:	bb 0f       	add	r27, r27
+    1bb4:	11 f4       	brne	.+4      	; 0x1bba <__floatsisf+0x36>
+    1bb6:	60 ff       	sbrs	r22, 0
+    1bb8:	1b c0       	rjmp	.+54     	; 0x1bf0 <__floatsisf+0x6c>
+    1bba:	6f 5f       	subi	r22, 0xFF	; 255
+    1bbc:	7f 4f       	sbci	r23, 0xFF	; 255
+    1bbe:	8f 4f       	sbci	r24, 0xFF	; 255
+    1bc0:	9f 4f       	sbci	r25, 0xFF	; 255
+    1bc2:	16 c0       	rjmp	.+44     	; 0x1bf0 <__floatsisf+0x6c>
+    1bc4:	88 23       	and	r24, r24
+    1bc6:	11 f0       	breq	.+4      	; 0x1bcc <__floatsisf+0x48>
+    1bc8:	96 e9       	ldi	r25, 0x96	; 150
+    1bca:	11 c0       	rjmp	.+34     	; 0x1bee <__floatsisf+0x6a>
+    1bcc:	77 23       	and	r23, r23
+    1bce:	21 f0       	breq	.+8      	; 0x1bd8 <__floatsisf+0x54>
+    1bd0:	9e e8       	ldi	r25, 0x8E	; 142
+    1bd2:	87 2f       	mov	r24, r23
+    1bd4:	76 2f       	mov	r23, r22
+    1bd6:	05 c0       	rjmp	.+10     	; 0x1be2 <__floatsisf+0x5e>
+    1bd8:	66 23       	and	r22, r22
+    1bda:	71 f0       	breq	.+28     	; 0x1bf8 <__floatsisf+0x74>
+    1bdc:	96 e8       	ldi	r25, 0x86	; 134
+    1bde:	86 2f       	mov	r24, r22
+    1be0:	70 e0       	ldi	r23, 0x00	; 0
+    1be2:	60 e0       	ldi	r22, 0x00	; 0
+    1be4:	2a f0       	brmi	.+10     	; 0x1bf0 <__floatsisf+0x6c>
+    1be6:	9a 95       	dec	r25
+    1be8:	66 0f       	add	r22, r22
+    1bea:	77 1f       	adc	r23, r23
+    1bec:	88 1f       	adc	r24, r24
+    1bee:	da f7       	brpl	.-10     	; 0x1be6 <__floatsisf+0x62>
+    1bf0:	88 0f       	add	r24, r24
+    1bf2:	96 95       	lsr	r25
+    1bf4:	87 95       	ror	r24
+    1bf6:	97 f9       	bld	r25, 7
+    1bf8:	08 95       	ret
+
+00001bfa <__fp_inf>:
+    1bfa:	97 f9       	bld	r25, 7
+    1bfc:	9f 67       	ori	r25, 0x7F	; 127
+    1bfe:	80 e8       	ldi	r24, 0x80	; 128
+    1c00:	70 e0       	ldi	r23, 0x00	; 0
+    1c02:	60 e0       	ldi	r22, 0x00	; 0
+    1c04:	08 95       	ret
+
+00001c06 <__fp_nan>:
+    1c06:	9f ef       	ldi	r25, 0xFF	; 255
+    1c08:	80 ec       	ldi	r24, 0xC0	; 192
+    1c0a:	08 95       	ret
+
+00001c0c <__fp_pscA>:
+    1c0c:	00 24       	eor	r0, r0
+    1c0e:	0a 94       	dec	r0
+    1c10:	16 16       	cp	r1, r22
+    1c12:	17 06       	cpc	r1, r23
+    1c14:	18 06       	cpc	r1, r24
+    1c16:	09 06       	cpc	r0, r25
+    1c18:	08 95       	ret
+
+00001c1a <__fp_pscB>:
+    1c1a:	00 24       	eor	r0, r0
+    1c1c:	0a 94       	dec	r0
+    1c1e:	12 16       	cp	r1, r18
+    1c20:	13 06       	cpc	r1, r19
+    1c22:	14 06       	cpc	r1, r20
+    1c24:	05 06       	cpc	r0, r21
+    1c26:	08 95       	ret
+
+00001c28 <__fp_round>:
+    1c28:	09 2e       	mov	r0, r25
+    1c2a:	03 94       	inc	r0
+    1c2c:	00 0c       	add	r0, r0
+    1c2e:	11 f4       	brne	.+4      	; 0x1c34 <__fp_round+0xc>
+    1c30:	88 23       	and	r24, r24
+    1c32:	52 f0       	brmi	.+20     	; 0x1c48 <__fp_round+0x20>
+    1c34:	bb 0f       	add	r27, r27
+    1c36:	40 f4       	brcc	.+16     	; 0x1c48 <__fp_round+0x20>
+    1c38:	bf 2b       	or	r27, r31
+    1c3a:	11 f4       	brne	.+4      	; 0x1c40 <__fp_round+0x18>
+    1c3c:	60 ff       	sbrs	r22, 0
+    1c3e:	04 c0       	rjmp	.+8      	; 0x1c48 <__fp_round+0x20>
+    1c40:	6f 5f       	subi	r22, 0xFF	; 255
+    1c42:	7f 4f       	sbci	r23, 0xFF	; 255
+    1c44:	8f 4f       	sbci	r24, 0xFF	; 255
+    1c46:	9f 4f       	sbci	r25, 0xFF	; 255
+    1c48:	08 95       	ret
+
+00001c4a <__fp_split3>:
+    1c4a:	57 fd       	sbrc	r21, 7
+    1c4c:	90 58       	subi	r25, 0x80	; 128
+    1c4e:	44 0f       	add	r20, r20
+    1c50:	55 1f       	adc	r21, r21
+    1c52:	59 f0       	breq	.+22     	; 0x1c6a <__fp_splitA+0x10>
+    1c54:	5f 3f       	cpi	r21, 0xFF	; 255
+    1c56:	71 f0       	breq	.+28     	; 0x1c74 <__fp_splitA+0x1a>
+    1c58:	47 95       	ror	r20
+
+00001c5a <__fp_splitA>:
+    1c5a:	88 0f       	add	r24, r24
+    1c5c:	97 fb       	bst	r25, 7
+    1c5e:	99 1f       	adc	r25, r25
+    1c60:	61 f0       	breq	.+24     	; 0x1c7a <__fp_splitA+0x20>
+    1c62:	9f 3f       	cpi	r25, 0xFF	; 255
+    1c64:	79 f0       	breq	.+30     	; 0x1c84 <__fp_splitA+0x2a>
+    1c66:	87 95       	ror	r24
+    1c68:	08 95       	ret
+    1c6a:	12 16       	cp	r1, r18
+    1c6c:	13 06       	cpc	r1, r19
+    1c6e:	14 06       	cpc	r1, r20
+    1c70:	55 1f       	adc	r21, r21
+    1c72:	f2 cf       	rjmp	.-28     	; 0x1c58 <__fp_split3+0xe>
+    1c74:	46 95       	lsr	r20
+    1c76:	f1 df       	rcall	.-30     	; 0x1c5a <__fp_splitA>
+    1c78:	08 c0       	rjmp	.+16     	; 0x1c8a <__fp_splitA+0x30>
+    1c7a:	16 16       	cp	r1, r22
+    1c7c:	17 06       	cpc	r1, r23
+    1c7e:	18 06       	cpc	r1, r24
+    1c80:	99 1f       	adc	r25, r25
+    1c82:	f1 cf       	rjmp	.-30     	; 0x1c66 <__fp_splitA+0xc>
+    1c84:	86 95       	lsr	r24
+    1c86:	71 05       	cpc	r23, r1
+    1c88:	61 05       	cpc	r22, r1
+    1c8a:	08 94       	sec
+    1c8c:	08 95       	ret
+
+00001c8e <__fp_zero>:
+    1c8e:	e8 94       	clt
+
+00001c90 <__fp_szero>:
+    1c90:	bb 27       	eor	r27, r27
+    1c92:	66 27       	eor	r22, r22
+    1c94:	77 27       	eor	r23, r23
+    1c96:	cb 01       	movw	r24, r22
+    1c98:	97 f9       	bld	r25, 7
+    1c9a:	08 95       	ret
+
+00001c9c <__gesf2>:
+    1c9c:	0e 94 c0 0e 	call	0x1d80	; 0x1d80 <__fp_cmp>
+    1ca0:	08 f4       	brcc	.+2      	; 0x1ca4 <__gesf2+0x8>
+    1ca2:	8f ef       	ldi	r24, 0xFF	; 255
+    1ca4:	08 95       	ret
+
+00001ca6 <__mulsf3>:
+    1ca6:	0e 94 66 0e 	call	0x1ccc	; 0x1ccc <__mulsf3x>
+    1caa:	0c 94 14 0e 	jmp	0x1c28	; 0x1c28 <__fp_round>
+    1cae:	0e 94 06 0e 	call	0x1c0c	; 0x1c0c <__fp_pscA>
+    1cb2:	38 f0       	brcs	.+14     	; 0x1cc2 <__mulsf3+0x1c>
+    1cb4:	0e 94 0d 0e 	call	0x1c1a	; 0x1c1a <__fp_pscB>
+    1cb8:	20 f0       	brcs	.+8      	; 0x1cc2 <__mulsf3+0x1c>
+    1cba:	95 23       	and	r25, r21
+    1cbc:	11 f0       	breq	.+4      	; 0x1cc2 <__mulsf3+0x1c>
+    1cbe:	0c 94 fd 0d 	jmp	0x1bfa	; 0x1bfa <__fp_inf>
+    1cc2:	0c 94 03 0e 	jmp	0x1c06	; 0x1c06 <__fp_nan>
+    1cc6:	11 24       	eor	r1, r1
+    1cc8:	0c 94 48 0e 	jmp	0x1c90	; 0x1c90 <__fp_szero>
+
+00001ccc <__mulsf3x>:
+    1ccc:	0e 94 25 0e 	call	0x1c4a	; 0x1c4a <__fp_split3>
+    1cd0:	70 f3       	brcs	.-36     	; 0x1cae <__mulsf3+0x8>
+
+00001cd2 <__mulsf3_pse>:
+    1cd2:	95 9f       	mul	r25, r21
+    1cd4:	c1 f3       	breq	.-16     	; 0x1cc6 <__mulsf3+0x20>
+    1cd6:	95 0f       	add	r25, r21
+    1cd8:	50 e0       	ldi	r21, 0x00	; 0
+    1cda:	55 1f       	adc	r21, r21
+    1cdc:	62 9f       	mul	r22, r18
+    1cde:	f0 01       	movw	r30, r0
+    1ce0:	72 9f       	mul	r23, r18
+    1ce2:	bb 27       	eor	r27, r27
+    1ce4:	f0 0d       	add	r31, r0
+    1ce6:	b1 1d       	adc	r27, r1
+    1ce8:	63 9f       	mul	r22, r19
+    1cea:	aa 27       	eor	r26, r26
+    1cec:	f0 0d       	add	r31, r0
+    1cee:	b1 1d       	adc	r27, r1
+    1cf0:	aa 1f       	adc	r26, r26
+    1cf2:	64 9f       	mul	r22, r20
+    1cf4:	66 27       	eor	r22, r22
+    1cf6:	b0 0d       	add	r27, r0
+    1cf8:	a1 1d       	adc	r26, r1
+    1cfa:	66 1f       	adc	r22, r22
+    1cfc:	82 9f       	mul	r24, r18
+    1cfe:	22 27       	eor	r18, r18
+    1d00:	b0 0d       	add	r27, r0
+    1d02:	a1 1d       	adc	r26, r1
+    1d04:	62 1f       	adc	r22, r18
+    1d06:	73 9f       	mul	r23, r19
+    1d08:	b0 0d       	add	r27, r0
+    1d0a:	a1 1d       	adc	r26, r1
+    1d0c:	62 1f       	adc	r22, r18
+    1d0e:	83 9f       	mul	r24, r19
+    1d10:	a0 0d       	add	r26, r0
+    1d12:	61 1d       	adc	r22, r1
+    1d14:	22 1f       	adc	r18, r18
+    1d16:	74 9f       	mul	r23, r20
+    1d18:	33 27       	eor	r19, r19
+    1d1a:	a0 0d       	add	r26, r0
+    1d1c:	61 1d       	adc	r22, r1
+    1d1e:	23 1f       	adc	r18, r19
+    1d20:	84 9f       	mul	r24, r20
+    1d22:	60 0d       	add	r22, r0
+    1d24:	21 1d       	adc	r18, r1
+    1d26:	82 2f       	mov	r24, r18
+    1d28:	76 2f       	mov	r23, r22
+    1d2a:	6a 2f       	mov	r22, r26
+    1d2c:	11 24       	eor	r1, r1
+    1d2e:	9f 57       	subi	r25, 0x7F	; 127
+    1d30:	50 40       	sbci	r21, 0x00	; 0
+    1d32:	9a f0       	brmi	.+38     	; 0x1d5a <__mulsf3_pse+0x88>
+    1d34:	f1 f0       	breq	.+60     	; 0x1d72 <__mulsf3_pse+0xa0>
+    1d36:	88 23       	and	r24, r24
+    1d38:	4a f0       	brmi	.+18     	; 0x1d4c <__mulsf3_pse+0x7a>
+    1d3a:	ee 0f       	add	r30, r30
+    1d3c:	ff 1f       	adc	r31, r31
+    1d3e:	bb 1f       	adc	r27, r27
+    1d40:	66 1f       	adc	r22, r22
+    1d42:	77 1f       	adc	r23, r23
+    1d44:	88 1f       	adc	r24, r24
+    1d46:	91 50       	subi	r25, 0x01	; 1
+    1d48:	50 40       	sbci	r21, 0x00	; 0
+    1d4a:	a9 f7       	brne	.-22     	; 0x1d36 <__mulsf3_pse+0x64>
+    1d4c:	9e 3f       	cpi	r25, 0xFE	; 254
+    1d4e:	51 05       	cpc	r21, r1
+    1d50:	80 f0       	brcs	.+32     	; 0x1d72 <__mulsf3_pse+0xa0>
+    1d52:	0c 94 fd 0d 	jmp	0x1bfa	; 0x1bfa <__fp_inf>
+    1d56:	0c 94 48 0e 	jmp	0x1c90	; 0x1c90 <__fp_szero>
+    1d5a:	5f 3f       	cpi	r21, 0xFF	; 255
+    1d5c:	e4 f3       	brlt	.-8      	; 0x1d56 <__mulsf3_pse+0x84>
+    1d5e:	98 3e       	cpi	r25, 0xE8	; 232
+    1d60:	d4 f3       	brlt	.-12     	; 0x1d56 <__mulsf3_pse+0x84>
+    1d62:	86 95       	lsr	r24
+    1d64:	77 95       	ror	r23
+    1d66:	67 95       	ror	r22
+    1d68:	b7 95       	ror	r27
+    1d6a:	f7 95       	ror	r31
+    1d6c:	e7 95       	ror	r30
+    1d6e:	9f 5f       	subi	r25, 0xFF	; 255
+    1d70:	c1 f7       	brne	.-16     	; 0x1d62 <__mulsf3_pse+0x90>
+    1d72:	fe 2b       	or	r31, r30
+    1d74:	88 0f       	add	r24, r24
+    1d76:	91 1d       	adc	r25, r1
+    1d78:	96 95       	lsr	r25
+    1d7a:	87 95       	ror	r24
+    1d7c:	97 f9       	bld	r25, 7
+    1d7e:	08 95       	ret
+
+00001d80 <__fp_cmp>:
+    1d80:	99 0f       	add	r25, r25
+    1d82:	00 08       	sbc	r0, r0
+    1d84:	55 0f       	add	r21, r21
+    1d86:	aa 0b       	sbc	r26, r26
+    1d88:	e0 e8       	ldi	r30, 0x80	; 128
+    1d8a:	fe ef       	ldi	r31, 0xFE	; 254
+    1d8c:	16 16       	cp	r1, r22
+    1d8e:	17 06       	cpc	r1, r23
+    1d90:	e8 07       	cpc	r30, r24
+    1d92:	f9 07       	cpc	r31, r25
+    1d94:	c0 f0       	brcs	.+48     	; 0x1dc6 <__fp_cmp+0x46>
+    1d96:	12 16       	cp	r1, r18
+    1d98:	13 06       	cpc	r1, r19
+    1d9a:	e4 07       	cpc	r30, r20
+    1d9c:	f5 07       	cpc	r31, r21
+    1d9e:	98 f0       	brcs	.+38     	; 0x1dc6 <__fp_cmp+0x46>
+    1da0:	62 1b       	sub	r22, r18
+    1da2:	73 0b       	sbc	r23, r19
+    1da4:	84 0b       	sbc	r24, r20
+    1da6:	95 0b       	sbc	r25, r21
+    1da8:	39 f4       	brne	.+14     	; 0x1db8 <__fp_cmp+0x38>
+    1daa:	0a 26       	eor	r0, r26
+    1dac:	61 f0       	breq	.+24     	; 0x1dc6 <__fp_cmp+0x46>
+    1dae:	23 2b       	or	r18, r19
+    1db0:	24 2b       	or	r18, r20
+    1db2:	25 2b       	or	r18, r21
+    1db4:	21 f4       	brne	.+8      	; 0x1dbe <__fp_cmp+0x3e>
+    1db6:	08 95       	ret
+    1db8:	0a 26       	eor	r0, r26
+    1dba:	09 f4       	brne	.+2      	; 0x1dbe <__fp_cmp+0x3e>
+    1dbc:	a1 40       	sbci	r26, 0x01	; 1
+    1dbe:	a6 95       	lsr	r26
+    1dc0:	8f ef       	ldi	r24, 0xFF	; 255
+    1dc2:	81 1d       	adc	r24, r1
+    1dc4:	81 1d       	adc	r24, r1
+    1dc6:	08 95       	ret
+
+00001dc8 <__tablejump2__>:
+    1dc8:	ee 0f       	add	r30, r30
+    1dca:	ff 1f       	adc	r31, r31
+    1dcc:	05 90       	lpm	r0, Z+
+    1dce:	f4 91       	lpm	r31, Z
+    1dd0:	e0 2d       	mov	r30, r0
+    1dd2:	09 94       	ijmp
+
+00001dd4 <__umulhisi3>:
+    1dd4:	a2 9f       	mul	r26, r18
+    1dd6:	b0 01       	movw	r22, r0
+    1dd8:	b3 9f       	mul	r27, r19
+    1dda:	c0 01       	movw	r24, r0
+    1ddc:	a3 9f       	mul	r26, r19
+    1dde:	70 0d       	add	r23, r0
+    1de0:	81 1d       	adc	r24, r1
+    1de2:	11 24       	eor	r1, r1
+    1de4:	91 1d       	adc	r25, r1
+    1de6:	b2 9f       	mul	r27, r18
+    1de8:	70 0d       	add	r23, r0
+    1dea:	81 1d       	adc	r24, r1
+    1dec:	11 24       	eor	r1, r1
+    1dee:	91 1d       	adc	r25, r1
+    1df0:	08 95       	ret
+
+00001df2 <_exit>:
+    1df2:	f8 94       	cli
+
+00001df4 <__stop_program>:
+    1df4:	ff cf       	rjmp	.-2      	; 0x1df4 <__stop_program>
